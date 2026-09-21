@@ -1,0 +1,30 @@
+# Raw source media — stays in Drive sync only, never git
+raw footage/
+BTS pics/
+
+# Rendered / large binary outputs — Drive syncs these, git doesn't
+edit/clips_graded/
+edit/downloads/
+edit/verify/
+edit/review/frames/
+edit/animations/*/render.mp4
+edit/animations/*/render.webm
+edit/animations/*/node_modules/
+*.mp4
+*.mov
+*.MOV
+*.MP4
+*.mkv
+*.webm
+
+# Admin/proposal/review documents — not editorial content, review before ever un-ignoring
+*.pdf
+
+# Personal working folder — local only, never pushed
+private/
+
+# Images pulled out of the proposal PDF — derived binaries, regenerable
+docs/extracted/
+
+.DS_Store
+CLAUDE.md

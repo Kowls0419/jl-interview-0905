@@ -576,8 +576,8 @@ self-contained-system passages) + this photo arc.
   it) and let the 芭蕉-clearing photos carry it. Never name or identify an
   occupant — defamation (誹謗) exposure on a 文化局-funded video. Taken off
   prof's list.
-- **怪手林:** prof is asked for the real name (question 1 of the doc). Caution
-  whatever the answer: the passage continues into 「他也擁有很多國有林地…有些有
+- **怪手林: nickname only, as she says it — no real name, no name card, not
+  asked of prof** (Kyle, 2026-09-27). Caution: the passage continues into 「他也擁有很多國有林地…有些有
   租約，有些也沒有」 (5635 27:14–27:22) — that attaches the land question to a
   nameable person; don't use that line without Kyle deciding explicitly.
 - **Original photos: wait for them.** 焦炭窯篇 is held until prof finds the
@@ -599,7 +599,7 @@ self-contained-system passages) + this photo arc.
 **Outstanding:**
 1. Kyle sends the rewritten `docs/questions_for_professor.md` to prof.
 2. ~~Prof's answers~~ mostly in (see Update 2026-09-27). Still open with prof:
-   怪手林's real name, photo originals (焦炭窯篇 waits on these).
+   photo originals only (焦炭窯篇 waits on these).
 3. Kyle's own list (see "Moved to Kyle" above): names/spellings and the 10 台語 gaps.
 4. JL's first-time setup against the new README (fork, not upstream).
 5. Once answers land: confirm strategy (Hard Rule 11), then EDLs — 產業篇 long

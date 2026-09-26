@@ -631,6 +631,19 @@ self-contained-system passages) + this photo arc.
     ink before shipping a card; centre on the container, and check the rendered
     ink stays inside the margins.
 
+**戰俘營篇 test cut (2026-09-27)** — `edit/pow_preview.mp4`, 112.7 s, 29.97 fps.
+Built by `edit/build/pow.py` (cards → `edit/cards_pow/`, `edit/edl_pow.json`,
+`edit/master_pow.srt`); rendered with the fork's new `render.py --fps
+30000/1001 --sub-style … --fonts-dir edit/fonts --preview --no-loudnorm`
+(fork commit `66d6d45`). Order: open card → 23:32 door → 23:59 asked about
+foreigners → 25:15 nobody knew → 26:04 王財慶 → 29:10 POWs return and cry →
+29:58 from 金瓜石 near death (stops before 三十七磅) → close card (Hurst's
+dates, two deaths, source credit). Self-eval: no flashes at any cut; audio at
+every cut below the surrounding speech (fades working); cards silent. Watch:
+jump cuts at 39.98 and 85.90 (near-identical framing both sides); 29:10–30:20
+is a two-shot with prof, not the tight single; source audio peaks near 0 dBFS.
+Subtitle fixes hit: 阿託嘎→阿兜仔 ×4, 黃富→磺窟 ×1, 臺→台 ×1.
+
 **Reasoning log:**
 - Shortlist before verification because verification effort should follow what
   can reach the screen — 24 of the 34 台語 gaps are in passages we won't use.

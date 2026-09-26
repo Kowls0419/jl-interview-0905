@@ -613,6 +613,24 @@ self-contained-system passages) + this photo arc.
   Hurst's figures. 「三十七磅」 is unsupported → cut before it. 何麥克 is the
   Chinese name used by the society and the press. ASR 「黃富」 = 磺窟.
 
+**Output spec + look for all three videos (Kyle, 2026-09-27):**
+- **29.97 fps** (exact half of the 59.94 source → clean frame drop, no judder).
+  1920×1080. Overlay/card timing rules are stated in frames, so compute them at
+  29.97, not the 0613 set's 24.
+- **Look C — clean documentary** (chosen over reusing the 0613 set's look).
+  Mockup was made on 5636 26:21.
+  - Subtitles: **Noto Sans TC Medium**, white, on a soft dark box
+    (black ≈ 60 % opacity), bottom-centre. libass boxes (BorderStyle=3) are
+    square-cornered; the mockup's rounded box needs PNG subtitle overlays —
+    decide at the first preview.
+  - Cards: paper `(238,233,222)` background, ink `(34,30,26)` text in **Noto
+    Serif TC Medium**, rust accent `(150,70,40)` as a vertical rule / date line,
+    grey `(120,112,100)` for the 「新店礦業文化路徑」 kicker. Left-aligned block.
+  - Fonts: `edit/fonts/` (Drive only, gitignored; copied from the 0613 project).
+  - Rules carried over: no `・` in any on-screen text; assert every glyph has
+    ink before shipping a card; centre on the container, and check the rendered
+    ink stays inside the margins.
+
 **Reasoning log:**
 - Shortlist before verification because verification effort should follow what
   can reach the screen — 24 of the 34 台語 gaps are in passages we won't use.

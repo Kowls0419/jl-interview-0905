@@ -38,3 +38,6 @@ photo import */
 *.heic
 *.HEIC
 *.webp
+
+# Fonts — binaries, Drive only (Noto fonts are OFL; source: JL Interview 0613/edit/fonts)
+edit/fonts/

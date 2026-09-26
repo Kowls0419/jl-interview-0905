@@ -644,6 +644,19 @@ jump cuts at 39.98 and 85.90 (near-identical framing both sides); 29:10–30:20
 is a two-shot with prof, not the tight single; source audio peaks near 0 dBFS.
 Subtitle fixes hit: 阿託嘎→阿兜仔 ×4, 黃富→磺窟 ×1, 臺→台 ×1.
 
+**Dailies r01 → r02 (Kyle reviewed; 1 note, applies to every cue):** subtitle
+box padding uneven top vs bottom. Cause: libass `BorderStyle=3` pads from font
+metrics (Noto Sans TC descent ≫ ascent). Fix: subtitles now come from
+`edit/master_pow.ass` — per cue an exact vector-drawn box plus text centred on
+the ink band; ASS `Fontsize` = ascent+descent (73) so text is 50 px. Measured
+on the final render: ≈23 px top / 22 px bottom / 29 px each side on all 42
+cues. Detours tried and dropped (all mistimed in render.py's composite): a
+full-length qtrle overlay, PNG-in-MOV, per-cue PNG stills — see lessons L45/L46.
+Render now: `render.py edit/edl_pow.json -o edit/pow_preview.mp4 --preview
+--no-loudnorm --fps 30000/1001 --fonts-dir edit/fonts --sub-style "Encoding=1"`
+(the dummy `--sub-style` stops render.py's default force_style overriding the
+.ass styles). Corrections this round: 1.
+
 **Reasoning log:**
 - Shortlist before verification because verification effort should follow what
   can reach the screen — 24 of the 34 台語 gaps are in passages we won't use.

@@ -187,7 +187,63 @@ def build_srt():
             f.write(f"{i}\n{srt_time(s)} --> {srt_time(e)}\n{t}\n\n")
     for k, n in hits.items():
         print(f"  SUB_FIX {k}→{SUB_FIXES[k]}: {n} hit(s)" + ("  ← never matched" if n == 0 else ""))
-    return len(cues), offset + CLOSE_S
+    return cues, offset + CLOSE_S
+
+
+# Subtitles: libass burn from an .ass file (its timing is exact — Dailies r01),
+# but NOT libass's own BorderStyle=3 box: that pads from the font's line
+# metrics, and Noto Sans TC's descent >> ascent, so every box had more padding
+# below the text than above (r01). Instead each cue is two events — an exact
+# rectangle drawn in ASS vector commands, and the text centred on it with a
+# vertical correction measured from the ink. (Overlay-video / per-cue-still
+# routes through render.py's overlay pass were tried and mistimed; don't.)
+SUB_SIZE, PAD_Y, PAD_X, BOX_BOTTOM = 50, 16, 28, H - 64
+INK_NUDGE = 0      # px; empirical correction after measuring a render
+
+
+def ass_time(t):
+    cs = int(round(t * 100))
+    return f"{cs // 360000}:{cs // 6000 % 60:02d}:{cs // 100 % 60:02d}.{cs % 100:02d}"
+
+
+def build_ass(cues):
+    f = font(SANS, SUB_SIZE)
+    asc, desc = f.getmetrics()
+    ref = f.getbbox("國說嗎關", anchor="ls")            # ink band relative to baseline
+    band_h = ref[3] - ref[1]
+    box_h = band_h + 2 * PAD_Y
+    y0 = BOX_BOTTOM - box_h; yc = y0 + box_h / 2
+    # \an5 centres the metric line box (baseline-asc .. baseline+desc) on pos;
+    # shift so the INK band's centre lands on the box centre instead
+    ink_c = (ref[1] + ref[3]) / 2; line_c = (desc - asc) / 2
+    ty = yc - (ink_c - line_c) + INK_NUDGE
+    # libass Fontsize = line height (ascent+descent), not the em size PIL uses
+    ass_size = asc + desc
+    head = f"""[Script Info]
+ScriptType: v4.00+
+PlayResX: {W}
+PlayResY: {H}
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Box,Noto Sans TC Medium,{ass_size},&H66000000,&H66000000,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+Style: Text,Noto Sans TC Medium,{ass_size},&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,5,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+"""
+    lines = []
+    for s0, e0, txt, _ in cues:
+        guard(f, txt.replace(" ", ""))
+        ink = f.getbbox(txt, anchor="ls"); tw = ink[2] - ink[0]
+        bw = tw + 2 * PAD_X; x0 = (W - bw) / 2
+        t0, t1 = ass_time(s0), ass_time(e0)
+        lines.append(f"Dialogue: 0,{t0},{t1},Box,,0,0,0,,{{\\pos({x0:.0f},{y0:.0f})\\p1}}m 0 0 l {bw:.0f} 0 {bw:.0f} {box_h:.0f} 0 {box_h:.0f}{{\\p0}}")
+        lines.append(f"Dialogue: 1,{t0},{t1},Text,,0,0,0,,{{\\pos({W / 2:.0f},{ty:.1f})}}{txt}")
+    (EDIT / "master_pow.ass").write_text(head + "\n".join(lines) + "\n")
+    return (x0, y0, box_h)
 
 
 def build_edl(total):
@@ -200,7 +256,7 @@ def build_edl(total):
         "ranges": ranges,
         "grade": "eq=brightness=0.02:contrast=1.06:saturation=1.05",
         "overlays": [],
-        "subtitles": "master_pow.srt",
+        "subtitles": "master_pow.ass",
         "total_duration_s": round(total, 2),
     }
     (EDIT / "edl_pow.json").write_text(json.dumps(edl, ensure_ascii=False, indent=2))
@@ -208,6 +264,7 @@ def build_edl(total):
 
 if __name__ == "__main__":
     build_cards()
-    n, total = build_srt()
+    cues, total = build_srt()
+    build_ass(cues)
     build_edl(total)
-    print(f"cards + {n} subtitle cues + EDL written; expected duration {total:.2f}s")
+    print(f"cards + {len(cues)} subtitle cues (.srt + .ass) + EDL written; expected duration {total:.2f}s")

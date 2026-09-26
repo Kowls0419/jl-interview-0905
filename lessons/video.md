@@ -224,3 +224,42 @@ can read it; **this is now the only copy.** Entry format is in `README.md`
 - Seen:       JL heritage (2026-08-18). Caught only because I'd offered Kyle a
               before/after A/B and then actually ran it instead of shipping the
               recommendation.
+
+### L45 — libass's subtitle box pads from font metrics, not ink — CJK fonts come out lopsided
+- Context:    burned subtitles on a solid/translucent box (`BorderStyle=3`), especially
+              with CJK fonts such as Noto Sans TC.
+- Symptom:    every cue has visibly more padding below the text than above it
+              (Dailies: "subtitles top/down margin different", all frames).
+- Root cause: libass sizes the box from the font's ascent/descent, and CJK fonts
+              reserve far more descent than their glyphs use. Separately, libass
+              `Fontsize` is the LINE height (ascent+descent), not the em size PIL/CSS
+              use — the same number renders ~1.45× smaller in libass.
+- Rule:       don't use `BorderStyle=3` for boxed subs. Write an `.ass` with two
+              events per cue: an exact rectangle (`{\pos(x,y)\p1}m 0 0 l w 0 w h 0 h`)
+              and the text `\an5`-centred on it, offset so the INK band (measured
+              with PIL, e.g. over 國說嗎關) is centred rather than the metric line
+              box. Set ASS `Fontsize = ascent+descent` from PIL's `getmetrics()` at
+              the intended px size. Then MEASURE padding on the rendered output for
+              every cue (inside the box, text is the only bright ink).
+- Scope:      video, zh-subtitle
+- Seen:       JL Interview 0905 戰俘營篇, Dailies r01 (2026-09-27), Kyle
+
+### L46 — a timed overlay clip can pass every check on its own and still mistime in the composite
+- Context:    replacing a subtitle burn with a transparent overlay video (or
+              per-cue stills) fed through a generic overlay/compositing pass.
+- Symptom:    the overlay file matches the SRT frame-by-frame and by `-ss` time,
+              yet the composited video shows a cue from seconds later, drifting
+              further through the video — or, with single-frame PNG stills, shows
+              no subtitles at all. The concat demuxer also added one frame per
+              image entry (+88 frames over 42 cues).
+- Root cause: not fully isolated — sync between a long alpha clip (qtrle / PNG-in-
+              MOV) or one-frame inputs and the main stream inside the overlay chain.
+              Checking the overlay in isolation proved nothing about the composite.
+- Rule:       for burned subtitles, use libass (its timing was exact) and solve
+              styling inside the `.ass` (L45) rather than switching delivery
+              mechanism. Whatever the mechanism, verify ON THE FINAL RENDER, by
+              time, at several cues spread across the whole video (start, middle,
+              end) against the SRT — never only on an intermediate file.
+- Scope:      video, zh-subtitle, diagnostics
+- Seen:       JL Interview 0905 戰俘營篇 r01→r02 (2026-09-27), Kyle — three
+              render rounds lost before reverting to libass

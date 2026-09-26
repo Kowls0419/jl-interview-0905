@@ -510,6 +510,14 @@ shortlist of candidate passages, not a cut (Hard Rule 11 still applies).
   (邵宗興, 游寶彩, 周再思). Added E (kiln not on camera) and the long-version
   plan under D. Added a "三支影片目前的段落" section so prof can object to a
   passage. Removed an outdated aside from question C.
+- **Question doc then cut to 8 one-line questions** (Kyle: the final doc must be
+  TL;DR, and several items were ones he can answer himself). Only what prof
+  alone can answer stayed. **Moved to Kyle (not in the prof doc):**
+  尤月里's full name for the title card (5635 00:13) · 「三十七磅」 (5636 30:25,
+  likely wrong — check against Hurst's published account) · 何麥克's own Chinese
+  rendering (5636 24:45) · how to write *gala* (5635 06:44) · 「下層里」 place name
+  (5635 07:07) · 政三煤礦 → 浙江/正三? (5635 02:38) · the **10 台語 gaps**
+  (5635 06:44–08:01 ×8, 5635 12:08, 5636 34:30) · the 審查意見 document.
 - **Fixed an unsupported claim** in question B: it said 邵宗興's road and the
   民國58 flood were "同一條線". The transcript doesn't say that. The supported
   link is that the flood swept away the miners'/washing workers' 油毛氈 houses
@@ -542,10 +550,10 @@ shortlist of candidate passages, not a cut (Hard Rule 11 still applies).
 
 **Outstanding:**
 1. Kyle sends the rewritten `docs/questions_for_professor.md` to prof.
-2. Prof's answers — video count, length, 10/15, **how to cover the kiln
-   itself (E)**, photo originals, the occupation framing, the 8 names/facts
-   and the 10 台語 gaps.
-3. JL's first-time setup against the new README (fork, not upstream).
-4. Once answers land: confirm strategy (Hard Rule 11), then EDLs — 產業篇 long
+2. Prof's answers to the 8 questions — above all **#5, how to cover the kiln
+   itself**, and #6, the photo originals.
+3. Kyle's own list (see "Moved to Kyle" above): names/spellings and the 10 台語 gaps.
+4. JL's first-time setup against the new README (fork, not upstream).
+5. Once answers land: confirm strategy (Hard Rule 11), then EDLs — 產業篇 long
    version first. Decide target fps before building any overlay.
-5. Later, deliberately: merge upstream's 4 commits into the fork's `kyle` branch.
+6. Later, deliberately: merge upstream's 4 commits into the fork's `kyle` branch.

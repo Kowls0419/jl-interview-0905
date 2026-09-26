@@ -38,13 +38,14 @@ entries means the *0613 set*, not these.
 
 | | Git (this repo) | Google Drive |
 |---|---|---|
-| Contains | `edit/project.md`, `edit/takes_packed.md`, `edit/transcripts/*.json`, `edl.json` / `master.srt` / `review/*.json` (once they exist), `docs/*.md` | `raw footage/`, `BTS pics/`, `photo import */` (client photos), `edit/clips_graded/`, `edit/verify/`, previews, `final.mp4`, animation renders, `review/frames/*.png`, `docs/*.pdf` |
+| Contains | `edit/project.md`, `lessons/*.md`, `edit/takes_packed.md`, `edit/transcripts/*.json`, `edl.json` / `master.srt` / `review/*.json` (once they exist), `docs/*.md` | `raw footage/`, `BTS pics/`, `photo import */` (client photos), `edit/clips_graded/`, `edit/verify/`, previews, `final.mp4`, animation renders, `review/frames/*.png`, `docs/*.pdf` |
 | Why | Small text, diffable, mergeable — this is the actual editorial history | Large binaries — git can't diff/merge video and GitHub caps file size anyway |
 
 Drive folder (raw footage + renders): **[JL Interview 0905 on Drive](https://drive.google.com/drive/folders/1wwfvlHXUNO4crt0ZVVjCH3QRvXbb3hyh?usp=drive_link)**
 
 `edit/` is the **video-use skill's** namespace — only what the skill reads and
 writes belongs in it. Project admin (client questions, the proposal) goes in `docs/`.
+Editing lessons go in `lessons/` (see below).
 
 ⚠ Git history was squashed to one commit on 2026-09-26, so **`edit/project.md`
 is the editorial history** — `git log` won't tell you how the edit got here.
@@ -60,9 +61,10 @@ fork, not upstream.** The fork adds:
 - A `render.py` that understands per-range `"grade"` in `edl.json` and
   `--crf`/`--preset`. Upstream silently ignores those, so the same EDL would
   render **differently** on the two machines.
-- An optional `reflect` learning loop that is Kyle's own. JL doesn't need it —
-  the skill skips it when it isn't installed, and project-specific rules
-  (e.g. Traditional-Chinese-only subtitles) are written into `edit/project.md`.
+- An optional `reflect` learning loop that is Kyle's own. JL doesn't need the
+  `reflect` skill — the shared editing lessons live in this repo's `lessons/`
+  folder instead (below), and project-specific rules (e.g.
+  Traditional-Chinese-only subtitles) are written into `edit/project.md`.
 
 **Keeping the two in sync.** Kyle's copy lives in his Google Drive, but Drive
 only syncs to *his* machines — changes reach JL through GitHub only:
@@ -78,6 +80,41 @@ only syncs to *his* machines — changes reach JL through GitHub only:
 - Before rendering an EDL the other person wrote, check you're on the same
   version: `git -C ~/.claude/skills/video-use log -1 --oneline` on both machines.
 
+## Lessons (shared, one part each)
+
+Generalized editing mistakes and the rule that prevents each, so the same fix
+isn't re-requested next session. Both Claudes **read both files before any
+render**; each person **writes only their own**:
+
+| file | written by | IDs |
+|---|---|---|
+| `lessons/video.md` | Kyle's sessions | `L…` (Kyle's global sequence — gaps are normal) |
+| `lessons/video-jl.md` | JL's sessions | `J01`, `J02`, … (next free ID is at the top of the file) |
+
+A lesson is worth adding when a mistake was **preventable and likely to
+recur** — typically something the other person had to correct in a Dailies
+round. Write the **rule, not the instance** ("never use `・` in on-screen text —
+it renders as a box", not "fixed the dot at 1:32"). Before adding, re-read both
+files and strengthen an existing entry with a `Seen:` line rather than adding a
+near-duplicate. Format:
+
+```
+### J01 — one-line title
+- Context:    when this situation arises
+- Symptom:    what the user or a check sees
+- Root cause: why it happens
+- Rule:       the thing to DO to prevent it
+- Scope:      video + sub-tags (zh-subtitle, overlay-transitions, audio-render, …)
+- Seen:       project / Dailies round / date / who
+```
+
+## Who did what — the session log
+
+Every entry in `edit/project.md` is headed `## Session N — YYYY-MM-DD — Kyle`
+or `— JL`, numbered in one shared sequence. Commits carry each person's own git
+identity. So "what did JL do last time?" is answered by the latest `— JL`
+entry plus `git log --author`.
+
 ## Kyle's workflow (project owner)
 
 Google Drive syncs this whole folder to disk as before. Git rides on top,
@@ -88,7 +125,7 @@ tracking only the small text files.
    uploads footage/renders in the background automatically.
 3. **After a session:**
    ```bash
-   git add edit docs
+   git add edit docs lessons
    git commit -m "short description of what changed"
    git push
    ```
@@ -126,8 +163,9 @@ tracking only the small text files.
    API key is only needed to transcribe *new* footage** — this project's
    transcripts are already in `edit/transcripts/` and must not be re-done.
 
-5. **Every session after that:** `git pull` here, `git -C ~/.claude/skills/video-use pull`,
-   edit, then `git add edit docs` / `commit` / `push`.
+5. **Every session after that:** use the startup prompt below — it pulls both
+   repos, reads the lessons, and at the end logs the session as yours, adds any
+   new lesson to `lessons/video-jl.md`, and pushes.
 
 ## Claude-assisted workflow (recommended)
 
@@ -151,19 +189,34 @@ Open Claude Code (anywhere — not necessarily inside the project) and paste:
 ### Every session: startup prompt
 
 Open Claude Code **inside this project folder** (after Drive has finished
-syncing it) and paste:
+syncing it) and paste — the same prompt works for both of you:
 
 > This is a `video-use` project shared via git + Google Drive — read its
 > `README.md` at the project root first for how that split works and who
-> everyone is. Run `git pull` to sync the latest edit decisions, and
+> everyone is. Work out who is driving this session from
+> `gh api user --jq .login` (`Kowls0419` = Kyle, `CYLI310` = JL); if that's
+> unclear, ask me. Run `git pull` to sync the latest edit decisions, and
 > `git -C ~/.claude/skills/video-use pull` to make sure video-use is current.
 > Then read `edit/project.md` (full session log — pay attention to the most
-> recent session) and `docs/questions_for_professor.md` for open items.
-> Summarize where things left off in one or two sentences, then let's continue.
-> At the end of this session, `git add`/`commit`/`push` whatever changed under
-> `edit/` and `docs/`, and append a new session entry to `edit/project.md` per
-> the skill's own memory format before we stop. Don't put anything in `edit/`
-> that the video-use skill doesn't itself read or write.
+> recent session, and to what the *other* person did since my last session),
+> `docs/questions_for_professor.md` for open items, and both files in
+> `lessons/` — treat those lessons as rules to self-check against before any
+> render. Summarize where things left off in one or two sentences, then let's
+> continue.
+>
+> Before we stop:
+> 1. **Reflect:** list any mistakes that had to be corrected this session. For
+>    each one that was preventable and likely to recur, add a generalized
+>    lesson to *my* lessons file (`lessons/video.md` if I'm Kyle,
+>    `lessons/video-jl.md` if I'm JL) in the README's format, or strengthen an
+>    existing entry. If nothing qualifies, say so.
+> 2. **Log:** append a new session entry to `edit/project.md` per the skill's
+>    memory format, headed `## Session N — <date> — <Kyle|JL>` with the next
+>    shared session number, saying who did what.
+> 3. **Push:** `git add`/`commit`/`push` whatever changed under `edit/`,
+>    `docs/` and `lessons/`.
+>
+> Don't put anything in `edit/` that the video-use skill doesn't itself read or write.
 
 ### Dailies across two machines
 
@@ -181,6 +234,8 @@ stays consistent for whoever picks it up next.
 
 ## Cautions
 
+- ⚠️ **Write only your own lessons file** — Kyle `lessons/video.md`, JL
+  `lessons/video-jl.md` — so the two never conflict.
 - ⚠️ **Never both edit `edl.json` at the same time.** Two concurrent edits
   conflict messily and git can't merge them cleanly. Say who's driving the cut
   before you start.

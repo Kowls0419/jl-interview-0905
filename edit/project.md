@@ -10,11 +10,18 @@ Kyle's Drive only). Same client, same association, new shoot.
 "V1 焦炭窯 · V2 戰俘營 · V3 產業…" is this project's working split under the old
 labels. Notes tagged *(Kyle's machine)* refer to paths/hosts only he has.
 
+**Every session is tagged with who drove it:** `## Session N — YYYY-MM-DD — Kyle`
+or `— JL`. Session numbers are shared and sequential across both people — take
+the next number after the last entry here, whoever wrote it. Inside an entry,
+say who did what if both were involved (e.g. "JL ran Dailies round r02").
+To answer "what did JL do last time": the latest `— JL` entry here, plus
+`git log --author` for his commits.
+
 **Status (as of 2026-09-26):** candidate-passage shortlist done (Session 7); no
 EDL or cut yet. Waiting on prof's answers (video count, length, photo
 originals, how to cover the kiln itself). See the latest session.
 
-## Session 1 — 2026-09-18 (`/video-use init` — inventory, no cutting)
+## Session 1 — 2026-09-18 — Kyle (`/video-use init` — inventory, no cutting)
 
 **Status:** inventory + transcription only. No EDL, no cuts. Awaiting Kyle's
 direction on what this material becomes.
@@ -227,7 +234,7 @@ every subtitle pass.
    gaps.
 3. The photo set the leader promises at the end of 5636 — not in this directory yet.
 
-## Session 2 — 2026-09-20 (collaboration setup — no cutting)
+## Session 2 — 2026-09-20 — Kyle (collaboration setup — no cutting)
 
 **Strategy:** Kyle wants a peer (GitHub: `CYLI310`) to be able to collaborate
 on the edit from his own PC. No editorial work happened this session — this
@@ -271,7 +278,7 @@ people's Claude sessions can pick up full context.
 - Everything from Session 1's Outstanding list is still open — no editorial
   work has started.
 
-## Session 3 — 2026-09-20 (陳總's brief, relayed by Hoho + 焦炭窯 proposal)
+## Session 3 — 2026-09-20 — Kyle (陳總's brief, relayed by Hoho + 焦炭窯 proposal)
 
 **Still no cutting.** Brief and source doc logged; strategy not yet confirmed.
 
@@ -332,7 +339,7 @@ assuming a 後製剪輯 credit like the 0613 set's carries over.
 4. The photo set + 堰塞湖 before/after comparison promised on camera.
 5. Still needed: the `[台語]` gaps, and the unresolved names above.
 
-## Session 4 — 2026-09-20 (decisions + framing analysis)
+## Session 4 — 2026-09-20 — Kyle (decisions + framing analysis)
 
 ### Decisions taken (Kyle)
 
@@ -385,7 +392,7 @@ check that a remedy changes the thing you blame before recommending it.
    **photo originals**, and how directly to state the occupation issue.
    All added to `docs/questions_for_professor.md` as section 〇.
 
-## Session 5 — 2026-09-20 (repo layout: `edit/` is the skill's namespace)
+## Session 5 — 2026-09-20 — Kyle (repo layout: `edit/` is the skill's namespace)
 
 Kyle's rule: **`edit/` holds only what the video-use skill reads and writes.**
 Anything else I added there was in the wrong place. Restructured:
@@ -407,7 +414,7 @@ edit/   video-use only: project.md, takes_packed.md, transcripts/,
   to put non-skill files in `edit/`.
 - All stale paths in this file rewritten.
 
-## Session 6 — 2026-09-26 (repo/infra housekeeping; still no cutting)
+## Session 6 — 2026-09-26 — Kyle (repo/infra housekeeping; still no cutting)
 
 No editorial work. Six days since the last session; nothing in the footage,
 transcripts or decisions changed.
@@ -452,7 +459,7 @@ cannot run `ffprobe`/`ffmpeg`, sample frames, render previews or run Dailies.
    the scope or the date has to give.
 3. The `[台語]` gaps (33 passages) and the unresolved names still need a human.
 
-## Session 7 — 2026-09-26 (segment shortlist; question doc scoped to it; video-use fork)
+## Session 7 — 2026-09-26 — Kyle (segment shortlist; question doc scoped to it; video-use fork)
 
 **Strategy:** Kyle's call — pick the passages each video will use *first*, then
 ask prof only about names, facts and 台語 inside those passages. Asking him to
@@ -583,6 +590,28 @@ self-contained-system passages) + this photo arc.
 - **Original photos: wait for them.** 焦炭窯篇 is held until prof finds the
   kiln originals (he said they may not exist — if they don't, ask Kyle before
   building from the LINE copies). 戰俘營篇 and 產業篇 are not held by this.
+
+**Shared lessons + who-did-what logging (2026-09-27, Kyle's request):**
+- Kyle's 11 video lessons moved from his private `reflect` ledger into this
+  repo's **`lessons/video.md`** (now the only copy; the reflect file is a
+  pointer). JL writes **`lessons/video-jl.md`** (`J01…` IDs). Both are read
+  before any render. Kept in this *private* repo on Kyle's call, not the
+  public fork.
+- Every session header now names its driver (`— Kyle` / `— JL`); Sessions 1–7
+  retro-tagged Kyle. Session numbers are one shared sequence.
+- README: new "Lessons" and "Who did what" sections; the startup prompt now
+  identifies the driver, reads both lessons files, and ends with reflect →
+  log → push.
+- Fork `SKILL.md` (commit `38bf34e`): step 0 / Hard Rule 13 read a project's
+  root `lessons/` folder with or without the reflect skill.
+- **戰俘營篇 research (Hurst's Taiwan POW Camps Memorial Society):** the camp is
+  **Kukutsu = 磺窟**, opened 1945-05-16 (groups 5/16, 5/30, 6/16), closed
+  08-24; sweet potatoes + peanuts on an old tea plantation; two deaths;
+  location found 1997; three ex-POWs at the 1999 memorial. Her account
+  differs on arrival (「四月底五月初」), the year she met him (民國87 = 1998)
+  and the number who returned (four) — keep her words, but cards use only
+  Hurst's figures. 「三十七磅」 is unsupported → cut before it. 何麥克 is the
+  Chinese name used by the society and the press. ASR 「黃富」 = 磺窟.
 
 **Reasoning log:**
 - Shortlist before verification because verification effort should follow what

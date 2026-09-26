@@ -1,13 +1,18 @@
 # Project memory — JL Interview 0905
 
-Companion to `../2026/JL Interview 0613/edit/project.md` (新店礦業文化路徑 heritage
-series, V1–V3 DELIVERED 2026-08-14). Same client, same association, new shoot.
+Companion to `JL Interview 0613` (新店礦業文化路徑 heritage series; its three
+videos — the **"0613 set"** — were DELIVERED 2026-08-14; that project's log is on
+Kyle's Drive only). Same client, same association, new shoot.
 
-**Status (as of 2026-09-26):** preparatory work only — inventory,
-transcription, and collaboration setup. Actual editing (first cut, EDL,
-grading, subtitling) has **not started**, and is blocked on 陳總's answers
-(video count, the merge, and above all the photo originals). See the latest
-session for the open list.
+**Who's who** (陳總 = 陳國超 = "prof", Hoho, JL, speaker IDs) is in the root
+`README.md` — read it before this file. **Video names:** 焦炭窯篇 · 戰俘營篇 ·
+產業篇. Older entries say "V1–V3" for the *0613 set*; Session 4's
+"V1 焦炭窯 · V2 戰俘營 · V3 產業…" is this project's working split under the old
+labels. Notes tagged *(Kyle's machine)* refer to paths/hosts only he has.
+
+**Status (as of 2026-09-26):** candidate-passage shortlist done (Session 7); no
+EDL or cut yet. Waiting on prof's answers (video count, length, photo
+originals, how to cover the kiln itself). See the latest session.
 
 ## Session 1 — 2026-09-18 (`/video-use init` — inventory, no cutting)
 
@@ -30,8 +35,8 @@ up 獅仔頭山 and 樟腦窯 — which is exactly where 5636 opens. Treat as on
 
 **⚠ 5635 was not materialized on arrival** — Google Drive held it as a 302 MB
 placeholder for a 19.7 GB file. Pulled at ~88 MB/min, completed in ~3 h via
-`scratchpad/materialize.sh` (retry loop; log in `scratchpad/materialize.log`).
-Tail verified decodable. kyles-imac is on Tailscale but **relayed** (DERP "hkg"),
+`scratchpad/materialize.sh` *(Kyle's machine)* (retry loop; log in `scratchpad/materialize.log`).
+Tail verified decodable. *(Kyle's machine:)* kyles-imac is on Tailscale but **relayed** (DERP "hkg"),
 not LAN-direct, so copying from the iMac was not a faster path.
 **Check `stat -f %b` vs `%z` on every Drive source before planning around it.**
 
@@ -140,10 +145,10 @@ actually run the tour. A 審查意見 review-comments item is also raised.
   Repeatedly cites **何麥克 / Michael Hurst** (Taiwan POW Camps Memorial Society).
 - **43:52–end** Wrap: topics named as 獅仔頭山、戰俘營、焦炭窯、隘勇穴 + a photo pass.
 
-### ⚠ ASR term errors to resolve before any subtitle burn (L05 / L40 class)
+### ⚠ ASR term errors to resolve before any subtitle burn (homophone mis-hearings, and fixes that silently miss)
 
-Scribe returns **Simplified**; prior project converted with OpenCC `s2twp` and
-`L06` requires Traditional-only output. These need an authoritative spelling from
+Scribe returns **Simplified**; prior project converted with OpenCC `s2twp`, and
+this project's output must be **Traditional Chinese only**. These need an authoritative spelling from
 Kyle or a source doc — do NOT guess into a burn:
 
 **Confident:**
@@ -189,21 +194,27 @@ Note `政三煤礦` in the ASR is probably **浙江煤礦**, not 正三.
 - `何麥克` = **Michael Hurst** (Taiwan POW Camps Memorial Society) — verify the
   Chinese rendering he himself uses before putting it on screen.
 
-Per **L40**, whatever map we build gets per-key hit counters, and entries must be
-written against the string *as it arrives at the replace* (post-OpenCC).
-Per **L05**, re-check every domain term on every subtitle pass.
+A find/replace map that runs *after* OpenCC can silently do nothing, because the
+string it sees has already changed. So whatever map we build gets per-key hit
+counters, and entries must be written against the string *as it arrives at the
+replace* (post-OpenCC). ASR also produces valid-but-wrong homophones (the 0613
+set shipped 兩千平 for 兩千坪 until caught), so re-check every domain term on
+every subtitle pass.
 
 ### Framing / craft notes for whenever cutting starts
 
-- 59.94fps source. V1–V3 delivered at 24. Decide the target fps *before* building
-  any overlay — L02/L03's flash rules are stated in frames and the drift maths
-  changes.
+- 59.94fps source; the 0613 set was delivered at 24. Decide the target fps
+  *before* building any overlay — photo/card overlays that butt against each
+  other flashed one frame of footage in the 0613 set (fade overlap and
+  frame-rounding drift), and those fixes are stated in frames, so the maths
+  changes with fps.
 - The flower basket blocks centre frame throughout. In the wide two-shot both
   speakers sit at the far edges with dead space between them — a crop or a cover
-  is going to be wanted more often than in V1–V3.
+  is going to be wanted more often than in the 0613 set.
 - ~23 min into 5635 the camera is wide and both subjects are in profile facing
-  each other, not camera. **L08** says cover those stretches rather than
-  globally cropping.
+  each other, not camera. Rule from the 0613 set: when the speaker looks away or
+  someone intrudes on the frame, cover that stretch with a photo rather than
+  cropping globally.
 - The TV behind the speakers displays the photo grid they keep referring to
   (「等一下我們有些照片可以再讓大家看一下」). Those photos are the natural card material,
   and the leader says at the end of 5636 he will hand them over.
@@ -260,11 +271,11 @@ people's Claude sessions can pick up full context.
 - Everything from Session 1's Outstanding list is still open — no editorial
   work has started.
 
-## Session 3 — 2026-09-20 (brief received from Hoho + 焦炭窯 proposal)
+## Session 3 — 2026-09-20 (陳總's brief, relayed by Hoho + 焦炭窯 proposal)
 
 **Still no cutting.** Brief and source doc logged; strategy not yet confirmed.
 
-### The brief (Hoho, LINE, 15:49–15:50)
+### The brief (陳總's, relayed by Hoho over LINE, 15:49–15:50)
 
 Four themes in the Saturday recording:
 1. 獅仔頭山地區產業變遷（邵宗興）
@@ -277,7 +288,7 @@ videos, each **at least 90 seconds**. More docs promised.
 
 ### ⚠ Three numbers that do not agree — resolve before building
 
-- Hoho's message says **3 videos**.
+- The brief (via Hoho) says **3 videos**.
 - The 焦炭窯 proposal's budget line says **二支各90秒** (`攝錄及影片製作費 1式
   4,000元 — 紀錄片(含剪接)二支各90秒`), i.e. **2 videos**.
 - He listed **4 themes**.
@@ -305,19 +316,19 @@ arch stacked forward off it — which is why it has survived decades of floods.
 **Note the strategic framing, which shapes tone:** the proposal is explicit that
 public display is a weapon against the squatters — 「如何用修復方案反擊惡意占用？」,
 「建立社會監控壓力」. These videos are not neutral heritage pieces; they are
-intended to make the community's claim visible. Worth confirming with Hoho how
+intended to make the community's claim visible. Worth confirming with 陳總 how
 directly that should read on screen.
 
 **© terms:** the signed 授權同意書 grants 文化局 a non-exclusive, royalty-free,
 unlimited licence for non-profit promotion, and waives 著作人格權 toward them.
 陳國超 retains 著作財產權. Relevant to how Kyle is credited — check before
-assuming a 後製剪輯 credit like V1–V3 carries over.
+assuming a 後製剪輯 credit like the 0613 set's carries over.
 
 ### Outstanding
 
 1. **3 or 2 videos? Which themes, against which budget?** (see above)
 2. Target length — "at least 90s" is a floor; is there a ceiling?
-3. Remaining docs Hoho is sending.
+3. Remaining docs 陳總 is sending (via Hoho).
 4. The photo set + 堰塞湖 before/after comparison promised on camera.
 5. Still needed: the `[台語]` gaps, and the unresolved names above.
 
@@ -325,13 +336,14 @@ assuming a 後製剪輯 credit like V1–V3 carries over.
 
 ### Decisions taken (Kyle)
 
-- **3 videos, each ≥90 s** — quoting Hoho's brief directly.
+- **3 videos, each ≥90 s** — quoting 陳總's brief (via Hoho) directly.
 - **Working assumption on the merge** (mine, NOT yet confirmed by 陳總):
-  V1 焦炭窯 · V2 戰俘營 · V3 產業變遷（邵宗興）＋ 堰塞湖/土石流.
+  V1 焦炭窯 · V2 戰俘營 · V3 產業變遷（邵宗興）＋ 堰塞湖/土石流
+  (now named 焦炭窯篇 · 戰俘營篇 · 產業篇).
   Four themes into three. **Confirm before building.**
-- **Subtitles: Traditional Chinese only.** Settles L06 for this project; no
+- **Subtitles: Traditional Chinese only.** Settled for this project; no
   bilingual pass. The 台語 gaps still have to be filled by ear.
-- **Visual treatment: rethink for the two-shot**, not a V1–V3 reuse.
+- **Visual treatment: rethink for the two-shot**, not a reuse of the 0613 set's treatment.
 - Deadline: asking 陳總 whether 10/15 is a hard delivery date.
 
 ### Framing analysis (contact sheets in `edit/verify/`)
@@ -360,12 +372,12 @@ on her you would have to crop past ~2.5×, which a 1080p source will not survive
 **Consequence for the treatment:** do not plan a reframing/crop pass. The levers
 that actually exist are (1) **select** the camera's own tighter framings rather
 than synthesising them, and (2) **cover** generously with photo cards, which is
-what V1–V3 did anyway. That makes the photo originals a hard dependency, not a
+what the 0613 set did anyway. That makes the photo originals a hard dependency, not a
 nice-to-have — currently the only copies are 24 PDF-embedded images, mostly
 under 1024 px, of which 3 are usable at framed size.
 
-This is a case of L28/L41's shape: the obvious fix was tested before being
-proposed, and the test killed it.
+The obvious fix was tested before being proposed, and the test killed it —
+check that a remedy changes the thing you blame before recommending it.
 
 ### Outstanding
 
@@ -439,3 +451,101 @@ cannot run `ffprobe`/`ffmpeg`, sample frames, render previews or run Dailies.
    third-month task. If the photos and the answers do not arrive soon, either
    the scope or the date has to give.
 3. The `[台語]` gaps (33 passages) and the unresolved names still need a human.
+
+## Session 7 — 2026-09-26 (segment shortlist; question doc scoped to it; video-use fork)
+
+**Strategy:** Kyle's call — pick the passages each video will use *first*, then
+ask prof only about names, facts and 台語 inside those passages. Asking him to
+check all ~30 names and 34 台語 gaps across 88 minutes was mostly wasted effort,
+since most of that material will never be on screen. Still no EDL — this is a
+shortlist of candidate passages, not a cut (Hard Rule 11 still applies).
+
+**Decisions:**
+- **Video names** from now on: 焦炭窯篇 · 戰俘營篇 · 產業篇 (see header).
+- **產業篇 gets a long version first** (~3 min, both themes), shown to prof
+  before deciding whether to cut it to 90 s. Fallback if prof insists on 90 s:
+  move the coal/mine passages into 焦炭窯篇 and keep 產業篇 to 土石流 + a short
+  邵宗興 thread. 焦炭窯篇 and 戰俘營篇 aim near 90 s.
+- **Shortlist** (file mm:ss; candidates, not final in/out points):
+
+  **戰俘營篇** (5636 — best framing in the shoot, tight single 25–37m; ~100 s if all used)
+  | time | content |
+  |---|---|
+  | 23:32–24:27 | 1998 (民國87): a foreigner (何麥克) pulls up at her door asking if elders saw 阿兜仔 |
+  | 25:15–25:26 | asks everyone 80–90+; they'd seen POWs, nobody knew where they were held |
+  | 26:04–26:37 | **王財慶: 「啊你不會來問我」** — his father was assigned to teach the POWs to grow sweet potatoes. Best moment in the shoot. |
+  | 29:58–30:31 | they came from 金瓜石 abused near to death, skin and bone |
+  | 29:12–29:29 | four former POWs return from the UK and cry |
+  Alternates: 29:43 bamboo cage for a man who went mad · 33:06 strafed at the
+  rice-ball meal by 碧潭 · 34:09 arrival at 7 pm, slept on bare ground ·
+  42:29 soap, bathing in the river all day after the surrender.
+
+  **焦炭窯篇** (5635 — two-shot throughout; TV slideshow visible 01–07m)
+  | time | content |
+  |---|---|
+  | 06:23–07:26 | her father carried *gala*: two trips a day, ~150 台斤, to 安坑 without resting |
+  | 07:31–08:01 | leave at 2–3 am, watch for the kiln smoke, queue |
+  | 11:45–12:15 | 陳總: 三段 was a self-contained system (own power, kiln, stockpiles, pits) — unlike 三峽/瑪陵坑 |
+  | 30:19–30:51 | not anyone could burn — the mine boss gave the job to 王家 |
+  ⚠ **The kiln itself is never discussed on camera** — no support wall, roots,
+  clearing, squatting or survey, which is the grant's whole subject. That half
+  must come from photos/cards or a site shoot → new question E for prof.
+
+  **產業篇** (long version)
+  - Industry order: 5636 19:29–19:45 藍染 → 樟腦 → 煤 · 5636 20:42–21:49 her
+    childhood memory of an old couple steaming camphor in a thatch hut ·
+    5635 02:26–02:55 + 04:12–04:28 coal found, most mines lost money, deaths ·
+    5635 05:20–06:22 mandarins carried up as seedlings, too little sun → juice → abandoned.
+  - 邵宗興: 5635 24:08–25:09 buying mandarins by the field; first name on the
+    state leases · 26:37–27:38 had 怪手林 cut the road, paid him in land ·
+    28:59–29:08 「對山段是很有貢獻的人」.
+  - 土石流: 5635 16:43–17:27 民國58, every house gone, boulders and mud ·
+    18:54–20:02 at 6 am the washing workers' water stops, 王才慶 says the dam
+    above is blocked, run; an hour later everything is swept away ·
+    20:46–21:09 陳總: water that should come and doesn't — it *will* recur, it's cyclical.
+  - **EXCLUDE 5635 28:00–28:31** (「山上有兩種女人」 about 邵宗興): gossip about a
+    real, named person, which 陳總 himself flags as unverified. Do not use.
+- **Question doc rewritten** around the shortlist: 台語 gaps 34 → 10 (8 in the
+  *gala* passage), names ~30 → 8. Dropped items the proposal already answered
+  (邵宗興, 游寶彩, 周再思). Added E (kiln not on camera) and the long-version
+  plan under D. Added a "三支影片目前的段落" section so prof can object to a
+  passage. Removed an outdated aside from question C.
+- **Fixed an unsupported claim** in question B: it said 邵宗興's road and the
+  民國58 flood were "同一條線". The transcript doesn't say that. The supported
+  link is that the flood swept away the miners'/washing workers' 油毛氈 houses
+  around the washing site (5635 18:12–20:02), so it belongs to the mining era.
+- **Kyle's video-use fork:** https://github.com/Kowls0419/video-use, default
+  branch `kyle` = upstream 92c2b34 + Dailies + optional reflect loop +
+  `render.py --crf/--preset` and per-range `"grade"`. Upstream `main` has 4 newer
+  commits (incl. **fps now preserved by default**) deliberately NOT merged —
+  merging mid-project would change render output on a 59.94 fps source.
+  `edl_to_fcpxml.py` is no longer used and was left out.
+- **README rewritten** for JL: who's-who, video names, the fork and how to keep
+  it in sync (Kyle pushes skill changes; JL pulls before rendering), updated
+  install/startup prompts, and a caution to fetch before editing tracked files.
+- **This file:** reflect-ledger codes (L05, L28, …) replaced by their rules in
+  plain words, since JL doesn't have that ledger; the "V1–V3" collision
+  resolved; machine-specific notes tagged *(Kyle's machine)*; Session 3 now
+  says the brief was 陳總's, relayed by Hoho.
+
+**Reasoning log:**
+- Shortlist before verification because verification effort should follow what
+  can reach the screen — 24 of the 34 台語 gaps are in passages we won't use.
+- 戰俘營篇 is framed through her discovery story (1998 → 王財慶) rather than a
+  POW chronology: it's first-hand, has a turn and a laugh, and sits in the
+  best-framed stretch; the POW facts can ride on cards.
+- 「三十七磅」 flagged rather than subtitled: 37 lb is not survivable for an
+  adult, so either the ASR or the recollection is off.
+- Fork on a separate `kyle` branch instead of rebasing onto upstream: keeps the
+  tested version both machines will run, and leaves upstream sync as a
+  deliberate later step.
+
+**Outstanding:**
+1. Kyle sends the rewritten `docs/questions_for_professor.md` to prof.
+2. Prof's answers — video count, length, 10/15, **how to cover the kiln
+   itself (E)**, photo originals, the occupation framing, the 8 names/facts
+   and the 10 台語 gaps.
+3. JL's first-time setup against the new README (fork, not upstream).
+4. Once answers land: confirm strategy (Hard Rule 11), then EDLs — 產業篇 long
+   version first. Decide target fps before building any overlay.
+5. Later, deliberately: merge upstream's 4 commits into the fork's `kyle` branch.

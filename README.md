@@ -1,155 +1,194 @@
 # JL Interview 0905
 
 Interview shoot for the 新店礦業文化路徑 (Xindian mining heritage trail) series —
-same client/association as `JL Interview 0613` (V1–V3 delivered 2026-08-14).
-One continuous ~88.5 min session across 3 source files: opening/mic check,
-then two long-form interview segments with 尤月里老師 and others, covering
-塗潭里 / 煤礦 / 獅仔頭山 / 戰俘營 history.
+same client/association as `JL Interview 0613` (the **"0613 set"**: three
+videos delivered 2026-08-14). One continuous ~88.5 min session across 3 source
+files: opening/mic check, then two long-form segments with 尤月里老師 and others,
+covering 塗潭里 / 煤礦 / 焦炭窯 / 土石流 / 獅仔頭山 / 戰俘營 history.
 
-**Status:** inventory + transcription done. No cut yet — see `edit/project.md`
-for the full session log and `docs/questions_for_professor.md` for open items.
+**Status:** inventory + transcription done; a candidate-passage shortlist for
+the three videos exists (see the latest session in `edit/project.md`). No EDL
+or cut yet. Open questions for the client are in `docs/questions_for_professor.md`.
 
 This repo is the **decision layer** for the edit (cut choices, transcripts,
 notes). The **raw footage and rendered video live in Google Drive**, not here
 — see below for why and how to get them.
 
+## Who's who (read this first)
+
+The session log uses these names without re-introducing them.
+
+| Name in the log | Who |
+|---|---|
+| **Kyle** (GitHub `Kowls0419`) | Project owner and editor. Owns this repo and the video-use fork. |
+| **JL** (GitHub `CYLI310`) | Kyle's collaborator; co-shot the footage. The folder name `JL Interview` is his initials. |
+| **陳國超** = **陳總** = **"prof"** | The client. 協會理事長, course leader on camera (`speaker_0` in the transcripts), and author of the 焦炭窯 grant proposal in `docs/`. `questions_for_professor.md` is addressed to him (「老師」). |
+| **Hoho** | Kyle's mom — sometimes relays prof's messages (e.g. the original brief over LINE). Not the client. |
+| **尤月里老師** | Main interviewee, born and raised in 塗潭里 (`speaker_1`). |
+| **游寶彩** (寶彩姐/老師) | Senior guide, mentioned often on camera; listed participant in the proposal. |
+
+⚠ Transcript speaker IDs (`speaker_0`, `speaker_1`, …) are **per file**, not
+stable across the three sources — check the file before trusting an ID.
+
+**Video names.** This project's three videos are called by topic —
+**焦炭窯篇**, **戰俘營篇**, **產業篇** (industry + 土石流). "V1–V3" in older log
+entries means the *0613 set*, not these.
+
 ## Repo vs. Drive — what lives where
 
 | | Git (this repo) | Google Drive |
 |---|---|---|
-| Contains | `edit/project.md`, `edit/takes_packed.md`, `edit/transcripts/*.json`, `edl.json` / `master.srt` (once they exist), `docs/*.md` | `raw footage/`, `BTS pics/`, `edit/clips_graded/`, previews, `final.mp4`, animation renders, `docs/*.pdf` |
+| Contains | `edit/project.md`, `edit/takes_packed.md`, `edit/transcripts/*.json`, `edl.json` / `master.srt` / `review/*.json` (once they exist), `docs/*.md` | `raw footage/`, `BTS pics/`, `edit/clips_graded/`, `edit/verify/`, previews, `final.mp4`, animation renders, `review/frames/*.png`, `docs/*.pdf` |
 | Why | Small text, diffable, mergeable — this is the actual editorial history | Large binaries — git can't diff/merge video and GitHub caps file size anyway |
 
 Drive folder (raw footage + renders): **[JL Interview 0905 on Drive](https://drive.google.com/drive/folders/1wwfvlHXUNO4crt0ZVVjCH3QRvXbb3hyh?usp=drive_link)**
 
+`edit/` is the **video-use skill's** namespace — only what the skill reads and
+writes belongs in it. Project admin (client questions, the proposal) goes in `docs/`.
+
+⚠ Git history was squashed to one commit on 2026-09-26, so **`edit/project.md`
+is the editorial history** — `git log` won't tell you how the edit got here.
+
+## Tooling: both machines run the same video-use
+
+This project is edited with **[Kyle's fork of video-use](https://github.com/Kowls0419/video-use)**
+(default branch `kyle`), a Claude Code skill based on the open-source
+[browser-use/video-use](https://github.com/browser-use/video-use). **Use the
+fork, not upstream.** The fork adds:
+
+- **Dailies** — the browser review app (see below). Upstream doesn't have it.
+- A `render.py` that understands per-range `"grade"` in `edl.json` and
+  `--crf`/`--preset`. Upstream silently ignores those, so the same EDL would
+  render **differently** on the two machines.
+- An optional `reflect` learning loop that is Kyle's own. JL doesn't need it —
+  the skill skips it when it isn't installed, and project-specific rules
+  (e.g. Traditional-Chinese-only subtitles) are written into `edit/project.md`.
+
+**Keeping the two in sync.** Kyle's copy lives in his Google Drive, but Drive
+only syncs to *his* machines — changes reach JL through GitHub only:
+
+- **Kyle**, after changing `SKILL.md` or anything in `helpers/`:
+  ```bash
+  cd ~/.claude/skills/video-use && git add -A && git commit -m "what changed" && git push
+  ```
+- **JL**, before any session that renders:
+  ```bash
+  git -C ~/.claude/skills/video-use pull
+  ```
+- Before rendering an EDL the other person wrote, check you're on the same
+  version: `git -C ~/.claude/skills/video-use log -1 --oneline` on both machines.
+
 ## Kyle's workflow (project owner)
 
-Google Drive is already syncing this whole folder to your disk, exactly as
-before — nothing changes there. Git rides on top, tracking only the small
-text files.
+Google Drive syncs this whole folder to disk as before. Git rides on top,
+tracking only the small text files.
 
-1. **Before a session:** `git pull` — picks up anything your collaborator pushed.
-2. **Edit as normal** (`video-use` through Claude Code, or by hand). Drive
-   uploads footage/renders in the background automatically — no action needed.
+1. **Before a session:** `git pull` — picks up anything JL pushed.
+2. **Edit as normal** (video-use through Claude Code, or by hand). Drive
+   uploads footage/renders in the background automatically.
 3. **After a session:**
    ```bash
-   git add edit
+   git add edit docs
    git commit -m "short description of what changed"
    git push
    ```
-   `git status` shows you exactly what's new — only tracked text files ever
-   show up, since `.gitignore` silently excludes binaries.
+   `git status` shows exactly what's new — `.gitignore` silently excludes binaries.
 
-## Collaborator's workflow (first-time setup)
+## JL's workflow (first-time setup)
 
-1. **Accept the GitHub invite** Kyle sent you, then clone the repo:
-   ```bash
-   git clone https://github.com/Kowls0419/jl-interview-0905.git
-   ```
+1. **Accept the GitHub invite**, then get the repo (see step 3 for where).
    Pushing needs a [personal access token](https://github.com/settings/tokens)
-   or an SSH key on your GitHub account — GitHub no longer accepts account
-   passwords for git operations.
+   or an SSH key — GitHub no longer accepts account passwords for git.
 
 2. **Get the Drive folder** from the link above (ask Kyle for edit access if
-   it's link-view-only) and make sure the **Google Drive Desktop app is
-   actually syncing it to your disk** — viewing it in a browser tab is not
-   enough, `video-use` reads and writes real local files.
+   it's view-only) and make sure the **Google Drive desktop app is actually
+   syncing it to your disk** — a browser tab is not enough; video-use reads and
+   writes real local files.
 
-3. **Line up the folder structure** so the repo and the Drive folder merge
-   into one local directory:
+3. **Line up the folder** so the repo and the Drive folder merge into one
+   local directory:
    ```
    JL Interview 0905/
-   ├── .git/                 ← from git clone
+   ├── .git/                 ← from git
    ├── edit/                 ← merged: repo gives text files, Drive gives the rest
-   ├── docs/                 ← client/admin docs (.md in git, .pdf from Drive)
-   ├── raw footage/          ← from Drive only
-   └── BTS pics/             ← from Drive only
+   ├── docs/                 ← .md from git, .pdf from Drive
+   ├── raw footage/          ← Drive only
+   └── BTS pics/             ← Drive only
    ```
+   Easiest: let Drive sync the folder locally first, then inside it run
+   ```bash
+   git init && git remote add origin https://github.com/Kowls0419/jl-interview-0905.git && git fetch && git checkout -f main
+   ```
+   rather than `git clone` into a location that doesn't exist yet.
 
-   `edit/` is the **video-use skill's** namespace — only what the skill reads
-   and writes belongs in it. Project admin goes in `docs/`.
-   Easiest in practice: let Drive sync the folder to a local path first, then
-   run `git init` + `git remote add origin <url>` + `git pull` inside it
-   (rather than `git clone` into a location that doesn't exist yet).
+4. **Install the tooling** with the one-time prompt below (Kyle's video-use
+   fork, Dailies included). Needs `ffmpeg`/`ffprobe` on PATH. An **ElevenLabs
+   API key is only needed to transcribe *new* footage** — this project's
+   transcripts are already in `edit/transcripts/` and must not be re-done.
 
-4. **Install the tooling:** this project is edited with
-   [video-use](https://github.com/browser-use/video-use), an open-source
-   conversation-driven video editor by [Browser Use](https://github.com/browser-use),
-   run as a Claude Code skill — needs `ffmpeg`/`ffprobe` on PATH and its Python
-   deps installed if you're driving edits through Claude. Reviewing or cutting
-   manually needs only the raw footage from Drive.
-
-5. **Every session after that:** same three steps as Kyle's workflow above —
-   `git pull` before, edit, `git add`/`commit`/`push` after.
+5. **Every session after that:** `git pull` here, `git -C ~/.claude/skills/video-use pull`,
+   edit, then `git add edit docs` / `commit` / `push`.
 
 ## Claude-assisted workflow (recommended)
 
-Both of you are driving this through Claude Code with the `video-use` skill,
-so the smoothest path is two copy-pasteable prompts rather than typing git
-commands by hand.
+Both of you drive this through Claude Code with the video-use skill, so the
+smoothest path is two copy-pasteable prompts.
 
-### One-time: install video-use + Dailies
+### One-time: install video-use
 
-If your peer doesn't have the skill yet, have them open Claude Code
-(anywhere — this doesn't need to be inside the project folder) and paste:
+Open Claude Code (anywhere — not necessarily inside the project) and paste:
 
-> Install the video-use skill from https://github.com/browser-use/video-use —
-> clone it to a stable local path, then follow its own `install.md` exactly
-> (ffmpeg on PATH, ElevenLabs API key in `.env`, register the skill so
-> `SKILL.md` is discoverable). Then also get
-> https://github.com/Kowls0419/dailies — copy `dailies_server.py` and
-> `dailies.html` from it into that video-use clone's `helpers/` directory
-> (Dailies isn't part of the upstream video-use repo; it's a separate
-> standalone tool that the skill's review step expects to find there).
-> Verify by running one real command against a real file rather than just
-> checking the files exist.
+> Install the video-use skill from https://github.com/Kowls0419/video-use (it's
+> a fork — use it, not upstream browser-use/video-use; its default branch
+> `kyle` already includes the Dailies review app). Clone it to a stable local
+> path and follow its own `install.md` exactly: ffmpeg on PATH, Python deps,
+> register the skill so `SKILL.md` is discoverable. Skip the ElevenLabs key
+> unless I say I have new footage to transcribe. I don't use the `reflect`
+> skill — that's expected. Verify by running one real command (e.g.
+> `helpers/render.py --help` and `helpers/dailies_server.py --help`) rather
+> than just checking the files exist.
 
 ### Every session: startup prompt
 
-Once installed, open Claude Code **inside this project folder** (make sure
-Google Drive has finished syncing it locally first) and paste:
+Open Claude Code **inside this project folder** (after Drive has finished
+syncing it) and paste:
 
 > This is a `video-use` project shared via git + Google Drive — read its
-> `README.md` at the project root first for how that split works. Run
-> `git pull` to sync the latest edit decisions, then read `edit/project.md`
-> (full session log — pay attention to the most recent session) and
-> `docs/questions_for_professor.md` for open items. Summarize where things
-> left off in one or two sentences, then let's continue. At the end of this
-> session, `git add`/`commit`/`push` whatever changed under `edit/` and
-> `docs/`, and append a new session entry to `edit/project.md` per the skill's
-> own memory format before we stop. Don't put anything in `edit/` that the
-> video-use skill doesn't itself read or write.
-
-This gets a new Claude session (yours or your peer's) fully oriented —
-editorial history, open questions, *and* the collaboration mechanics — without
-either of you re-explaining anything by hand each time.
+> `README.md` at the project root first for how that split works and who
+> everyone is. Run `git pull` to sync the latest edit decisions, and
+> `git -C ~/.claude/skills/video-use pull` to make sure video-use is current.
+> Then read `edit/project.md` (full session log — pay attention to the most
+> recent session) and `docs/questions_for_professor.md` for open items.
+> Summarize where things left off in one or two sentences, then let's continue.
+> At the end of this session, `git add`/`commit`/`push` whatever changed under
+> `edit/` and `docs/`, and append a new session entry to `edit/project.md` per
+> the skill's own memory format before we stop. Don't put anything in `edit/`
+> that the video-use skill doesn't itself read or write.
 
 ### Dailies across two machines
 
-[Dailies](https://github.com/Kowls0419/dailies) is the interactive review
-tool used in step 8 of the `video-use` process: point it at a rendered
-preview and it opens a browser page where you scrub the video, type
-timestamped comments, and draw pen/arrow/box annotations directly on a
-paused frame — much faster than describing "at 1:32 the caption is cropped"
-in prose. It runs as a local server and opens a local browser tab — it's
-per-machine, not a shared live session. If your peer runs a Dailies review, it
-writes `edit/review/<stem>_rNN.json` (small text) and
-`edit/review/frames/*.png` (the annotated screenshots) into his local copy of
-this folder. The JSON reaches you via `git pull` once he commits/pushes; the
-PNG frames reach you via Drive's normal sync (they're gitignored — too big/
-numerous for git, but Drive doesn't care). So: reviews are asynchronous —
-whoever runs Dailies should commit+push right after, so the round numbering
-(`_r01`, `_r02`, …) stays consistent for whoever picks it up next.
+Dailies is the review step (step 8 of the video-use process): point it at a
+rendered preview and it opens a browser page where you scrub the video, type
+timestamped comments, and draw pen/arrow/box annotations on a paused frame —
+much faster than describing "at 1:32 the caption is cropped" in prose.
+
+It runs as a local server — per-machine, not a shared live session. A review
+writes `edit/review/<stem>_rNN.json` (small text — reaches the other person via
+`git pull` once committed) and `edit/review/frames/*.png` (gitignored — reaches
+them via Drive sync). So reviews are asynchronous: **whoever runs Dailies
+commits and pushes right after**, so the round numbering (`_r01`, `_r02`, …)
+stays consistent for whoever picks it up next.
 
 ## Cautions
 
-- ⚠️ **Never both edit `edl.json` at the same time.** It's a JSON list of cut
-  decisions — two concurrent hand-edits will conflict messily and git can't
-  merge them cleanly. Say who's driving the cut before you start.
-- ⚠️ **Drive must be a real desktop sync, not just browser access.** Viewing
-  the folder on drive.google.com doesn't give `video-use` local files to work with.
-- ⚠️ **Check `git status` before committing.** `.gitignore` already excludes
-  raw footage and rendered video, but if it ever shows a huge binary file
-  staged, stop and check the `.gitignore` rather than committing it.
-- ⚠️ **GitHub needs a token or SSH key, not your account password**, for both
-  push and (if prompted) pull.
+- ⚠️ **Never both edit `edl.json` at the same time.** Two concurrent edits
+  conflict messily and git can't merge them cleanly. Say who's driving the cut
+  before you start.
+- ⚠️ **Same video-use version on both machines** before rendering each
+  other's EDLs (see "Keeping the two in sync").
+- ⚠️ **`git fetch` and compare with `origin/main` before editing tracked
+  files**, not after — this repo is pushed to from two places.
+- ⚠️ **Drive must be a real desktop sync, not just browser access.**
+- ⚠️ **Check `git status` before committing.** If a huge binary ever shows as
+  staged, stop and fix `.gitignore` rather than committing it.
+- ⚠️ **GitHub needs a token or SSH key, not your account password.**

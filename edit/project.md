@@ -461,6 +461,9 @@ since most of that material will never be on screen. Still no EDL — this is a
 shortlist of candidate passages, not a cut (Hard Rule 11 still applies).
 
 **Decisions:**
+- **3 videos — settled** (Kyle, 2026-09-26; not asked of prof despite the
+  grant's 「二支各90秒」). **The 10/15 deadline is not raised with prof** —
+  Kyle's call; don't reintroduce it in client docs.
 - **Video names** from now on: 焦炭窯篇 · 戰俘營篇 · 產業篇 (see header).
 - **產業篇 gets a long version first** (~3 min, both themes), shown to prof
   before deciding whether to cut it to 90 s. Fallback if prof insists on 90 s:
@@ -510,7 +513,7 @@ shortlist of candidate passages, not a cut (Hard Rule 11 still applies).
   (邵宗興, 游寶彩, 周再思). Added E (kiln not on camera) and the long-version
   plan under D. Added a "三支影片目前的段落" section so prof can object to a
   passage. Removed an outdated aside from question C.
-- **Question doc then cut to 8 one-line questions** (Kyle: the final doc must be
+- **Question doc then cut to 6 one-line questions** (Kyle: the final doc must be
   TL;DR, and several items were ones he can answer himself). Only what prof
   alone can answer stayed. **Moved to Kyle (not in the prof doc):**
   尤月里's full name for the title card (5635 00:13) · 「三十七磅」 (5636 30:25,
@@ -550,8 +553,8 @@ shortlist of candidate passages, not a cut (Hard Rule 11 still applies).
 
 **Outstanding:**
 1. Kyle sends the rewritten `docs/questions_for_professor.md` to prof.
-2. Prof's answers to the 8 questions — above all **#5, how to cover the kiln
-   itself**, and #6, the photo originals.
+2. Prof's answers to the 6 questions — above all **#3, how to cover the kiln
+   itself**, and #4, the photo originals.
 3. Kyle's own list (see "Moved to Kyle" above): names/spellings and the 10 台語 gaps.
 4. JL's first-time setup against the new README (fork, not upstream).
 5. Once answers land: confirm strategy (Hard Rule 11), then EDLs — 產業篇 long

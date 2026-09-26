@@ -570,6 +570,20 @@ occupation story visually. How explicit to be still waits on prof (open #1).
 焦炭窯篇 is no longer blocked on material: interview audio (the *gala* and
 self-contained-system passages) + this photo arc.
 
+**Kyle's decisions (2026-09-27):**
+- **Occupation framing: factual, no one named.** State what happened to the
+  site (crops planted on it, roots breaking into the kiln, the class clearing
+  it) and let the 芭蕉-clearing photos carry it. Never name or identify an
+  occupant — defamation (誹謗) exposure on a 文化局-funded video. Taken off
+  prof's list.
+- **怪手林:** prof is asked for the real name (question 1 of the doc). Caution
+  whatever the answer: the passage continues into 「他也擁有很多國有林地…有些有
+  租約，有些也沒有」 (5635 27:14–27:22) — that attaches the land question to a
+  nameable person; don't use that line without Kyle deciding explicitly.
+- **Original photos: wait for them.** 焦炭窯篇 is held until prof finds the
+  kiln originals (he said they may not exist — if they don't, ask Kyle before
+  building from the LINE copies). 戰俘營篇 and 產業篇 are not held by this.
+
 **Reasoning log:**
 - Shortlist before verification because verification effort should follow what
   can reach the screen — 24 of the 34 台語 gaps are in passages we won't use.
@@ -584,8 +598,8 @@ self-contained-system passages) + this photo arc.
 
 **Outstanding:**
 1. Kyle sends the rewritten `docs/questions_for_professor.md` to prof.
-2. ~~Prof's answers~~ mostly in (see Update 2026-09-27). Still open: occupation
-   framing, 怪手林's real name, photo originals.
+2. ~~Prof's answers~~ mostly in (see Update 2026-09-27). Still open with prof:
+   怪手林's real name, photo originals (焦炭窯篇 waits on these).
 3. Kyle's own list (see "Moved to Kyle" above): names/spellings and the 10 台語 gaps.
 4. JL's first-time setup against the new README (fork, not upstream).
 5. Once answers land: confirm strategy (Hard Rule 11), then EDLs — 產業篇 long

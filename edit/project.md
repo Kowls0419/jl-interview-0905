@@ -539,6 +539,37 @@ shortlist of candidate passages, not a cut (Hard Rule 11 still applies).
   resolved; machine-specific notes tagged *(Kyle's machine)*; Session 3 now
   says the brief was 陳總's, relayed by Hoho.
 
+### Update — 2026-09-27: prof's answers + kiln photos
+
+**Prof's answers** (LINE, 2026-09-26 23:25–23:37): the split and the long
+產業篇 first are OK · 王才慶/王財慶 are the same person → write **王財慶** ·
+he sent kiln structure + clearing photos, 「這照片可用」 · originals: 「原照片我再找
+當時可能沒存原檔」 — plan around the LINE copies. Still open (now the whole
+`docs/questions_for_professor.md`): occupation framing, 怪手林's real name,
+photo originals.
+
+**Kiln photos** — `photo import session 7/` (Drive only; now gitignored along
+with all image types). 24 JPGs = **20 unique**: `S__15073360–63` are byte-identical
+re-sends of `…34–37`. The three `SCR-*.png` are Kyle's LINE screenshots, not
+material. All LINE-compressed: 1280×960 / 1477×1108 (+ portraits) → use
+**framed on a blurred background**; full-bleed 1080p would upscale 1.3–1.5×
+and look soft.
+
+| role in 焦炭窯篇 | files (`S__150733xx_0.jpg`) |
+|---|---|
+| overgrown, before | 34 (walking in), 35, 37 |
+| structure + roots | **47** (stump growing on the masonry — the roots problem in one frame), 39 (root-covered wall), 59, 56 + **58** (arched kiln mouth) |
+| clearing | **52** (chainsaw beside the stone wall), 49, 50, 51, 53, 54, 57, 48 |
+| after | **46** (prof with sign before the cleared row of kiln mouths), 45 (group selfie) |
+| survey | **38** — hand-drawn plan, several U-shaped chambers; candidate animated card |
+| context | 36 (prof pointing, on the road) |
+
+The plants being cleared in 49–54 are largely **芭蕉** — the proposal names
+planted 芭蕉/柑橘 as the squatters' — so the clearing photos *are* the
+occupation story visually. How explicit to be still waits on prof (open #1).
+焦炭窯篇 is no longer blocked on material: interview audio (the *gala* and
+self-contained-system passages) + this photo arc.
+
 **Reasoning log:**
 - Shortlist before verification because verification effort should follow what
   can reach the screen — 24 of the 34 台語 gaps are in passages we won't use.
@@ -553,8 +584,8 @@ shortlist of candidate passages, not a cut (Hard Rule 11 still applies).
 
 **Outstanding:**
 1. Kyle sends the rewritten `docs/questions_for_professor.md` to prof.
-2. Prof's answers to the 6 questions — above all **#3, how to cover the kiln
-   itself**, and #4, the photo originals.
+2. ~~Prof's answers~~ mostly in (see Update 2026-09-27). Still open: occupation
+   framing, 怪手林's real name, photo originals.
 3. Kyle's own list (see "Moved to Kyle" above): names/spellings and the 10 台語 gaps.
 4. JL's first-time setup against the new README (fork, not upstream).
 5. Once answers land: confirm strategy (Hard Rule 11), then EDLs — 產業篇 long

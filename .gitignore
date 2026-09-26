@@ -28,3 +28,13 @@ docs/extracted/
 
 .DS_Store
 CLAUDE.md
+
+# Photos / stills (client photos, screenshots) — Drive only, like footage
+photo import */
+*.jpg
+*.jpeg
+*.JPG
+*.png
+*.heic
+*.HEIC
+*.webp

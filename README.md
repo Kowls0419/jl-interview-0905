@@ -22,7 +22,7 @@ The session log uses these names without re-introducing them.
 |---|---|
 | **Kyle** (GitHub `Kowls0419`) | Project owner and editor. Owns this repo and the video-use fork. |
 | **JL** (GitHub `CYLI310`) | Kyle's collaborator; co-shot the footage. The folder name `JL Interview` is his initials. |
-| **陳國超** = **陳總** = **"prof"** | The client. 協會理事長, course leader on camera (`speaker_0` in the transcripts), and author of the 焦炭窯 grant proposal in `docs/`. `questions_for_professor.md` is addressed to him (「老師」). |
+| **陳國超** = **陳總** = **"prof"** (LINE: `jason chen 1526`) | The client. 協會理事長, course leader on camera (`speaker_0` in the transcripts), and author of the 焦炭窯 grant proposal in `docs/`. `questions_for_professor.md` is addressed to him (「老師」). |
 | **Hoho** | Kyle's mom — sometimes relays prof's messages (e.g. the original brief over LINE). Not the client. |
 | **尤月里老師** | Main interviewee, born and raised in 塗潭里 (`speaker_1`). |
 | **游寶彩** (寶彩姐/老師) | Senior guide, mentioned often on camera; listed participant in the proposal. |
@@ -38,7 +38,7 @@ entries means the *0613 set*, not these.
 
 | | Git (this repo) | Google Drive |
 |---|---|---|
-| Contains | `edit/project.md`, `edit/takes_packed.md`, `edit/transcripts/*.json`, `edl.json` / `master.srt` / `review/*.json` (once they exist), `docs/*.md` | `raw footage/`, `BTS pics/`, `edit/clips_graded/`, `edit/verify/`, previews, `final.mp4`, animation renders, `review/frames/*.png`, `docs/*.pdf` |
+| Contains | `edit/project.md`, `edit/takes_packed.md`, `edit/transcripts/*.json`, `edl.json` / `master.srt` / `review/*.json` (once they exist), `docs/*.md` | `raw footage/`, `BTS pics/`, `photo import */` (client photos), `edit/clips_graded/`, `edit/verify/`, previews, `final.mp4`, animation renders, `review/frames/*.png`, `docs/*.pdf` |
 | Why | Small text, diffable, mergeable — this is the actual editorial history | Large binaries — git can't diff/merge video and GitHub caps file size anyway |
 
 Drive folder (raw footage + renders): **[JL Interview 0905 on Drive](https://drive.google.com/drive/folders/1wwfvlHXUNO4crt0ZVVjCH3QRvXbb3hyh?usp=drive_link)**

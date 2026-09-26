@@ -3,9 +3,11 @@
 Companion to `../2026/JL Interview 0613/edit/project.md` (新店礦業文化路徑 heritage
 series, V1–V3 DELIVERED 2026-08-14). Same client, same association, new shoot.
 
-**Status (as of 2026-09-20):** preparatory work only — inventory,
+**Status (as of 2026-09-26):** preparatory work only — inventory,
 transcription, and collaboration setup. Actual editing (first cut, EDL,
-grading, subtitling) has not started.
+grading, subtitling) has **not started**, and is blocked on 陳總's answers
+(video count, the merge, and above all the photo originals). See the latest
+session for the open list.
 
 ## Session 1 — 2026-09-18 (`/video-use init` — inventory, no cutting)
 
@@ -392,3 +394,48 @@ edit/   video-use only: project.md, takes_packed.md, transcripts/,
   onboarding prompt now say `docs/`, and the prompt tells future sessions not
   to put non-skill files in `edit/`.
 - All stale paths in this file rewritten.
+
+## Session 6 — 2026-09-26 (repo/infra housekeeping; still no cutting)
+
+No editorial work. Six days since the last session; nothing in the footage,
+transcripts or decisions changed.
+
+### ⚠ Git history is now a SINGLE commit — this file IS the history
+
+The repo was squashed to one "Initial Commit" and force-pushed. The
+per-session git trail is gone, so `edit/project.md` is the only record of how
+the edit got here. **Keep appending to it**, and do not assume `git log` will
+tell a future session anything useful.
+
+Also landed on the repo:
+- `LICENSE` (MIT, © 2026 Kyle Yang).
+- `CLAUDE.md` added to `.gitignore`.
+- `private/` — a local-only folder, gitignored, never pushed. Leave it alone.
+- `gh` (GitHub CLI) installed and authenticated as `Kowls0419`.
+
+**Near-miss worth remembering:** I edited `project.md`, `README.md` and
+`.gitignore` against a stale base while the remote had already moved ahead.
+Kyle caught it before the push. Had it gone through, the force-push would have
+destroyed `LICENSE` and the `CLAUDE.md` ignore line. Recovery was to rebuild
+`.gitignore` from `git show origin/main:.gitignore` rather than the local copy,
+reset onto the remote commit, and `git checkout origin/main -- LICENSE`.
+**Always `git fetch` and diff against `origin/main` BEFORE editing tracked
+files, not after** — this repo gets pushed to from more than one place.
+
+### Cloud vs local
+
+The repo carries text only (9 files); all 31.8 GB of footage is gitignored and
+lives in Drive. A cloud session can read the transcripts and plan cuts, but
+cannot run `ffprobe`/`ffmpeg`, sample frames, render previews or run Dailies.
+**Any real edit pass has to run on a machine with the Drive folder synced.**
+
+### Still open — unchanged since Session 4, and now 6 days old
+
+1. **陳總 has not answered** (as far as this session knows): video count
+   (his 3 vs the grant's 二支各90秒), which budget each video sits under, the
+   four-themes-into-three merge, whether 10/15 is a hard delivery date, a length
+   ceiling above 90 s, and **the photo originals**.
+2. The **10/15 execution deadline is 19 days away** and 影片剪輯 is the grant's
+   third-month task. If the photos and the answers do not arrive soon, either
+   the scope or the date has to give.
+3. The `[台語]` gaps (33 passages) and the unresolved names still need a human.

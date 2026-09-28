@@ -657,6 +657,10 @@ Render now: `render.py edit/edl_pow.json -o edit/pow_preview.mp4 --preview
 (the dummy `--sub-style` stops render.py's default force_style overriding the
 .ass styles). Corrections this round: 1.
 
+**Dailies r02 (Kyle, 2026-09-28): no changes — 0 corrections** (r01: 1 → r02: 0).
+The 戰俘營篇 test cut as it stands (`edit/pow_preview.mp4`, 112.7 s) is accepted.
+Not yet decided: whether to trim toward 90 s, and the jump cuts at 0:40 / 1:26.
+
 **Reasoning log:**
 - Shortlist before verification because verification effort should follow what
   can reach the screen — 24 of the 34 台語 gaps are in passages we won't use.

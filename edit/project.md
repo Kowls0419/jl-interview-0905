@@ -459,7 +459,7 @@ cannot run `ffprobe`/`ffmpeg`, sample frames, render previews or run Dailies.
    the scope or the date has to give.
 3. The `[台語]` gaps (33 passages) and the unresolved names still need a human.
 
-## Session 7 — 2026-09-26 — Kyle (segment shortlist; question doc scoped to it; video-use fork)
+## Session 7 — 2026-09-26 → 09-28 — Kyle (shortlist; prof's answers; fork; shared lessons; 戰俘營篇 test cut)
 
 **Strategy:** Kyle's call — pick the passages each video will use *first*, then
 ask prof only about names, facts and 台語 inside those passages. Asking him to
@@ -674,11 +674,18 @@ Not yet decided: whether to trim toward 90 s, and the jump cuts at 0:40 / 1:26.
   deliberate later step.
 
 **Outstanding:**
-1. Kyle sends the rewritten `docs/questions_for_professor.md` to prof.
-2. ~~Prof's answers~~ mostly in (see Update 2026-09-27). Still open with prof:
-   photo originals only (焦炭窯篇 waits on these).
-3. Kyle's own list (see "Moved to Kyle" above): names/spellings and the 10 台語 gaps.
-4. JL's first-time setup against the new README (fork, not upstream).
-5. Once answers land: confirm strategy (Hard Rule 11), then EDLs — 產業篇 long
-   version first. Decide target fps before building any overlay.
-6. Later, deliberately: merge upstream's 4 commits into the fork's `kyle` branch.
+1. **產業篇 — next.** Long version first (~3 min), per prof. Candidate passages
+   are in the Session 7 shortlist; exclude 5635 28:00–28:31; 怪手林 stays as the
+   nickname and the passage must end before 27:14 (land-lease line).
+2. **戰俘營篇 — accepted (Dailies r02, 0 notes)** at 112.7 s. Open: trim toward
+   90 s or not; jump cuts at 0:40 and 1:26 (cover with a photo/card?).
+3. **焦炭窯篇 — on hold** until prof finds the original kiln photos; if he says
+   they don't exist, ask Kyle before building from the LINE copies. Occupation:
+   factual, no one named.
+4. **Kyle's own list:** 尤月里's full name for a title card · *gala* spelling ·
+   「下層里」 (5635 07:07) · 政三煤礦 (5635 02:38) · the 10 台語 gaps
+   (5635 06:44–08:01 ×8, 12:08; 5636 34:30).
+5. **JL's first-time setup** against the README (fork, not upstream).
+6. Later, deliberately: merge upstream's 4 commits into the fork's `kyle` branch
+   (includes an fps-default change — re-check renders after).
+7. `temp/` holds the 怪手林 clips from 2026-09-27 — no longer needed; delete if unwanted.

@@ -161,6 +161,9 @@ can read it; **this is now the only copy.** Entry format is in `README.md`
               then failed for real (`content overflows the canvas 4329 > 4311`) because
               the row height I precomputed disagreed with what the rows actually
               consumed. The guess was wrong, not the drawing.
+- Seen:       JL Interview 0905 產業篇 (2026-09-28), self-eval — framed photo covers ran
+              down behind the burned subtitle box. The container was "the frame", but the
+              real one is "the frame above the subtitle band"; now asserted in code.
 
 ### L40 — a text fix that runs downstream of a transform can be silently dead
 - Context:    any find/replace map applied AFTER a normalizing step — OpenCC
@@ -263,3 +266,77 @@ can read it; **this is now the only copy.** Entry format is in `README.md`
 - Scope:      video, zh-subtitle, diagnostics
 - Seen:       JL Interview 0905 戰俘營篇 r01→r02 (2026-09-27), Kyle — three
               render rounds lost before reverting to libass
+
+### L47 — stream-copy concat mixes colour ranges: generated cards after full-range footage render darker
+- Context:    camera footage that is full range (`yuvj420p`, `color_range=pc` — common on
+              Canon and phones) joined by `-c copy` concat with generated cards/slates
+              encoded from PNG (limited range, untagged).
+- Symptom:    every card AFTER the first footage segment is dimmer than an identical card
+              before it — paper 236 → 219, a clean `0.86·x + 16` (a second full→limited
+              squeeze). Easy to miss: each card looks fine on its own.
+- Root cause: an untagged segment inherits the previous segment's "pc" flag in the
+              joined stream, so the final encode converts data that is already limited.
+- Rule:       normalize every segment to ONE range and tag it explicitly at extraction
+              (`scale=out_range=tv` at the end of the chain + `-color_range tv`). Check:
+              the same card PNG must measure identical at every position in the output.
+- Scope:      video, audio-render, cards
+- Seen:       JL Interview 0905 (2026-09-28), found while checking Kyle's r01 frame of the
+              closing card — already present in the accepted 戰俘營篇 r02.
+
+### L48 — per-segment AAC + stream-copy concat: the voice drifts behind the picture
+- Context:    render pipelines that encode each cut to its own MP4 with AAC audio and then
+              join them with the concat demuxer and `-c copy`.
+- Symptom:    lip sync worsens toward the end — ~17 ms per segment; 0.35 s after 22 cuts.
+              ffprobe's stream durations look fine, so a duration check passes.
+- Root cause: each AAC encode starts with ~1024 priming samples that only the container's
+              edit list hides; stream copy keeps them all, so the decoded audio is longer
+              than its timestamps say.
+- Rule:       copy the video but re-encode the audio once at the join
+              (`-af aresample=async=1:first_pts=0 -c:a aac`). Verify sync on the FINAL file
+              with a known marker in both streams — e.g. where a card's digital silence
+              starts vs where its first frame appears — never from stream durations.
+- Scope:      video, audio-render, diagnostics
+- Seen:       JL Interview 0905 (2026-09-28), found in self-eval — also in 戰俘營篇 r02
+              (~0.13 s over 8 cuts).
+
+### L49 — an ASR word boundary is not a safe cut point; check the waveform
+- Context:    choosing in/out points from Scribe word timestamps, especially at a
+              speaker handoff or inside a fast phrase (「對對對。所以你說」).
+- Symptom:    a crackle/distortion at the head of a segment, or a sliver of the next
+              word at its tail — Kyle caught both in one review (r01 #1, #4).
+- Root cause: the timestamps drifted ~200 ms — past the 30–200 ms padding window.
+              「對對對」 was stamped as ending at 1166.10 but still sounded at 1166.30.
+- Rule:       after picking an edge from the transcript, read the 10 ms RMS envelope
+              around it and put the cut in a real dip (≤ −30 dB). If there is none within
+              the padding window, move the cut to the nearest one and adjust the phrase —
+              don't trust the stamp. When a splice lands inside continuous speech, flag it
+              for listening in Dailies.
+- Scope:      video, cut, audio-render
+- Seen:       JL Interview 0905 產業篇 r01 (2026-09-28), Kyle
+
+### L50 — compute the timeline from real segment lengths, never nominal EDL lengths or shared intermediates
+- Context:    placing subtitles and overlays on the output timeline of a multi-segment
+              render (render.py re-times each segment to whole frames).
+- Symptom:    subtitles/covers drift early by the end (0.32 s over 21 segments). A first
+              "fix" that measured last render's clips silently fell back to nominal after
+              another video's render overwrote the same `clips_preview/seg_NN` files.
+- Root cause: footage segments round UP to whole frames (video outlasts audio); card
+              video rounds down but its audio keeps the exact length; concat advances by
+              the longer stream. Intermediates in `edit/` are shared by every video.
+- Rule:       derive each segment's length deterministically (footage
+              `ceil(d·fps)/fps`, cards `d`) and build every offset from that. Never read
+              base/clip intermediates to verify or time one video — another render may
+              have replaced them; verify on that video's final output only.
+- Scope:      video, zh-subtitle, overlay-transitions, code
+- Seen:       JL Interview 0905 產業篇 (2026-09-28), self-eval
+
+### L51 — Ken Burns stepping: whole-pixel resize + paste per frame
+- Context:    a slow push/pan on a still (PIL, per-frame), especially long and gentle ones.
+- Symptom:    the motion looks laggy, with visible steps (Kyle, r01 #3, all covers).
+- Root cause: resizing to `round(w·k)` and pasting at integer x/y changes the picture
+              one whole pixel at a time; at 5 % over 10 s most frames don't move.
+- Rule:       pre-scale once (Lanczos) to the largest size the move reaches, then place
+              each frame with a sub-pixel affine transform (`Image.transform(AFFINE,
+              BICUBIC)`), so the photo only ever downsamples slightly. Keep eased ends.
+- Scope:      video, overlay-transitions, animation
+- Seen:       JL Interview 0905 產業篇 r01 (2026-09-28), Kyle

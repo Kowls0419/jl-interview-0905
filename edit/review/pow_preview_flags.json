@@ -1,0 +1,46 @@
+{
+  "video": "pow_preview.mp4",
+  "by": "Claude self-eval, Session 8",
+  "flags": [
+    {
+      "t": 0.5,
+      "end": 4.5,
+      "title": "Drop the 新店礦業文化路徑 kicker here too?",
+      "note": "You removed it from 產業篇's cards. For a matching series, remove it from these two cards as well?",
+      "region": [
+        0.08,
+        0.28,
+        0.75,
+        0.72
+      ],
+      "id": 1
+    },
+    {
+      "t": 33.75,
+      "end": 41.1,
+      "title": "New cover: 1947 aerial over the 0:40 jump cut",
+      "note": "Caption 「1947 年航照」 comes from the date printed on the film (13AF 5 SEPT 47) — the posters' own captions for this image (1948 / 文山茶廠1973年) are wrong. Ends as she starts 「你不會來問我」.",
+      "region": [
+        0.02,
+        0.02,
+        0.2,
+        0.1
+      ],
+      "id": 2
+    },
+    {
+      "t": 79.185,
+      "end": 88.64,
+      "title": "New cover: memorial photo over the 1:26 jump cut — who is this?",
+      "note": "From prof's POW poster; no caption, because I can't tell who, where or when. Over 「四個以前關在這邊的…哭」 viewers may read these men as those POWs. Keep, or ask prof?",
+      "id": 3
+    },
+    {
+      "t": 107.2,
+      "end": 112.5,
+      "title": "Closing card colour fixed",
+      "note": "This card was darker than the opening card in the r02 you accepted (colour-range bug). Should now match.",
+      "id": 4
+    }
+  ]
+}

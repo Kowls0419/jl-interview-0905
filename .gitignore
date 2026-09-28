@@ -41,3 +41,9 @@ photo import */
 
 # Fonts — binaries, Drive only (Noto fonts are OFL; source: JL Interview 0613/edit/fonts)
 edit/fonts/
+
+# Python bytecode from importing build scripts
+__pycache__/
+
+# prof's poster .docx files — client material, Drive only (images extracted to docs/extracted/)
+posters/

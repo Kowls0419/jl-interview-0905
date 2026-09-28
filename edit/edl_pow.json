@@ -58,7 +58,18 @@
     }
   ],
   "grade": "eq=brightness=0.02:contrast=1.06:saturation=1.05",
-  "overlays": [],
+  "overlays": [
+    {
+      "file": "cards_pow/cover_aerial47.mp4",
+      "start_in_output": 33.75,
+      "duration": 7.352
+    },
+    {
+      "file": "cards_pow/cover_memorial.mp4",
+      "start_in_output": 79.185,
+      "duration": 9.452
+    }
+  ],
   "subtitles": "master_pow.ass",
-  "total_duration_s": 112.64
+  "total_duration_s": 112.7
 }

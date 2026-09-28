@@ -1,0 +1,172 @@
+{
+  "version": 1,
+  "sources": {
+    "5635": "/Users/kyle/Library/CloudStorage/GoogleDrive-kyleyang0419@gmail.com/Other computers/My iMac/2TB PURZ/Projects/2026/JL Interview 0905/raw footage/002A5635.MP4",
+    "5636": "/Users/kyle/Library/CloudStorage/GoogleDrive-kyleyang0419@gmail.com/Other computers/My iMac/2TB PURZ/Projects/2026/JL Interview 0905/raw footage/002A5636.MP4",
+    "OPEN": "/Users/kyle/Library/CloudStorage/GoogleDrive-kyleyang0419@gmail.com/Other computers/My iMac/2TB PURZ/Projects/2026/JL Interview 0905/edit/cards_ind/open.mp4",
+    "MID": "/Users/kyle/Library/CloudStorage/GoogleDrive-kyleyang0419@gmail.com/Other computers/My iMac/2TB PURZ/Projects/2026/JL Interview 0905/edit/cards_ind/mid.mp4",
+    "CLOSE": "/Users/kyle/Library/CloudStorage/GoogleDrive-kyleyang0419@gmail.com/Other computers/My iMac/2TB PURZ/Projects/2026/JL Interview 0905/edit/cards_ind/close.mp4"
+  },
+  "ranges": [
+    {
+      "source": "OPEN",
+      "start": 0,
+      "end": 5.0,
+      "beat": "open card",
+      "grade": ""
+    },
+    {
+      "source": "5636",
+      "start": 1166.6,
+      "end": 1181.95,
+      "beat": "藍染 was earliest, then 樟腦 (陳總 corrected); starts at 你說 — 對對對 runs on to 1166.30, cutting into it distorted (Dailies r01)"
+    },
+    {
+      "source": "5636",
+      "start": 1236.14,
+      "end": 1247.62,
+      "beat": "age 5-6: an old couple moved in next door"
+    },
+    {
+      "source": "5636",
+      "start": 1256.16,
+      "end": 1261.3,
+      "beat": "they built a thatch hut"
+    },
+    {
+      "source": "5636",
+      "start": 1299.25,
+      "end": 1306.95,
+      "beat": "shaved the camphor wood … 然後再倒進"
+    },
+    {
+      "source": "5636",
+      "start": 1307.62,
+      "end": 1308.95,
+      "beat": "那個桶裡面蒸 (「那個塔」 cut out, Dailies r01)"
+    },
+    {
+      "source": "5635",
+      "start": 145.62,
+      "end": 150.6,
+      "beat": "coal found; 新店 had several mines"
+    },
+    {
+      "source": "5635",
+      "start": 252.08,
+      "end": 268.3,
+      "beat": "most mine bosses lost money; disasters killed several"
+    },
+    {
+      "source": "5635",
+      "start": 281.52,
+      "end": 289.45,
+      "beat": "after coal: mandarins"
+    },
+    {
+      "source": "5635",
+      "start": 318.63,
+      "end": 331.7,
+      "beat": "seedlings carried up on foot, every day"
+    },
+    {
+      "source": "5635",
+      "start": 348.98,
+      "end": 357.25,
+      "beat": "too little sun, small fruit, only good for juice"
+    },
+    {
+      "source": "5635",
+      "start": 1442.65,
+      "end": 1452.75,
+      "beat": "邵宗興, from the Japanese era — buying up mandarins"
+    },
+    {
+      "source": "5635",
+      "start": 1589.56,
+      "end": 1603.4,
+      "beat": "怪手林 cut the 三段 road for 邵宗興 (ends before 27:14)"
+    },
+    {
+      "source": "5635",
+      "start": 1739.86,
+      "end": 1751.79,
+      "beat": "a man who contributed a lot; the washing plant bears his name (ends before the next voice at ~1751.80, Dailies r01)"
+    },
+    {
+      "source": "MID",
+      "start": 0,
+      "end": 5.0,
+      "beat": "mid card",
+      "grade": ""
+    },
+    {
+      "source": "5635",
+      "start": 1003.6,
+      "end": 1017.93,
+      "beat": "民國58: the first debris flow she ever saw"
+    },
+    {
+      "source": "5635",
+      "start": 1027.9,
+      "end": 1041.45,
+      "beat": "ran down after school: every house gone, huge boulders"
+    },
+    {
+      "source": "5635",
+      "start": 1134.38,
+      "end": 1145.05,
+      "beat": "one morning — the washing workers from outside"
+    },
+    {
+      "source": "5635",
+      "start": 1160.22,
+      "end": 1205.8,
+      "beat": "no water at 6 am; 王財慶: the dam above is blocked, run; 陳總: no one died"
+    },
+    {
+      "source": "5635",
+      "start": 1247.4,
+      "end": 1250.95,
+      "beat": "陳總: water that should come and doesn't"
+    },
+    {
+      "source": "5635",
+      "start": 1264.27,
+      "end": 1269.3,
+      "beat": "陳總: it will happen again"
+    },
+    {
+      "source": "CLOSE",
+      "start": 0,
+      "end": 7.0,
+      "beat": "close card",
+      "grade": ""
+    }
+  ],
+  "grade": "eq=brightness=0.02:contrast=1.06:saturation=1.05",
+  "overlays": [
+    {
+      "file": "cards_ind/cover_coal.mp4",
+      "start_in_output": 47.788,
+      "duration": 9.945
+    },
+    {
+      "file": "cards_ind/cover_stele.mp4",
+      "start_in_output": 125.456,
+      "duration": 8.105
+    },
+    {
+      "file": "cards_ind/cover_aerial.mp4",
+      "start_in_output": 142.511,
+      "duration": 10.418
+    },
+    {
+      "file": "cards_ind/cover_creek.mp4",
+      "start_in_output": 222.828,
+      "duration": 8.559
+    }
+  ],
+  "subtitles": "master_ind.ass",
+  "total_duration_s": 237.39
+}

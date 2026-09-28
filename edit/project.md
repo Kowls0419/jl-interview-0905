@@ -17,9 +17,9 @@ say who did what if both were involved (e.g. "JL ran Dailies round r02").
 To answer "what did JL do last time": the latest `— JL` entry here, plus
 `git log --author` for his commits.
 
-**Status (as of 2026-09-26):** candidate-passage shortlist done (Session 7); no
-EDL or cut yet. Waiting on prof's answers (video count, length, photo
-originals, how to cover the kiln itself). See the latest session.
+**Status (as of 2026-09-29):** 戰俘營篇 accepted (r04, 1:53) · 產業篇 long version
+accepted (Dailies r02, 3:57) — ready to show prof · 焦炭窯篇 on hold for the kiln
+photo originals. See the latest session.
 
 ## Session 1 — 2026-09-18 — Kyle (`/video-use init` — inventory, no cutting)
 
@@ -689,3 +689,117 @@ Not yet decided: whether to trim toward 90 s, and the jump cuts at 0:40 / 1:26.
 6. Later, deliberately: merge upstream's 4 commits into the fork's `kyle` branch
    (includes an fps-default change — re-check renders after).
 7. `temp/` holds the 怪手林 clips from 2026-09-27 — no longer needed; delete if unwanted.
+
+## Session 8 — 2026-09-28 → 09-29 — Kyle (產業篇 long version; prof's posters; renderer + Dailies fixes)
+
+Kyle drove; JL had pushed nothing since Session 7. Kyle reviewed every round in
+Dailies (產業篇 r01, r02; 戰俘營篇 r03).
+
+**Strategy:** keep the split prof approved on 9/26 — 戰俘營篇 (done) · 焦炭窯篇
+(standalone: the kiln grant's video deliverable is about the kiln) · 產業篇 =
+產業變遷＋堰塞湖/土石流. Kyle re-pasted prof's four themes and asked to rethink;
+the posters strengthened the merge rather than breaking it: prof's 中碳場 poster
+says the flood 「沖毀中碳場所有工寮」, the coal settlement, so the flood is the end
+of the industry story. The alternative (土石流篇 alone, coal folded into 焦炭窯篇)
+was declined: it dilutes the grant video and would hold 產業 behind the kiln photos.
+
+### prof's posters (`posters/`, Drive only — now gitignored)
+
+19 `.docx` "posters" for the trail stations + one unrelated file
+(`FTC 2026-27 英文競賽手冊(917).pdf`, a robotics manual — ignore). 43 images,
+extracted to `docs/extracted/posters/` (gitignored). **Their captions are
+shuffled between files** (formatting damage — Kyle's warning). Use images only;
+write our own captions. Known facts and mislabels:
+- The big aerial (`戰俘營/image2.png` = `茶廠/image2.png`, 2037×2059) has
+  **「13AF 5 SEPT 47」** on the film — a US 13th Air Force photo, 5 Sept 1947.
+  Poster captions for it (「文山茶廠1973年」, 「航照圖 1948」) are wrong.
+- `場中碳` = **中碳場** (title reversed). `image1.png` (470×468) is the one captioned
+  「新潭路2段民國52年 淹塞湖事件前航照」 — confirmed by Kyle's screenshot of the
+  poster. `image2.png` (612×471) is the other pre-flood aerial (captioned 民國50).
+- `站4 梯田.docx` actually holds the 新潭路二段老宅 poster; the 梯田 aerial is
+  also used as the 站7 水力充電 image.
+- Poster text worth using: 邵宗興「光復後塗潭聞人及建設重要人物，道路開築及電力引入」;
+  磺窟溪「新店溪的支流，全長約4.25公里，發源於獅仔頭山北側」; 焦炭窯「煤炭進窯經過24小時
+  高溫燃燒…質地較好的送煉鋼廠，較差的送打鐵舖」; 早期新潭路一、二段為台車道、三段為木馬路.
+- For 焦炭窯篇: `站5焦炭窯/image1.png` (kiln interior) and `image3.png` (clearing
+  by a kiln mouth) are NEW — not duplicates of the Session 7 LINE photos.
+- Conflicts with the interview: the poster says the flood was **民國52** and that
+  *her father* saw the creek run dry; on camera she says **民國58** and 王財慶.
+  **Kyle: drop it** — subtitles keep her words, cards carry no year. The poster
+  spells her **游月里** (not 尤) — confirm with her before any name card. POW poster
+  says 5/16–8/15; the 戰俘營篇 closing card keeps Hurst's 5/16–8/24.
+- Credits if used later: 塗潭社區 photo「攝影：劉育柔」; 磺窟溪 old photo「游寶彩提供」.
+
+### 產業篇 — long version, accepted (Dailies r01: 8 notes → r02: 0)
+
+Built by `edit/build/industry.py` (two-source fork of pow.py) →
+`edit/cards_ind/`, `edit/edl_ind.json`, `edit/master_ind.srt/.ass`; preview
+`edit/ind_preview.mp4`, **3:57 (237.4 s)**. Order: open card (新店區塗潭里 /
+藍染、樟腦、煤礦、柑橘 / 一座山的產業變遷) → 5636 19:26 藍染 was earliest → her childhood
+camphor memory (20:36, 20:56, 21:39) → coal, most bosses lost money, deaths
+(5635 02:25, 04:12) → mandarins (04:41, 05:18, 05:49) → 邵宗興 (24:02) · 怪手林 cut
+the road (26:29, ends before 27:14) · 「很有貢獻」＋洗煤廠 (28:59) → mid card
+(塗潭里 / 堰塞湖與土石流, no year) → 民國58 debris flow (16:43, 17:07) → 6 am, the
+water stops, 王財慶, run (18:54, 19:20–20:05) → 陳總「會再發生」(20:47, 21:04) →
+close card (磺窟溪 / 發源於獅仔頭山北側 / 全長約 4.25 公里，匯入新店溪).
+Covers (framed on blurred bg, captions ours): coal-bed map · 宗興洗煤場石碑 ·
+中碳場 aerial image1 「新潭路二段 土石流前的航照」 · 磺窟溪.
+Excluded: 28:00–28:31 (gossip), 27:14+ (land lease), 28:36–28:47 (private land
+from his debts — same kind of claim), 02:38 政三煤礦 (unresolved name).
+
+r01 fixes (Kyle): start at 「你說」 (the old in-point sat inside 對對對 → distortion);
+cut 「那個塔」; end 0.11 s earlier after 「名字啊」; use the poster's image1 aerial,
+out on 「白天」 (it now starts at 「我們這邊有一次土石流」 so it isn't a 3-s flash);
+remove the 新店礦業文化路徑 kicker from cards; smooth the photo push. Kyle OK'd
+「山段」→「三段」 by ear, all four kept jump cuts (0:21, 0:32, 1:08, 3:43), the 1:32
+camera zoom (source), and the closing-card text.
+
+### 戰俘營篇 — r03 → r04, accepted
+
+Two covers over the jump cuts: 1947 aerial 「1947 年航照」 at 0:34–0:41 (ends as
+「你不會來問我」 starts) and the memorial photo (no caption) at 1:19–1:29 — both OK'd
+(r03). r03 note: remove the kicker from the opening card → r04 (the closing
+card keeps its source credit). Subtitles now use exact segment timing (up to
+~0.1 s closer to the voice at the end). Same renderer fixes as below.
+
+### Renderer fixes (Kyle's fork, `~/.claude/skills/video-use`)
+- **Cards after footage rendered darker** (paper 236 → 219): full-range camera
+  footage + untagged limited-range cards in a stream-copy concat. `render.py` now
+  converts every segment to limited range, tagged (L47). Was in 戰俘營篇 r02 too.
+- **Lip sync drifted** up to 0.35 s by the end: per-segment AAC priming kept by
+  `-c copy` concat. The join now copies video and re-encodes audio once with
+  `aresample=async=1` — within one frame of the picture (L48). Also in 戰俘營篇 r02.
+- Build scripts compute each segment's real length (footage rounds up to whole
+  frames) instead of nominal EDL lengths — the nominal timeline drifted 0.32 s (L50).
+
+### Dailies features (Kyle's request)
+- **Claude's flags:** I write `edit/review/<stem>_flags.json` after self-eval;
+  Dailies shows them as violet timeline marks + a checklist (OK / Change, `[`/`]`
+  to jump, ▶ play, dashed region box). Answers are stored in the round JSON under
+  `flags`; a Change is a normal note with `"flag": id`. Documented in SKILL.md.
+- **Edit / delete notes** (✎ / 🗑); note ids never reused; saved-note thumbnails now
+  load (`/frames/` was a 404); next free port if 8756 is busy.
+
+**Reasoning log:**
+- 產業篇 runs 3:57, not ~3:00 — exact word boundaries came out longer; Kyle
+  accepted the length. The 3:05 variant (drop camphor + 藍染 exchange) stays the
+  first cut if prof wants it shorter.
+- Round numbers: 戰俘營篇's accepted r02 had no JSON (0 notes), so its next review
+  was started as `--round 3` to match this log.
+- I picked the wrong 中碳場 aerial (image2) because the poster's captions are
+  unreliable; the flag caught it and Kyle's screenshot settled it. With damaged
+  captions, show the candidates rather than choose silently.
+
+**Outstanding:**
+1. **Show prof both previews** (戰俘營篇 r04, 產業篇 long version) — his call on
+   trimming 產業篇 toward 90 s (first cut: the 3:05 variant).
+2. **焦炭窯篇 — still on hold** for the kiln originals. New material now exists
+   (two poster kiln photos + the 24-hour burn text); if prof says the originals
+   don't exist, ask Kyle before building from LINE copies.
+3. **Kyle's own list:** 游月里 (poster) vs 尤 — confirm with her before any name
+   card · *gala* spelling · 「下層里」 (5635 07:07) · 政三煤礦 (5635 02:38) · the
+   10 台語 gaps (焦炭窯篇 passages).
+4. **JL's first-time setup** against the README; the fork's `render.py` changed —
+   JL must `git pull` the fork before rendering.
+5. Later, deliberately: merge upstream's 4 commits into the fork (fps default).
+6. `temp/` still holds the 怪手林 clips from 2026-09-27 — delete if unwanted.

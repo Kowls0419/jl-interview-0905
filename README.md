@@ -6,9 +6,10 @@ videos delivered 2026-08-14). One continuous ~88.5 min session across 3 source
 files: opening/mic check, then two long-form segments with 尤月里老師 and others,
 covering 塗潭里 / 煤礦 / 焦炭窯 / 土石流 / 獅仔頭山 / 戰俘營 history.
 
-**Status:** inventory + transcription done; a candidate-passage shortlist for
-the three videos exists (see the latest session in `edit/project.md`). No EDL
-or cut yet. Open questions for the client are in `docs/questions_for_professor.md`.
+**Status:** 戰俘營篇 and the long version of 產業篇 are cut and accepted
+(built by `edit/build/pow.py` and `edit/build/industry.py`); 焦炭窯篇 is on hold
+for the kiln photo originals. Details in the latest session of `edit/project.md`;
+open questions for the client are in `docs/questions_for_professor.md`.
 
 This repo is the **decision layer** for the edit (cut choices, transcripts,
 notes). The **raw footage and rendered video live in Google Drive**, not here
@@ -38,7 +39,7 @@ entries means the *0613 set*, not these.
 
 | | Git (this repo) | Google Drive |
 |---|---|---|
-| Contains | `edit/project.md`, `lessons/*.md`, `edit/takes_packed.md`, `edit/transcripts/*.json`, `edl.json` / `master.srt` / `review/*.json` (once they exist), `docs/*.md` | `raw footage/`, `BTS pics/`, `photo import */` (client photos), `edit/clips_graded/`, `edit/verify/`, previews, `final.mp4`, animation renders, `review/frames/*.png`, `docs/*.pdf` |
+| Contains | `edit/project.md`, `lessons/*.md`, `edit/takes_packed.md`, `edit/transcripts/*.json`, `edl.json` / `master.srt` / `review/*.json` (once they exist), `docs/*.md` | `raw footage/`, `BTS pics/`, `photo import */` + `posters/` (client photos and prof's station posters — the posters' captions are shuffled, see Session 8), `edit/clips_graded/`, `edit/verify/`, previews, `final.mp4`, animation renders, `review/frames/*.png`, `docs/*.pdf` |
 | Why | Small text, diffable, mergeable — this is the actual editorial history | Large binaries — git can't diff/merge video and GitHub caps file size anyway |
 
 Drive folder (raw footage + renders): **[JL Interview 0905 on Drive](https://drive.google.com/drive/folders/1wwfvlHXUNO4crt0ZVVjCH3QRvXbb3hyh?usp=drive_link)**

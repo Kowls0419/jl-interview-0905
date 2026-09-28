@@ -7,6 +7,7 @@ Look C (project.md, Session 7): paper cards in Noto Serif TC, Noto Sans TC
 subtitles on a dark box, 29.97 fps.
 """
 import json
+import math
 import re
 import subprocess
 from collections import OrderedDict
@@ -37,7 +38,22 @@ RANGES = [
     (1797.86, 1818.60, "they had come from 金瓜石 nearly starved (stops before 三十七磅)"),
 ]
 OPEN_S, CLOSE_S = 5.0, 6.0
+
+# Photo covers from prof's posters (r03), each spanning one of the two jump
+# cuts. (name, poster docx, media file, caption, (range, src t), (range, src t)).
+# The aerial's date is printed on the negative itself ("13AF 5 SEPT 47"); the
+# posters' own captions for it (1948 / 文山茶廠1973年) are wrong.
+COVERS = [
+    ("aerial47", "戰俘營", "image2.png", "1947 年航照", (2, 1520.40), (3, 1565.00)),
+    ("memorial", "戰俘營", "image1.png", None, (4, 1758.80), (5, 1800.55)),
+]
 PUNCT = set("，。？！、-")
+
+
+def seg_len(a, b):
+    """Real length of a footage range in render.py's concat: video rounds up to
+    whole 29.97 frames (see industry.py seg_len). Nominal b - a drifted ~0.1 s."""
+    return math.ceil((b - a) * 30000 / 1001 - 1e-6) / (30000 / 1001)
 
 # Authoritative spellings, applied AFTER OpenCC. Keys are written against the
 # converted (Traditional) text; every key's hits are counted and reported.
@@ -99,8 +115,7 @@ def build_cards():
         ("1945 年 5 月", font(SERIF, 56), RUST, 0),
         ("日軍將金瓜石戰俘", font(SERIF, 78), INK, 60),
         ("移往新店山區磺窟", font(SERIF, 78), INK, 36),
-        ("新店礦業文化路徑", font(SANS, 34), GREY, 70),
-    ], CARDS / "open.png")
+    ], CARDS / "open.png")    # no 新店礦業文化路徑 kicker (Dailies r03, matches 產業篇)
     draw_block([
         ("磺窟戰俘營", font(SERIF, 56), RUST, 0),
         ("1945.5.16 — 8.24", font(SERIF, 78), INK, 60),
@@ -152,7 +167,7 @@ def build_srt():
             s = ch[0]["start"] - a + offset
             e = min(ch[-1]["end"] + 0.15, b) - a + offset
             cues.append((s, e, txt, ri))
-        offset += b - a
+        offset += seg_len(a, b)
     # merge tiny cues (≤3 chars, e.g. a lone 欸) into the previous one if it fits
     merged = []
     for c in cues:
@@ -246,7 +261,24 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     return (x0, y0, box_h)
 
 
-def build_edl(total):
+def build_covers():
+    from industry import build_cover        # same cover look as 產業篇
+    starts, t = [], OPEN_S
+    for a, b, _ in RANGES:
+        starts.append(t); t += seg_len(a, b)
+    overlays = []
+    for name, docx, member, caption, (ri, ta), (rj, tb) in COVERS:
+        for r, x in ((ri, ta), (rj, tb)):
+            assert RANGES[r][0] + 1.0 <= x <= RANGES[r][1] - 1.0, "cover edge within 1 s of a cut"
+        t0 = starts[ri] + ta - RANGES[ri][0]; t1 = starts[rj] + tb - RANGES[rj][0]
+        build_cover(name, docx, member, caption, t1 - t0, out_dir=CARDS)
+        overlays.append({"file": f"cards_pow/cover_{name}.mp4", "start_in_output": round(t0, 3),
+                         "duration": round(t1 - t0, 3)})
+        print(f"    at {t0:.2f}–{t1:.2f}")
+    return overlays
+
+
+def build_edl(total, overlays=()):
     ranges = [{"source": "OPEN", "start": 0.0, "end": OPEN_S, "beat": "OPEN CARD", "grade": ""}]
     ranges += [{"source": "5636", "start": a, "end": b, "beat": beat} for a, b, beat in RANGES]
     ranges += [{"source": "CLOSE", "start": 0.0, "end": CLOSE_S, "beat": "CLOSE CARD", "grade": ""}]
@@ -255,7 +287,7 @@ def build_edl(total):
         "sources": {"5636": str(SRC), "OPEN": str(CARDS / "open.mp4"), "CLOSE": str(CARDS / "close.mp4")},
         "ranges": ranges,
         "grade": "eq=brightness=0.02:contrast=1.06:saturation=1.05",
-        "overlays": [],
+        "overlays": list(overlays),
         "subtitles": "master_pow.ass",
         "total_duration_s": round(total, 2),
     }
@@ -266,5 +298,5 @@ if __name__ == "__main__":
     build_cards()
     cues, total = build_srt()
     build_ass(cues)
-    build_edl(total)
+    build_edl(total, build_covers())
     print(f"cards + {len(cues)} subtitle cues (.srt + .ass) + EDL written; expected duration {total:.2f}s")

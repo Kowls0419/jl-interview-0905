@@ -803,3 +803,35 @@ card keeps its source credit). Subtitles now use exact segment timing (up to
    JL must `git pull` the fork before rendering.
 5. Later, deliberately: merge upstream's 4 commits into the fork (fps default).
 6. `temp/` still holds the 怪手林 clips from 2026-09-27 — delete if unwanted.
+
+## Session 9 — 2026-09-29 — Kyle (焦炭窯篇 photo decision and build handoff)
+
+Kyle drove the decision; Codex drove the planning and handoff. Claude had already
+synced the project and the video-use fork, both up to date, and confirmed JL had
+pushed nothing since Session 8. No cut or render was made this session.
+
+**Strategy:** Kyle said to ignore the original kiln photos, clearing the hold
+on 焦炭窯篇. Codex inspected the existing LINE and poster images and wrote a
+build plan for Claude in the local `HANDOFF.md`: about 90–120 seconds, moving
+from 尤月里老師's memory of carrying kiln product to the site's roots, clearing,
+and preservation work. Claude will propose the cut to Kyle before editing, as
+the video-use skill requires.
+
+**Decisions:** use the available LINE copies and poster photos; frame the
+compressed images on blurred backgrounds in the established 29.97 fps look C.
+`docs/questions_for_professor.md` no longer asks for the kiln originals.
+The existing factual rule remains: describe the site's condition and clearing,
+without identifying an occupant. The two accepted videos were not changed.
+
+**Reasoning log:** the interview covers the kiln's past but not its current
+rescue, so the photo arc and short cards must carry the present-day half. The
+06:44–08:01 passage contains unresolved 台語 and *gala* spelling; the plan
+avoids putting uncertain words on screen until Kyle verifies them. Poster
+captions are shuffled, so Claude must inspect images and write new captions.
+
+**Reflect:** no mistake needed correction during this planning-only session;
+no new recurring lesson was added.
+
+**Outstanding:** Claude should confirm the story shape with Kyle, then build
+and review 焦炭窯篇 from the existing assets. Show prof the accepted 戰俘營篇 and
+產業篇 previews; the remaining name and 台語 questions from Session 8 stay open.

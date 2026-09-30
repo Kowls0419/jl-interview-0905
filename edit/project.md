@@ -18,8 +18,8 @@ To answer "what did JL do last time": the latest `— JL` entry here, plus
 `git log --author` for his commits.
 
 **Status (as of 2026-09-29):** 戰俘營篇 accepted (r04, 1:53) · 產業篇 long version
-accepted (Dailies r02, 3:57) — ready to show prof · 焦炭窯篇 on hold for the kiln
-photo originals. See the latest session.
+accepted (Dailies r02, 3:57) — ready to show prof · 焦炭窯篇 planned from the
+existing LINE and poster photos, story shape waiting on Kyle. See Session 9.
 
 ## Session 1 — 2026-09-18 — Kyle (`/video-use init` — inventory, no cutting)
 
@@ -812,10 +812,32 @@ pushed nothing since Session 8. No cut or render was made this session.
 
 **Strategy:** Kyle said to ignore the original kiln photos, clearing the hold
 on 焦炭窯篇. Codex inspected the existing LINE and poster images and wrote a
-build plan for Claude in the local `HANDOFF.md`: about 90–120 seconds, moving
-from 尤月里老師's memory of carrying kiln product to the site's roots, clearing,
-and preservation work. Claude will propose the cut to Kyle before editing, as
+build plan for Claude below. Aim for 90–120 seconds: the brief says each video
+must be at least 90 seconds, and 120 seconds is Codex's editorial estimate,
+not a client ceiling. Claude will propose the cut to Kyle before editing, as
 the video-use skill requires.
+
+**Build plan:** open on 塗潭焦炭窯; move through 尤月里老師's memory of her father
+carrying the finished product (5635 06:38–07:26), the early-morning smoke and
+queue (5635 07:31–08:01), then 陳總's account of 三段's power plant, kiln, coal
+stockpiles and small pits (5635 11:45–12:00). Use a brief card for the poster's
+「煤炭進窯經過24小時高溫燃燒」; then show roots in the masonry, clearing, the exposed
+kiln mouths and the preservation work. The present-day half needs photos and
+short cards because the interview does not discuss the rescue. Use 29.97 fps,
+the accepted clean documentary look, paper cards, framed photos on blurred
+backgrounds and Traditional Chinese subtitles. No name card until she confirms
+whether her surname is 尤 or 游.
+
+**Photo candidates:** LINE `S__15073358_0.jpg` (overgrown kiln mouth),
+`S__15073347_0.jpg` (roots in stonework), `S__15073352_0.jpg` (chainsaw during
+clearing), `S__15073346_0.jpg` (cleared kiln row), and optionally
+`S__15073338_0.jpg` (hand-drawn survey plan). The poster adds
+`站5焦炭窯/image1.png` (kiln interior) and `站5焦炭窯/image3.png` (clearing at a
+kiln mouth), plus the 24-hour burn text. Write short factual captions for the
+selected images from the proposal and the images themselves; the poster's
+captions are shuffled, so inspect the images instead of copying those labels.
+Never name or imply an occupant. Frame the compressed LINE copies rather than
+stretching them full-bleed.
 
 **Decisions:** use the available LINE copies and poster photos; frame the
 compressed images on blurred backgrounds in the established 29.97 fps look C.
@@ -825,13 +847,22 @@ without identifying an occupant. The two accepted videos were not changed.
 
 **Reasoning log:** the interview covers the kiln's past but not its current
 rescue, so the photo arc and short cards must carry the present-day half. The
-06:44–08:01 passage contains unresolved 台語 and *gala* spelling; the plan
+5635 06:44–08:01 passage contains unresolved 台語 and *gala* spelling; the plan
 avoids putting uncertain words on screen until Kyle verifies them. Poster
 captions are shuffled, so Claude must inspect images and write new captions.
 
 **Reflect:** no mistake needed correction during this planning-only session;
 no new recurring lesson was added.
 
-**Outstanding:** Claude should confirm the story shape with Kyle, then build
-and review 焦炭窯篇 from the existing assets. Show prof the accepted 戰俘營篇 and
-產業篇 previews; the remaining name and 台語 questions from Session 8 stay open.
+**Outstanding:**
+1. Claude confirms the 焦炭窯篇 story shape with Kyle, then builds and reviews it
+   from the existing assets. Kyle shows prof the accepted 戰俘營篇 and 產業篇
+   previews; prof decides whether to trim 產業篇 toward 90 s (first cut: 3:05).
+2. Kyle's own list: 游月里 (poster) vs 尤 — confirm with her before any name card ·
+   *gala* spelling · 「下層里」 (5635 07:07) · 政三煤礦 (5635 02:38) · the 10 台語 gaps
+   in the shortlisted passages.
+3. JL's first-time setup against the README; JL must `git pull` the video-use
+   fork before rendering because `render.py` changed.
+4. Later, deliberately merge upstream's 4 commits into the fork (includes an
+   fps-default change, so re-check renders afterwards).
+5. `temp/` still holds the 怪手林 clips from 2026-09-27 — delete if unwanted.

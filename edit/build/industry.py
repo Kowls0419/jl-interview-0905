@@ -142,20 +142,10 @@ def card_mp4(png, seconds, out):
 
 def build_cards():
     CARDS.mkdir(parents=True, exist_ok=True)
-    draw_block([
-        ("新店區塗潭里", font(SERIF, 56), RUST, 0),
-        ("藍染、樟腦、煤礦、柑橘", font(SERIF, 78), INK, 60),
-        ("一座山的產業變遷", font(SERIF, 78), INK, 36),
-    ], CARDS / "open.png")
-    draw_block([
-        ("塗潭里", font(SERIF, 56), RUST, 0),
-        ("堰塞湖與土石流", font(SERIF, 78), INK, 60),
-    ], CARDS / "mid.png")
-    draw_block([
-        ("磺窟溪", font(SERIF, 56), RUST, 0),
-        ("發源於獅仔頭山北側", font(SERIF, 78), INK, 60),
-        ("全長約 4.25 公里，匯入新店溪", font(SERIF, 64), INK, 36),
-    ], CARDS / "close.png")    # no 新店礦業文化路徑 kicker (Dailies r01)
+    from cards import open_card, credits_card
+    open_card("新店區塗潭里", "塗潭里的產業變遷", "藍染、樟腦、煤礦、柑橘", CARDS / "open.png")
+    open_card("新店區塗潭里", "堰塞湖與土石流", "民國 58 年的土石流記憶", CARDS / "mid.png")   # 土石流篇's opener
+    credits_card(CARDS / "close.png")    # the credits card is the closer
     for k in CARD_S:
         card_mp4(CARDS / f"{k.lower()}.png", CARD_S[k], CARDS / f"{k.lower()}.mp4")
 

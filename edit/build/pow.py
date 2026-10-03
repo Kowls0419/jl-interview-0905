@@ -37,7 +37,7 @@ RANGES = [
     (1750.18, 1765.55, "former POWs come back from the UK and cry"),
     (1797.86, 1818.60, "they had come from 金瓜石 nearly starved (stops before 三十七磅)"),
 ]
-OPEN_S, CLOSE_S = 5.0, 6.0
+OPEN_S, CLOSE_S = 5.0, 7.0
 
 # Photo covers from prof's posters (r03), each spanning one of the two jump
 # cuts. (name, poster docx, media file, caption, (range, src t), (range, src t)).
@@ -111,17 +111,9 @@ def card_mp4(png, seconds, out):
 
 def build_cards():
     CARDS.mkdir(parents=True, exist_ok=True)
-    draw_block([
-        ("1945 年 5 月", font(SERIF, 56), RUST, 0),
-        ("日軍將金瓜石戰俘", font(SERIF, 78), INK, 60),
-        ("移往新店山區磺窟", font(SERIF, 78), INK, 36),
-    ], CARDS / "open.png")    # no 新店礦業文化路徑 kicker (Dailies r03, matches 產業篇)
-    draw_block([
-        ("磺窟戰俘營", font(SERIF, 56), RUST, 0),
-        ("1945.5.16 — 8.24", font(SERIF, 78), INK, 60),
-        ("兩名戰俘死於營中", font(SERIF, 78), INK, 36),
-        ("資料來源：台灣戰俘營紀念協會", font(SANS, 30), GREY, 70),
-    ], CARDS / "close.png")
+    from cards import open_card, credits_card
+    open_card("新店區磺窟", "磺窟戰俘營", "1945 年 5 月，戰俘自金瓜石遷來", CARDS / "open.png")
+    credits_card(CARDS / "close.png", extra_rows=[("資料來源", "台灣戰俘營紀念協會")])   # the credits card is the closer
     card_mp4(CARDS / "open.png", OPEN_S, CARDS / "open.mp4")
     card_mp4(CARDS / "close.png", CLOSE_S, CARDS / "close.mp4")
 

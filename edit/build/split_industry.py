@@ -37,10 +37,8 @@ if __name__ == "__main__":
 
     base.build_cards()
     base.CARD_S["IND_CLOSE"] = 7.0
-    base.draw_block([
-        ("塗潭里的產業變遷", base.font(base.SERIF, 82), base.INK, 0),
-        ("藍染、樟腦、煤礦、柑橘", base.font(base.SERIF, 58), base.RUST, 44),
-    ], base.CARDS / "ind_close.png")
+    from cards import credits_card
+    credits_card(base.CARDS / "ind_close.png")      # the credits card is the closer
     base.card_mp4(base.CARDS / "ind_close.png", base.CARD_S["IND_CLOSE"],
                   base.CARDS / "ind_close.mp4")
 

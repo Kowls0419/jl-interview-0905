@@ -120,19 +120,13 @@ def card_mp4(png, seconds, out):
 
 def build_cards():
     CARDS.mkdir(parents=True, exist_ok=True)
-    draw_block([
-        ("新店區塗潭里", font(SERIF, 56), RUST, 0),
-        ("塗潭焦炭窯", font(SERIF, 86), INK, 60),
-        ("一座山的煤礦記憶", font(SERIF, 64), INK, 36),
-    ], CARDS / "open.png")
+    from cards import open_card, credits_card
+    open_card("新店區塗潭里", "塗潭焦炭窯", "一座山的煤礦記憶", CARDS / "open.png")
     draw_block([
         ("從礦坑到焦炭窯", font(SERIF, 78), INK, 0),
         ("煤炭在這裡堆放、燒製", font(SERIF, 64), RUST, 44),
     ], CARDS / "mid.png")
-    draw_block([
-        ("搶救塗潭焦炭窯", font(SERIF, 82), INK, 0),
-        ("測繪調查與社區共守", font(SERIF, 58), RUST, 44),
-    ], CARDS / "close.png")
+    credits_card(CARDS / "close.png")    # the credits card is the closer
     for k in ("OPEN", "MID", "CLOSE"):
         card_mp4(CARDS / f"{k.lower()}.png", CARD_S[k], CARDS / f"{k.lower()}.mp4")
 

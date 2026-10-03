@@ -67,7 +67,7 @@ Cached in `transcripts/`. Packed to `takes_packed.md` — **1,332 phrases, 88m 2
   every topic and supplies the analytical read (the 三段 self-contained-system
   argument, the 萬華 economic tie). Mentions 「我媽媽」 re: the 租約 chain, so he has
   a personal stake here. 5635 11.1 min · 5636 5.2 min.
-- `speaker_1` — **尤月里老師**, the main voice. Born and raised there. 5635 16.2
+- `speaker_1` — **游月裡老師**, the main voice. Born and raised there. 5635 16.2
   min · 5636 30 min.
 - `speaker_4` (5635 only, ~3.4 min) — the second 尤老師 introduced at the top.
   Heavy Taiwanese; carries the 朱再叔 / 1928 / 拓寬 thread.
@@ -82,7 +82,7 @@ from the ASR.
 
 A **導覽人員訓練課程** (guide-training class), not a sit-down documentary interview.
 Opening line: rain forced a change of plan, so the field session became a
-classroom one. 尤月里老師 is teaching the volunteer guides the history of the
+classroom one. 游月裡老師 is teaching the volunteer guides the history of the
 新潭路三段 stretch, with the course leader steering and a second 尤老師 filling in.
 Stated scope at the top of 5634: (1) 社區礦業歷史 + 礦業遺構, (2) 溪流環境 + how to
 actually run the tour. A 審查意見 review-comments item is also raised.
@@ -196,7 +196,7 @@ Note `政三煤礦` in the ASR is probably **浙江煤礦**, not 正三.
 - `兽中心的时代` · `觀思亭` (→ 觀獅亭?) · `怪手林` (nickname; real name?)
 - `徐福全`, `陳龍喜`, `穆國康`, `鍾盛吉`, `廖鳳英`, `夏慎理`
 - `王才慶` / `王財慶`, plus 王財昆 / 王才進 / 王如卿 across two 王 families.
-- `尤月里` / `月婷老師` — she is the *teacher*, so not in the 學員 list.
+- `游月裡` / `月婷老師` — she is the *teacher*, so not in the 學員 list.
 - `新堂城`, `防哭城`, `北極北之城`, `廟抬頭`, `精誠霸`, `剝甲船`, `三峽中立`
 - `何麥克` = **Michael Hurst** (Taiwan POW Camps Memorial Society) — verify the
   Chinese rendering he himself uses before putting it on screen.
@@ -358,11 +358,11 @@ assuming a 後製剪輯 credit like the 0613 set's carries over.
 Sampled every 180 s across both long takes. **The camera is not locked** — the
 operator reframes repeatedly between a wide two-shot and a tighter single.
 
-- **5635**: two-shot most of the way. 尤月里 sits camera-right, 陳國超 camera-left
+- **5635**: two-shot most of the way. 游月裡 sits camera-right, 陳國超 camera-left
   and frequently **clipped by the left edge** (04m, 07m, 25m, 37m). At **34–37m**
   the camera pans right to bring in the third speaker (pink shirt, grey hair) —
   matches `speaker_4`'s 朱再叔/周再思 block at 31:41–37:40.
-- **5636**: noticeably more single-on-尤月里, and the best framing in the whole
+- **5636**: noticeably more single-on-游月裡, and the best framing in the whole
   shoot sits at **25–37m** — which is the 戰俘營 block. The POW video therefore
   has the strongest available pictures, which is lucky rather than planned.
 - The TV behind them shows the photo slideshow early in 5635 (01–07m, purple)
@@ -373,7 +373,7 @@ operator reframes repeatedly between a wide two-shot and a tighter single.
 I tested 1.33× (1440 crop) and 1.5× (1280 crop) punch-ins on a clean two-shot.
 **Both make it worse.** The obstruction is the flower basket sitting *between*
 the two speakers, not clutter at the edges — so cropping inward enlarges the
-basket and 尤月里 stays pinned to the right edge regardless. To get a clean single
+basket and 游月裡 stays pinned to the right edge regardless. To get a clean single
 on her you would have to crop past ~2.5×, which a 1080p source will not survive.
 
 **Consequence for the treatment:** do not plan a reframing/crop pass. The levers
@@ -523,7 +523,7 @@ shortlist of candidate passages, not a cut (Hard Rule 11 still applies).
 - **Question doc then cut to 6 one-line questions** (Kyle: the final doc must be
   TL;DR, and several items were ones he can answer himself). Only what prof
   alone can answer stayed. **Moved to Kyle (not in the prof doc):**
-  尤月里's full name for the title card (5635 00:13) · 「三十七磅」 (5636 30:25,
+  游月裡's full name for the title card (5635 00:13) · 「三十七磅」 (5636 30:25,
   likely wrong — check against Hurst's published account) · 何麥克's own Chinese
   rendering (5636 24:45) · how to write *gala* (5635 06:44) · 「下層里」 place name
   (5635 07:07) · 政三煤礦 → 浙江/正三? (5635 02:38) · the **10 台語 gaps**
@@ -682,7 +682,7 @@ Not yet decided: whether to trim toward 90 s, and the jump cuts at 0:40 / 1:26.
 3. **焦炭窯篇 — on hold** until prof finds the original kiln photos; if he says
    they don't exist, ask Kyle before building from the LINE copies. Occupation:
    factual, no one named.
-4. **Kyle's own list:** 尤月里's full name for a title card · *gala* spelling ·
+4. **Kyle's own list:** 游月裡's full name for a title card · *gala* spelling ·
    「下層里」 (5635 07:07) · 政三煤礦 (5635 02:38) · the 10 台語 gaps
    (5635 06:44–08:01 ×8, 12:08; 5636 34:30).
 5. **JL's first-time setup** against the README (fork, not upstream).
@@ -817,7 +817,7 @@ must be at least 90 seconds, and 120 seconds is Codex's editorial estimate,
 not a client ceiling. Claude will propose the cut to Kyle before editing, as
 the video-use skill requires.
 
-**Build plan:** open on 塗潭焦炭窯; move through 尤月里老師's memory of her father
+**Build plan:** open on 塗潭焦炭窯; move through 游月裡老師's memory of her father
 carrying the finished product (5635 06:38–07:26), the early-morning smoke and
 queue (5635 07:31–08:01), then 陳總's account of 三段's power plant, kiln, coal
 stockpiles and small pits (5635 11:45–12:00). Use a brief card for the poster's
@@ -945,3 +945,9 @@ qualified. Kiln's note counts fell 9 → 4 → 2 → 0; both new split films had
 5. Later, deliberately merge upstream's four commits into the fork, including
    its fps-default change, and re-check renders afterwards.
 6. `temp/` still holds the 怪手林 clips from 2026-09-27; delete if unwanted.
+
+### Session 10 addendum — 2026-10-03 — Kyle (Claude drove this part)
+- Added a 7 s credits card to the end of all four films (`edit/build/credits.py`, appended to each EDL; re-run it after rebuilding any EDL). Credits: 口述 陳國超、游月裡、張游寶彩、高燈立 · 攝影 李承洋 · 後製剪輯 楊大謙 · 指導單位 新北市政府文化局 · 執行單位 新北市陳昌梯醫師山林保育協會. Names follow the signed video consent form.
+- Re-rendered the four masters and the −1.5 dB review copies. Lengths now 戰俘營篇 119.8 s, 產業篇 145.0 s, 土石流篇 111.8 s, 焦炭窯篇 89.7 s; everything before the credits is unchanged (frames and audio levels identical); card paper Y=216 on the closer and credits card.
+- Spelling: the interviewee is **游月裡** (as signed), not 尤月里. Fixed in README and this log.
+- YouTube series title for this set: **搶救塗潭焦炭窯**. Prof approved four films.

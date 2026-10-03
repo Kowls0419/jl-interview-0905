@@ -3,7 +3,7 @@
 Interview shoot for the 新店礦業文化路徑 (Xindian mining heritage trail) series —
 same client/association as `JL Interview 0613` (the **"0613 set"**: three
 videos delivered 2026-08-14). One continuous ~88.5 min session across 3 source
-files: opening/mic check, then two long-form segments with 尤月里老師 and others,
+files: opening/mic check, then two long-form segments with 游月裡老師 and others,
 covering 塗潭里 / 煤礦 / 焦炭窯 / 土石流 / 獅仔頭山 / 戰俘營 history.
 
 **Status (2026-10-03):** Four professor review files are prepared and accepted
@@ -26,7 +26,7 @@ The session log uses these names without re-introducing them.
 | **JL** (GitHub `CYLI310`) | Kyle's collaborator; co-shot the footage. The folder name `JL Interview` is his initials. |
 | **陳國超** = **陳總** = **"prof"** (LINE: `jason chen 1526`) | The client. 協會理事長, course leader on camera (`speaker_0` in the transcripts), and author of the 焦炭窯 grant proposal in `docs/`. `questions_for_professor.md` is addressed to him (「老師」). |
 | **Hoho** | Kyle's mom — sometimes relays prof's messages (e.g. the original brief over LINE). Not the client. |
-| **尤月里老師** | Main interviewee, born and raised in 塗潭里 (`speaker_1`). |
+| **游月裡老師** | Main interviewee, born and raised in 塗潭里 (`speaker_1`). |
 | **游寶彩** (寶彩姐/老師) | Senior guide, mentioned often on camera; listed participant in the proposal. |
 
 ⚠ Transcript speaker IDs (`speaker_0`, `speaker_1`, …) are **per file**, not

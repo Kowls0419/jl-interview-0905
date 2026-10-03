@@ -3,7 +3,8 @@
   "sources": {
     "5636": "/Users/kyle/Library/CloudStorage/GoogleDrive-kyleyang0419@gmail.com/Other computers/My iMac/2TB PURZ/Projects/2026/JL Interview 0905/raw footage/002A5636.MP4",
     "OPEN": "/Users/kyle/Library/CloudStorage/GoogleDrive-kyleyang0419@gmail.com/Other computers/My iMac/2TB PURZ/Projects/2026/JL Interview 0905/edit/cards_pow/open.mp4",
-    "CLOSE": "/Users/kyle/Library/CloudStorage/GoogleDrive-kyleyang0419@gmail.com/Other computers/My iMac/2TB PURZ/Projects/2026/JL Interview 0905/edit/cards_pow/close.mp4"
+    "CLOSE": "/Users/kyle/Library/CloudStorage/GoogleDrive-kyleyang0419@gmail.com/Other computers/My iMac/2TB PURZ/Projects/2026/JL Interview 0905/edit/cards_pow/close.mp4",
+    "CREDITS": "/Users/kyle/Library/CloudStorage/GoogleDrive-kyleyang0419@gmail.com/Other computers/My iMac/2TB PURZ/Projects/2026/JL Interview 0905/edit/cards_credits/credits.mp4"
   },
   "ranges": [
     {
@@ -55,6 +56,13 @@
       "end": 6.0,
       "beat": "CLOSE CARD",
       "grade": ""
+    },
+    {
+      "source": "CREDITS",
+      "start": 0.0,
+      "end": 7.0,
+      "beat": "CREDITS CARD",
+      "grade": ""
     }
   ],
   "grade": "eq=brightness=0.02:contrast=1.06:saturation=1.05",
@@ -71,5 +79,5 @@
     }
   ],
   "subtitles": "master_pow.ass",
-  "total_duration_s": 112.7
+  "total_duration_s": 119.7
 }

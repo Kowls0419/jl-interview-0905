@@ -1,0 +1,81 @@
+{
+  "video": "kiln_preview.mp4",
+  "round": 3,
+  "fps": 29.97,
+  "created": "2026-10-03T08:46:25+00:00",
+  "notes": [
+    {
+      "i": 1,
+      "t": 60.771,
+      "tc": "1:00.771",
+      "comment": "right after 堆煤的 theres a uncut sound from female speaker, maybe cut just a lil before maybe cut at 1:00.800",
+      "tool": "pen",
+      "strokes": [
+        {
+          "tool": "pen",
+          "color": "#ff3b30",
+          "points": [
+            [
+              0.6030405405405406,
+              0.377927923345709
+            ]
+          ]
+        }
+      ],
+      "frame": "frames/kiln_preview_r03_01_60.77.png",
+      "edited": "2026-10-03T08:45:18+00:00"
+    },
+    {
+      "i": 2,
+      "t": 75.814,
+      "tc": "1:15.814",
+      "comment": "same here ciut 1:15.810 to remove female speaker sound",
+      "tool": "",
+      "strokes": [],
+      "frame": null
+    }
+  ],
+  "next_i": 3,
+  "flags": [
+    {
+      "id": 1,
+      "t": 27.0,
+      "end": 31.8,
+      "tc": "0:27.000",
+      "title": "Shorter kiln-mouth photo",
+      "note": "The overgrown mouth photo now ends near 30.6 s, then returns to the speaker. Does this pacing work?",
+      "region": null,
+      "verdict": "ok"
+    },
+    {
+      "id": 2,
+      "t": 50.4,
+      "end": 61.0,
+      "tc": "0:50.400",
+      "title": "One coal-handling passage",
+      "note": "Only the first passage about coal being stacked remains. The two repeated passages are removed. Does it flow into the next speaker?",
+      "region": null,
+      "verdict": "ok"
+    },
+    {
+      "id": 3,
+      "t": 64.8,
+      "end": 69.2,
+      "tc": "1:04.800",
+      "title": "Interior photo on kiln mention",
+      "note": "The lighter-coke speech is gone. The kiln interior photo appears when 陳總 reaches 「它有自己的焦炭窯」 and hands to the exposed kiln photo. Is this the right visual timing?",
+      "region": null,
+      "verdict": "ok"
+    },
+    {
+      "id": 4,
+      "t": 75.8,
+      "end": 83.0,
+      "tc": "1:15.800",
+      "title": "Shorter ending",
+      "note": "The closing card now begins around 76 s and the video ends at 1:23. Is the ending complete?",
+      "region": null,
+      "verdict": "ok"
+    }
+  ]
+}

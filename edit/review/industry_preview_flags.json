@@ -1,0 +1,27 @@
+{
+  "video": "industry_preview.mp4",
+  "by": "Codex self-eval, split 產業篇 r01, 2026-10-03",
+  "flags": [
+    {
+      "t": 0,
+      "end": 8,
+      "title": "Standalone opening",
+      "note": "Does the opening card introduce this as a separate 產業篇?",
+      "region": null
+    },
+    {
+      "t": 129,
+      "end": 137.97,
+      "title": "New industry closer",
+      "note": "Does the new ending feel complete after the washing plant, with no flood segment attached?",
+      "region": null
+    },
+    {
+      "t": 117.3,
+      "end": 119.2,
+      "title": "Subtitle spelling",
+      "note": "The road line uses your requested 「這里路」. Is it correct on screen?",
+      "region": null
+    }
+  ]
+}

@@ -6,9 +6,10 @@ videos delivered 2026-08-14). One continuous ~88.5 min session across 3 source
 files: opening/mic check, then two long-form segments with 尤月里老師 and others,
 covering 塗潭里 / 煤礦 / 焦炭窯 / 土石流 / 獅仔頭山 / 戰俘營 history.
 
-**Status:** 戰俘營篇 and the long version of 產業篇 are cut and accepted
-(built by `edit/build/pow.py` and `edit/build/industry.py`); 焦炭窯篇 is on hold
-for the kiln photo originals. Details in the latest session of `edit/project.md`;
+**Status (2026-10-03):** Four professor review files are prepared:
+戰俘營篇 · 產業篇 · 土石流篇 · 焦炭窯篇. The long 產業篇 was split at the
+professor's request. The new split and latest kiln trim await Kyle's review.
+Details are in the latest session of `edit/project.md`;
 open questions for the client are in `docs/questions_for_professor.md`.
 
 This repo is the **decision layer** for the edit (cut choices, transcripts,

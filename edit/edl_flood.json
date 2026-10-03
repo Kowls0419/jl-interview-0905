@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "sources": {
+    "5635": "/Users/kyle/Library/CloudStorage/GoogleDrive-kyleyang0419@gmail.com/Other computers/My iMac/2TB PURZ/Projects/2026/JL Interview 0905/raw footage/002A5635.MP4",
+    "5636": "/Users/kyle/Library/CloudStorage/GoogleDrive-kyleyang0419@gmail.com/Other computers/My iMac/2TB PURZ/Projects/2026/JL Interview 0905/raw footage/002A5636.MP4",
+    "OPEN": "/Users/kyle/Library/CloudStorage/GoogleDrive-kyleyang0419@gmail.com/Other computers/My iMac/2TB PURZ/Projects/2026/JL Interview 0905/edit/cards_ind/open.mp4",
+    "MID": "/Users/kyle/Library/CloudStorage/GoogleDrive-kyleyang0419@gmail.com/Other computers/My iMac/2TB PURZ/Projects/2026/JL Interview 0905/edit/cards_ind/mid.mp4",
+    "CLOSE": "/Users/kyle/Library/CloudStorage/GoogleDrive-kyleyang0419@gmail.com/Other computers/My iMac/2TB PURZ/Projects/2026/JL Interview 0905/edit/cards_ind/close.mp4",
+    "IND_CLOSE": "/Users/kyle/Library/CloudStorage/GoogleDrive-kyleyang0419@gmail.com/Other computers/My iMac/2TB PURZ/Projects/2026/JL Interview 0905/edit/cards_ind/ind_close.mp4"
+  },
+  "ranges": [
+    {
+      "source": "MID",
+      "start": 0,
+      "end": 5.0,
+      "beat": "mid card",
+      "grade": ""
+    },
+    {
+      "source": "5635",
+      "start": 1003.6,
+      "end": 1017.93,
+      "beat": "民國58: the first debris flow she ever saw"
+    },
+    {
+      "source": "5635",
+      "start": 1027.9,
+      "end": 1041.45,
+      "beat": "ran down after school: every house gone, huge boulders"
+    },
+    {
+      "source": "5635",
+      "start": 1134.38,
+      "end": 1145.05,
+      "beat": "one morning — the washing workers from outside"
+    },
+    {
+      "source": "5635",
+      "start": 1160.22,
+      "end": 1205.8,
+      "beat": "no water at 6 am; 王財慶: the dam above is blocked, run; 陳總: no one died"
+    },
+    {
+      "source": "5635",
+      "start": 1247.4,
+      "end": 1250.95,
+      "beat": "陳總: water that should come and doesn't"
+    },
+    {
+      "source": "5635",
+      "start": 1264.27,
+      "end": 1269.3,
+      "beat": "陳總: it will happen again"
+    },
+    {
+      "source": "CLOSE",
+      "start": 0,
+      "end": 7.0,
+      "beat": "close card",
+      "grade": ""
+    }
+  ],
+  "grade": "eq=brightness=0.02:contrast=1.06:saturation=1.05",
+  "overlays": [
+    {
+      "file": "cards_ind/cover_aerial.mp4",
+      "start_in_output": 9.95,
+      "duration": 10.418
+    },
+    {
+      "file": "cards_ind/cover_creek.mp4",
+      "start_in_output": 90.267,
+      "duration": 8.559
+    }
+  ],
+  "subtitles": "master_flood.ass",
+  "total_duration_s": 104.83
+}

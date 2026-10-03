@@ -279,9 +279,13 @@ can read it; **this is now the only copy.** Entry format is in `README.md`
 - Rule:       normalize every segment to ONE range and tag it explicitly at extraction
               (`scale=out_range=tv` at the end of the chain + `-color_range tv`). Check:
               the same card PNG must measure identical at every position in the output.
+              Sample the decoded Y plane directly for this check; converting a pixel
+              to grayscale RGB changes a limited-range value such as Y=216 to 233.
 - Scope:      video, audio-render, cards
 - Seen:       JL Interview 0905 (2026-09-28), found while checking Kyle's r01 frame of the
               closing card — already present in the accepted 戰俘營篇 r02.
+- Seen:       JL Interview 0905 four-film export (2026-10-03), self-eval — corrected
+              a grayscale-RGB measurement before accepting the final card check.
 
 ### L48 — per-segment AAC + stream-copy concat: the voice drifts behind the picture
 - Context:    render pipelines that encode each cut to its own MP4 with AAC audio and then

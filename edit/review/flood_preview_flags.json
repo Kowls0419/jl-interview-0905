@@ -1,0 +1,27 @@
+{
+  "video": "flood_preview.mp4",
+  "by": "Codex self-eval, 土石流篇 r01, 2026-10-03",
+  "flags": [
+    {
+      "t": 0,
+      "end": 8,
+      "title": "Standalone flood opening",
+      "note": "Does the existing 堰塞湖與土石流 card work as this film’s opening?",
+      "region": null
+    },
+    {
+      "t": 65.8,
+      "end": 69,
+      "title": "Professor correction",
+      "note": "The spoken subtitle is replaced by 「這樣應該是上面山崩土石堵住溪流」. Is the text and timing right?",
+      "region": null
+    },
+    {
+      "t": 97,
+      "end": 104.83,
+      "title": "Flood closer",
+      "note": "Does the creek closing card complete this separate film?",
+      "region": null
+    }
+  ]
+}

@@ -1,80 +1,25 @@
 {
   "video": "ind_preview.mp4",
-  "by": "Claude self-eval, Session 8",
+  "by": "Codex self-eval, 產業篇 r03, 2026-10-01",
   "flags": [
     {
-      "t": 0.5,
-      "end": 4.5,
-      "title": "r01 #7/#8 — kicker removed; card colour fixed",
-      "note": "新店礦業文化路徑 removed from the opening and closing cards. Also: the middle and closing cards were rendering darker than the opening one (a colour-range bug) — all three should now match.",
+      "t": 46.0,
+      "end": 51.0,
+      "title": "Coal introduction moved to kiln",
+      "note": "The original coal-discovery line is now in 焦炭窯篇. This passage now starts 「那包括我們塗潭里也有好幾個煤礦」. Does the cut from 樟腦 into coal and the next mine story sound natural?",
+      "region": null
+    },
+    {
+      "t": 196.9,
+      "end": 199.8,
+      "title": "Professor’s correction",
+      "note": "The subtitle now reads 「這樣應該是上面山崩土石堵住溪流」 exactly as you requested. Please confirm the placement and text.",
       "region": [
-        0.08,
-        0.28,
-        0.75,
-        0.72
-      ],
-      "id": 1
-    },
-    {
-      "t": 4.2,
-      "end": 7.5,
-      "title": "r01 #1 — now starts at 「你說」",
-      "note": "Cut moved into the silence before 你 (the old in-point sat inside her 對對對). Is the distortion gone?",
-      "id": 2
-    },
-    {
-      "t": 42.77,
-      "end": 46.27,
-      "title": "r01 #2 — 「那個塔」 cut out",
-      "note": "Now 「…然後再倒進 | 那個桶裡面蒸」. I placed the splice by the waveform, not by ear, and there is a small picture jump there. Does it sound natural?",
-      "id": 3
-    },
-    {
-      "t": 47.788,
-      "end": 57.73,
-      "title": "r01 #3 — photo push should be smooth now (all covers)",
-      "note": "Rebuilt: the photo is scaled once and moved with sub-pixel precision instead of re-sized to whole pixels every frame. Still see steps?",
-      "id": 4
-    },
-    {
-      "t": 130.06,
-      "end": 133.06,
-      "title": "r01 #4 — ends right after 「名字啊」",
-      "note": "Out-point moved 0.11 s earlier, to where the next voice starts. No clipped word now?",
-      "id": 5
-    },
-    {
-      "t": 142.511,
-      "end": 152.93,
-      "title": "r01 #5/#6 — your aerial, out on 「白天」",
-      "note": "The 470×468 image from your screenshot (no poster text), caption 「新潭路二段 土石流前的航照」. It now starts at 「我們這邊有一次土石流」 (earlier than before, so it isn't a 3-s flash) and ends as she says 白天. It's upscaled ~1.7× — soft; OK?",
-      "region": [
-        0.02,
-        0.02,
-        0.3,
-        0.1
-      ],
-      "id": 6
-    },
-    {
-      "t": 211.95,
-      "end": 221.75,
-      "title": "Lip sync (fixed in the renderer)",
-      "note": "The voice used to drift up to 0.35 s behind the picture by the end (AAC padding piling up at each cut). Now within a frame. Near the end of the long flood take (her, then 陳總's 「好在有預警」) — in sync?",
-      "id": 7
-    },
-    {
-      "t": 230.89,
-      "end": 237.19,
-      "title": "Closing card text (unanswered in r01)",
-      "note": "「發源於獅仔頭山北側 / 全長約 4.25 公里，匯入新店溪」 from prof's 磺窟溪 poster text. OK as the closer?",
-      "region": [
-        0.08,
-        0.28,
-        0.75,
-        0.72
-      ],
-      "id": 8
+        0.24,
+        0.82,
+        0.76,
+        0.96
+      ]
     }
   ]
 }

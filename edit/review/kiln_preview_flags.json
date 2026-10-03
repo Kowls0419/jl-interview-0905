@@ -1,0 +1,20 @@
+{
+  "video": "kiln_preview.mp4",
+  "by": "Codex self-eval, 焦炭窯篇 r04, 2026-10-03",
+  "flags": [
+    {
+      "t": 59.9,
+      "end": 61.4,
+      "title": "Coal passage tail",
+      "note": "The brief stray reply after 「堆煤的」 is cut. Does the handoff into the next shot sound clean?",
+      "region": null
+    },
+    {
+      "t": 74.4,
+      "end": 76.2,
+      "title": "Ending speech tail",
+      "note": "The brief stray reply after 「木馬道」 is cut while the final 「道」 stays audible. Does the transition into the closing card sound complete?",
+      "region": null
+    }
+  ]
+}

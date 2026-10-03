@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "sources": {
+    "5635": "/Users/kyle/Library/CloudStorage/GoogleDrive-kyleyang0419@gmail.com/Other computers/My iMac/2TB PURZ/Projects/2026/JL Interview 0905/raw footage/002A5635.MP4",
+    "OPEN": "/Users/kyle/Library/CloudStorage/GoogleDrive-kyleyang0419@gmail.com/Other computers/My iMac/2TB PURZ/Projects/2026/JL Interview 0905/edit/cards_kiln/open.mp4",
+    "MID": "/Users/kyle/Library/CloudStorage/GoogleDrive-kyleyang0419@gmail.com/Other computers/My iMac/2TB PURZ/Projects/2026/JL Interview 0905/edit/cards_kiln/mid.mp4",
+    "CLOSE": "/Users/kyle/Library/CloudStorage/GoogleDrive-kyleyang0419@gmail.com/Other computers/My iMac/2TB PURZ/Projects/2026/JL Interview 0905/edit/cards_kiln/close.mp4"
+  },
+  "ranges": [
+    {
+      "source": "OPEN",
+      "start": 0,
+      "end": 5.0,
+      "beat": "open card",
+      "grade": ""
+    },
+    {
+      "source": "5635",
+      "start": 145.62,
+      "end": 150.6,
+      "beat": "coal discovered and mined around 新店; moved from 產業篇"
+    },
+    {
+      "source": "5635",
+      "start": 398.82,
+      "end": 403.78,
+      "beat": "her father had carried the kiln product"
+    },
+    {
+      "source": "5635",
+      "start": 412.86,
+      "end": 424.82,
+      "beat": "carried it out; two trips a day"
+    },
+    {
+      "source": "5635",
+      "start": 435.58,
+      "end": 446.06,
+      "beat": "about 150 台斤 a trip, without stopping; omit false start 一趟是一百"
+    },
+    {
+      "source": "5635",
+      "start": 451.46,
+      "end": 455.98,
+      "beat": "two trips, leaving very early"
+    },
+    {
+      "source": "5635",
+      "start": 473.46,
+      "end": 475.46,
+      "beat": "seeing smoke from the kiln (stop before 台語)"
+    },
+    {
+      "source": "5635",
+      "start": 477.1,
+      "end": 478.52,
+      "beat": "queue quickly after the smoke signal; skip untranslated 台語"
+    },
+    {
+      "source": "MID",
+      "start": 0,
+      "end": 5.0,
+      "beat": "from mine to kiln, without unverified burn duration",
+      "grade": ""
+    },
+    {
+      "source": "5635",
+      "start": 484.26,
+      "end": 494.62,
+      "beat": "coal was stacked before burning; end before woman's reply"
+    },
+    {
+      "source": "5635",
+      "start": 705.36,
+      "end": 720.24,
+      "beat": "陳總: 三段 had its own power, kiln, coal piles, pits, 木馬道; end before woman's reply"
+    },
+    {
+      "source": "CLOSE",
+      "start": 0,
+      "end": 7.0,
+      "beat": "close card",
+      "grade": ""
+    }
+  ],
+  "grade": "eq=brightness=0.02:contrast=1.06:saturation=1.05",
+  "overlays": [
+    {
+      "file": "cards_kiln/cover_approach.mp4",
+      "start_in_output": 11.085,
+      "duration": 9.032
+    },
+    {
+      "file": "cards_kiln/cover_mouth.mp4",
+      "start_in_output": 22.617,
+      "duration": 7.959
+    },
+    {
+      "file": "cards_kiln/cover_interior.mp4",
+      "start_in_output": 64.957,
+      "duration": 3.55
+    },
+    {
+      "file": "cards_kiln/cover_exposed.mp4",
+      "start_in_output": 68.407,
+      "duration": 6.25
+    }
+  ],
+  "subtitles": "master_kiln.ass",
+  "total_duration_s": 82.7
+}

@@ -1,14 +1,12 @@
-"""產業篇 (long version) — build cards, photo covers, EDL and subtitles.
+"""焦炭窯篇 — build cards, photo covers, EDL and subtitles.
 
 Run from the project root with the video-use venv:
-    ~/.claude/skills/video-use/.venv/bin/python edit/build/industry.py
+    ~/.claude/skills/video-use/.venv/bin/python edit/build/kiln.py
 Then render (see the print at the end).
 
-Same approach and look as pow.py (戰俘營篇): look C cards, .ass subtitles with
-ink-balanced boxes, 29.97 fps. Differences: two sources (5635 + 5636), a middle
-card, and photo covers taken straight from prof's poster .docx files in
-`posters/` — images only; the posters' captions are shuffled between files, so
-every caption here is our own and no aerial carries a date it doesn't print.
+Same look as the accepted videos: paper cards, ink-balanced .ass subtitles,
+29.97 fps, and framed photo covers. This cut uses 5635 and the available
+LINE/poster photos. Poster captions are shuffled; all captions here are ours.
 """
 import json
 import math
@@ -24,10 +22,10 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 ROOT = Path(__file__).resolve().parents[2]
 EDIT = ROOT / "edit"
 FONTS = EDIT / "fonts"
-CARDS = EDIT / "cards_ind"
+CARDS = EDIT / "cards_kiln"
 POSTERS = ROOT / "posters"
-SRC = {"5635": ROOT / "raw footage" / "002A5635.MP4",
-       "5636": ROOT / "raw footage" / "002A5636.MP4"}
+LINE = ROOT / "photo import session 7"
+SRC = {"5635": ROOT / "raw footage" / "002A5635.MP4"}
 W, H = 1920, 1080
 FPS, FPS_F = "30000/1001", 30000 / 1001
 
@@ -41,28 +39,16 @@ CARD_S = {"OPEN": 5.0, "MID": 5.0, "CLOSE": 7.0}
 # Cards are ranges too, so the timeline is this one list.
 RANGES = [
     ("OPEN", 0, CARD_S["OPEN"], "open card"),
-    ("5636", 1166.60, 1181.95, "藍染 was earliest, then 樟腦 (陳總 corrected); starts at 你說 — "
-                               "對對對 runs on to 1166.30, cutting into it distorted (Dailies r01)"),
-    ("5636", 1236.14, 1247.62, "age 5-6: an old couple moved in next door"),
-    ("5636", 1256.16, 1261.30, "they built a thatch hut"),
-    ("5636", 1299.25, 1306.95, "shaved the camphor wood … 然後再倒進"),
-    ("5636", 1307.62, 1308.95, "那個桶裡面蒸 (「那個塔」 cut out, Dailies r01)"),
-    ("5635", 151.00, 154.42, "塗潭里 also had several coal mines; earlier discovery line moved to kiln"),
-    ("5635", 252.08, 268.30, "most mine bosses lost money; disasters killed several"),
-    ("5635", 281.52, 289.45, "after coal: mandarins"),
-    ("5635", 318.63, 331.70, "seedlings carried up on foot, every day"),
-    ("5635", 348.98, 357.25, "too little sun, small fruit, only good for juice"),
-    ("5635", 1442.65, 1452.75, "邵宗興, from the Japanese era — buying up mandarins"),
-    ("5635", 1589.56, 1603.40, "怪手林 cut the 三段 road for 邵宗興 (ends before 27:14)"),
-    ("5635", 1739.86, 1751.79, "a man who contributed a lot; the washing plant bears his name "
-                               "(ends before the next voice at ~1751.80, Dailies r01)"),
-    ("MID", 0, CARD_S["MID"], "mid card"),
-    ("5635", 1003.60, 1017.93, "民國58: the first debris flow she ever saw"),
-    ("5635", 1027.90, 1041.45, "ran down after school: every house gone, huge boulders"),
-    ("5635", 1134.38, 1145.05, "one morning — the washing workers from outside"),
-    ("5635", 1160.22, 1205.80, "no water at 6 am; 王財慶: the dam above is blocked, run; 陳總: no one died"),
-    ("5635", 1247.40, 1250.95, "陳總: water that should come and doesn't"),
-    ("5635", 1264.27, 1269.30, "陳總: it will happen again"),
+    ("5635", 145.62, 150.60, "coal discovered and mined around 新店; moved from 產業篇"),
+    ("5635", 398.82, 403.78, "her father had carried the kiln product"),
+    ("5635", 412.86, 424.82, "carried it out; two trips a day"),
+    ("5635", 435.58, 446.06, "about 150 台斤 a trip, without stopping; omit false start 一趟是一百"),
+    ("5635", 451.46, 455.98, "two trips, leaving very early"),
+    ("5635", 473.46, 475.46, "seeing smoke from the kiln (stop before 台語)"),
+    ("5635", 477.10, 478.52, "queue quickly after the smoke signal; skip untranslated 台語"),
+    ("MID", 0, CARD_S["MID"], "from mine to kiln, without unverified burn duration"),
+    ("5635", 484.26, 494.62, "coal was stacked before burning; end before woman's reply"),
+    ("5635", 705.36, 720.24, "陳總: 三段 had its own power, kiln, coal piles, pits, 木馬道; end before woman's reply"),
     ("CLOSE", 0, CARD_S["CLOSE"], "close card"),
 ]
 PUNCT = set("，。？！、-")
@@ -70,13 +56,7 @@ PUNCT = set("，。？！、-")
 # Authoritative spellings, applied AFTER OpenCC. Keys are written against the
 # converted (Traditional) text; every key's hits are counted and reported.
 SUB_FIXES = OrderedDict([
-    ("邵忠興", "邵宗興"),     # 宗興洗煤場 (proposal + 石碑 poster)
-    ("王才慶", "王財慶"),     # prof, 2026-09-26
-    ("這樣應該是上面水庫的水關起來了", "這樣應該是上面山崩土石堵住溪流"),  # prof, 2026-09-30
-    ("這裡路", "這里路"),   # Kyle, Dailies r03: 里 in this place reference
-    ("這個山段", "這個三段"),  # inferred from context — confirm by ear in review
-    ("趕，快", "趕快"),        # ASR put a comma inside 趕快
-    ("衝，沖", "沖，沖"),      # s2twp wrote 冲 two ways in one phrase
+    ("山段", "三段"),       # context; flag for Kyle to confirm by ear
     ("臺", "台"),
 ])
 
@@ -85,12 +65,10 @@ SUB_FIXES = OrderedDict([
 # or ("card", card name, seconds in). A cover never begins or ends within 1 s of
 # a cut; one that hands into a card runs 1 s into it (lesson L03).
 COVERS = [
-    ("coal", "煤礦", "image2.png", None, ("5635", 152.10), ("5635", 258.70)),
-    ("stele", "宗興洗煤場石碑", "image1.jpeg", "宗興洗煤場石碑", ("5635", 1744.70), ("card", "MID", 1.0)),
-    # image1 = the one captioned 「新潭路2段民國52年 淹塞湖事件前航照」 on the poster
-    # (Kyle's screenshot, Dailies r01); ends as she says 白天
-    ("aerial", "場中碳", "image1.png", "新潭路二段 土石流前的航照", ("5635", 1008.55), ("5635", 1028.92)),
-    ("creek", "磺窟溪.03", "image3.png", "磺窟溪", ("5635", 1248.45), ("card", "CLOSE", 1.0)),
+    ("approach", "line", "S__15073334_0.jpg", None, ("5635", 399.90), ("5635", 418.0)),
+    ("mouth", "line", "S__15073358_0.jpg", None, ("5635", 420.50), ("5635", 439.20)),
+    ("interior", "poster", "image1.png", "焦炭窯內部", ("5635", 709.50), ("5635", 713.05)),
+    ("exposed", "line", "S__15073346_0.jpg", "清理後的焦炭窯", ("5635", 712.95), ("5635", 719.20)),
 ]
 
 
@@ -144,19 +122,18 @@ def build_cards():
     CARDS.mkdir(parents=True, exist_ok=True)
     draw_block([
         ("新店區塗潭里", font(SERIF, 56), RUST, 0),
-        ("藍染、樟腦、煤礦、柑橘", font(SERIF, 78), INK, 60),
-        ("一座山的產業變遷", font(SERIF, 78), INK, 36),
+        ("塗潭焦炭窯", font(SERIF, 86), INK, 60),
+        ("一座山的煤礦記憶", font(SERIF, 64), INK, 36),
     ], CARDS / "open.png")
     draw_block([
-        ("塗潭里", font(SERIF, 56), RUST, 0),
-        ("堰塞湖與土石流", font(SERIF, 78), INK, 60),
+        ("從礦坑到焦炭窯", font(SERIF, 78), INK, 0),
+        ("煤炭在這裡堆放、燒製", font(SERIF, 64), RUST, 44),
     ], CARDS / "mid.png")
     draw_block([
-        ("磺窟溪", font(SERIF, 56), RUST, 0),
-        ("發源於獅仔頭山北側", font(SERIF, 78), INK, 60),
-        ("全長約 4.25 公里，匯入新店溪", font(SERIF, 64), INK, 36),
-    ], CARDS / "close.png")    # no 新店礦業文化路徑 kicker (Dailies r01)
-    for k in CARD_S:
+        ("搶救塗潭焦炭窯", font(SERIF, 82), INK, 0),
+        ("測繪調查與社區共守", font(SERIF, 58), RUST, 44),
+    ], CARDS / "close.png")
+    for k in ("OPEN", "MID", "CLOSE"):
         card_mp4(CARDS / f"{k.lower()}.png", CARD_S[k], CARDS / f"{k.lower()}.mp4")
 
 
@@ -197,8 +174,11 @@ def ease_in_out(t):
     return 4 * t ** 3 if t < 0.5 else 1 - (-2 * t + 2) ** 3 / 2
 
 
-def poster_image(docx, member):
-    with zipfile.ZipFile(POSTERS / f"{docx}.docx") as z:
+def photo_image(kind, member):
+    if kind == "line":
+        return Image.open(LINE / member).convert("RGB")
+    assert kind == "poster"
+    with zipfile.ZipFile(POSTERS / "站5焦炭窯.docx") as z:
         from io import BytesIO
         return Image.open(BytesIO(z.read(f"word/media/{member}"))).convert("RGB")
 
@@ -217,9 +197,9 @@ def caption_layer(text):
     return lay
 
 
-def build_cover(name, docx, member, caption, seconds, out_dir=CARDS):
+def build_cover(name, kind, member, caption, seconds, out_dir=CARDS):
     """Photo framed on a blurred, darkened copy of itself; slow push-in."""
-    src = poster_image(docx, member)
+    src = photo_image(kind, member)
     # background: fill the frame, blur, darken
     s = max(W / src.width, H / src.height)
     bg = src.resize((round(src.width * s), round(src.height * s)), Image.LANCZOS)
@@ -267,7 +247,7 @@ def srt_time(t):
     return f"{ms // 3600000:02d}:{ms // 60000 % 60:02d}:{ms // 1000 % 60:02d},{ms % 1000:03d}"
 
 
-def build_srt(offs, stem="ind"):
+def build_srt(offs):
     words = {k: json.load(open(EDIT / "transcripts" / f"002A{k}.json"))["words"] for k in SRC}
     cc = opencc.OpenCC("s2twp")
     hits = {k: 0 for k in SUB_FIXES}
@@ -275,7 +255,11 @@ def build_srt(offs, stem="ind"):
     for ri, (src, a, b, _) in enumerate(RANGES):
         if src not in SRC:
             continue
-        inside = [w for w in words[src] if w["start"] >= a - 0.01 and w["end"] <= b + 0.01]
+        # At the final cut the audible 道 ends before the ASR's 720.28 stamp;
+        # keep it in the subtitle while cutting the next speaker's early reply.
+        inside = [w for w in words[src] if w["start"] >= a - 0.01 and
+                  (w["end"] <= b + 0.01 or
+                   (b == 720.24 and w["text"] == "道" and 720.0 <= w["start"] <= 720.05))]
         events = [w["text"] for w in inside if w["type"] == "audio_event"]
         assert not any("台" in e or "方言" in e for e in events), f"range {ri} has an unfilled dialect gap: {events}"
         seg = [w for w in inside if w["type"] == "word"]
@@ -331,7 +315,7 @@ def build_srt(offs, stem="ind"):
     for i in range(len(cues) - 1):
         s, e, t, r = cues[i]
         cues[i] = (s, min(e, cues[i + 1][0] - 0.04), t, r)
-    with open(EDIT / f"master_{stem}.srt", "w") as f:
+    with open(EDIT / "master_kiln.srt", "w") as f:
         for i, (s, e, t, _) in enumerate(cues, 1):
             f.write(f"{i}\n{srt_time(s)} --> {srt_time(e)}\n{t}\n\n")
     for k, n in hits.items():
@@ -350,7 +334,7 @@ def ass_time(t):
     return f"{cs // 360000}:{cs // 6000 % 60:02d}:{cs // 100 % 60:02d}.{cs % 100:02d}"
 
 
-def build_ass(cues, stem="ind"):
+def build_ass(cues):
     f = font(SANS, SUB_SIZE)
     asc, desc = f.getmetrics()
     ref = f.getbbox("國說嗎關", anchor="ls")
@@ -383,10 +367,10 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         t0, t1 = ass_time(s0), ass_time(e0)
         lines.append(f"Dialogue: 0,{t0},{t1},Box,,0,0,0,,{{\\pos({x0:.0f},{y0:.0f})\\p1}}m 0 0 l {bw:.0f} 0 {bw:.0f} {box_h:.0f} 0 {box_h:.0f}{{\\p0}}")
         lines.append(f"Dialogue: 1,{t0},{t1},Text,,0,0,0,,{{\\pos({W / 2:.0f},{ty:.1f})}}{txt}")
-    (EDIT / f"master_{stem}.ass").write_text(head + "\n".join(lines) + "\n")
+    (EDIT / "master_kiln.ass").write_text(head + "\n".join(lines) + "\n")
 
 
-def build_edl(total, overlays, stem="ind"):
+def build_edl(total, overlays):
     sources = {k: str(v) for k, v in SRC.items()}
     sources.update({k: str(CARDS / f"{k.lower()}.mp4") for k in CARD_S})
     ranges = []
@@ -401,20 +385,20 @@ def build_edl(total, overlays, stem="ind"):
         "ranges": ranges,
         "grade": "eq=brightness=0.02:contrast=1.06:saturation=1.05",
         "overlays": overlays,
-        "subtitles": f"master_{stem}.ass",
+        "subtitles": "master_kiln.ass",
         "total_duration_s": round(total, 2),
     }
-    (EDIT / f"edl_{stem}.json").write_text(json.dumps(edl, ensure_ascii=False, indent=2))
+    (EDIT / "edl_kiln.json").write_text(json.dumps(edl, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":
     build_cards()
     offs, total = offsets()
     overlays = []
-    for name, docx, member, caption, a, b in COVERS:
+    for name, kind, member, caption, a, b in COVERS:
         t0, t1 = out_time(a, offs), out_time(b, offs)
-        build_cover(name, docx, member, caption, t1 - t0)
-        overlays.append({"file": f"cards_ind/cover_{name}.mp4", "start_in_output": round(t0, 3),
+        build_cover(name, kind, member, caption, t1 - t0)
+        overlays.append({"file": f"cards_kiln/cover_{name}.mp4", "start_in_output": round(t0, 3),
                          "duration": round(t1 - t0, 3)})
         print(f"    at {t0:.2f}–{t1:.2f}")
     cues = build_srt(offs)
@@ -422,5 +406,5 @@ if __name__ == "__main__":
     build_edl(total, overlays)
     print(f"cards + {len(COVERS)} covers + {len(cues)} subtitle cues + EDL written; expected duration {total:.2f}s")
     print("render: ~/.claude/skills/video-use/.venv/bin/python ~/.claude/skills/video-use/helpers/render.py "
-          "edit/edl_ind.json -o edit/ind_preview.mp4 --preview --no-loudnorm --fps 30000/1001 "
+          "edit/edl_kiln.json -o edit/kiln_preview.mp4 --preview --no-loudnorm --fps 30000/1001 "
           "--fonts-dir edit/fonts --sub-style \"Encoding=1\"")

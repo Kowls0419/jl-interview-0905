@@ -6,7 +6,7 @@ Kyle's Drive only). Same client, same association, new shoot.
 
 **Who's who** (陳總 = 陳國超 = "prof", Hoho, JL, speaker IDs) is in the root
 `README.md` — read it before this file. **Video names:** 焦炭窯篇 · 戰俘營篇 ·
-產業篇. Older entries say "V1–V3" for the *0613 set*; Session 4's
+產業篇 · 土石流篇. Older entries say "V1–V3" for the *0613 set*; Session 4's
 "V1 焦炭窯 · V2 戰俘營 · V3 產業…" is this project's working split under the old
 labels. Notes tagged *(Kyle's machine)* refer to paths/hosts only he has.
 
@@ -17,9 +17,9 @@ say who did what if both were involved (e.g. "JL ran Dailies round r02").
 To answer "what did JL do last time": the latest `— JL` entry here, plus
 `git log --author` for his commits.
 
-**Status (as of 2026-09-29):** 戰俘營篇 accepted (r04, 1:53) · 產業篇 long version
-accepted (Dailies r02, 3:57) — ready to show prof · 焦炭窯篇 planned from the
-existing LINE and poster photos, story shape waiting on Kyle. See Session 9.
+**Status (as of 2026-10-03):** 戰俘營篇 accepted (r04) · four Chinese-named
+professor review MP4s prepared on Drive · the new 產業篇 / 土石流篇 split and latest
+焦炭窯篇 sound-tail trims still await Kyle's Dailies verdicts. See Session 10.
 
 ## Session 1 — 2026-09-18 — Kyle (`/video-use init` — inventory, no cutting)
 
@@ -866,3 +866,76 @@ no new recurring lesson was added.
 4. Later, deliberately merge upstream's 4 commits into the fork (includes an
    fps-default change, so re-check renders afterwards).
 5. `temp/` still holds the 怪手林 clips from 2026-09-27 — delete if unwanted.
+
+## Session 10 — 2026-09-30 → 10-03 — Kyle (four professor review files)
+
+Codex drove the edit and exports while Kyle reviewed the Dailies rounds and
+made the cut and audio decisions. Claude checked the first kiln draft and wrote
+the starting handoff. JL made no changes during this session.
+
+**Strategy:** finish 戰俘營篇 and 焦炭窯篇, then follow prof's 2026-10-03 decision
+to split the former long 產業篇 into separate 產業篇 and 土石流篇. Keep the existing
+paper-card, framed-photo, burned Traditional Chinese subtitle look. Prepare
+four files named with `篇` for Kyle to show prof.
+
+**Decisions:** Kyle kept the tighter 82.7-second 焦炭窯篇 cut despite the original
+≥90-second brief. Kyle also approved a fixed −1.5 dB audio gain for all four
+review files. The long industry cut remains as its own earlier version; the new
+產業篇 uses its industry half and a new closing card, while 土石流篇 begins with
+the former middle card. No single-pass loudnorm was used. The final files are:
+
+- `edit/戰俘營篇.mp4` — 112.768 s
+- `edit/產業篇.mp4` — 137.971 s
+- `edit/土石流篇.mp4` — 104.832 s
+- `edit/焦炭窯篇.mp4` — 82.709 s
+
+The four full-quality, unattenuated masters remain as `edit/final_pow.mp4`,
+`edit/final_industry.mp4`, `edit/final_flood.mp4`, and `edit/final_kiln.mp4`.
+Media stays on Drive and outside git.
+
+**Review and changes:** 焦炭窯篇 r01 received 9 notes; r02 received 4; r03
+received 2, with all four r03 flags marked OK. The r03 notes asked to remove
+brief stray replies after 「堆煤的」 and 「木馬道」. Codex trimmed those tails,
+kept the audible final 「道」 in the subtitle, and built the current 82.709-second
+cut. Kyle has not yet reviewed that last trim in r04. The long 產業篇 r03 received
+1 note and both flags OK. Kyle's note changed 「這裡路」 to 「這里路」; the correction
+fires once in the new 產業篇. The professor's instruction replaced one spoken
+subtitle in 土石流篇 with 「這樣應該是上面山崩土石堵住溪流」; it fires once. The old 24-hour
+kiln claim is removed.
+
+**Verification:** rebuilt all EDLs, cards, SRT and ASS before full-quality
+renders. The four review files are 1920×1080 at 30000/1001 fps, with durations
+matching their previews. Rendered card paper measures Y=216. Final-composite
+frames show the 「這里路」 and landslide corrections. Audio mean levels are about
+1.5 dB below the full-quality masters. New Dailies flags cover the two kiln
+tails and the opening/closing transitions of the two split films; those versions
+have no completed Dailies round yet.
+
+**Reasoning log:** the professor requested a four-film set, so the split uses
+the approved material and cut point rather than reopening the long version's
+story. The review files sit directly in `edit/`, where video-use already reads
+and writes MP4 output, and are named for the professor's review. They have not
+been sent to prof or LINE. The 82.7-second kiln runtime is Kyle's explicit
+choice; the brief's ≥90-second minimum remains a known exception.
+
+**Reflect:** one self-check initially measured card brightness after RGB gray
+conversion and got 233 instead of the encoded Y=216; the direct-Y check
+corrected it. Strengthened the existing colour-range lesson. A system Python
+build attempt lacked `opencc`; rerunning under the skill virtual environment
+resolved it before any render. No new lesson was needed for that environment
+mistake because the skill already names its interpreter.
+
+**Outstanding:**
+1. Kyle reviews the latest kiln tail trims in Dailies r04 and the separate
+   產業篇 / 土石流篇 cuts in their first rounds. The four review files are ready
+   to show prof; no prof verdict has been recorded on this four-film set.
+2. The original ≥90-second minimum conflicts with Kyle's approved 82.7-second
+   kiln cut. If prof requires the minimum, add distinct material after his review.
+3. Kyle's open source questions: 游月里 (poster) vs 尤 — confirm with her before
+   any name card · *gala* spelling · 「下層里」 (5635 07:07) · 政三煤礦
+   (5635 02:38) · the 10 台語 gaps in the shortlisted kiln passages.
+4. JL's first-time setup against the README; JL must `git pull` the video-use
+   fork before rendering because `render.py` changed.
+5. Later, deliberately merge upstream's four commits into the fork, including
+   its fps-default change, and re-check renders afterwards.
+6. `temp/` still holds the 怪手林 clips from 2026-09-27; delete if unwanted.

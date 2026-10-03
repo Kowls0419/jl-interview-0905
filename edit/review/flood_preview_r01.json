@@ -1,0 +1,40 @@
+{
+  "video": "flood_preview.mp4",
+  "round": 1,
+  "fps": 29.97,
+  "created": "2026-10-03T15:21:06+00:00",
+  "notes": [],
+  "next_i": 0,
+  "flags": [
+    {
+      "id": 1,
+      "t": 0.0,
+      "end": 8.0,
+      "tc": "0:00.000",
+      "title": "Standalone flood opening",
+      "note": "Does the existing 堰塞湖與土石流 card work as this film’s opening?",
+      "region": null,
+      "verdict": "ok"
+    },
+    {
+      "id": 2,
+      "t": 65.8,
+      "end": 69.0,
+      "tc": "1:05.800",
+      "title": "Professor correction",
+      "note": "The spoken subtitle is replaced by 「這樣應該是上面山崩土石堵住溪流」. Is the text and timing right?",
+      "region": null,
+      "verdict": "ok"
+    },
+    {
+      "id": 3,
+      "t": 97.0,
+      "end": 104.83,
+      "tc": "1:37.000",
+      "title": "Flood closer",
+      "note": "Does the creek closing card complete this separate film?",
+      "region": null,
+      "verdict": "ok"
+    }
+  ]
+}

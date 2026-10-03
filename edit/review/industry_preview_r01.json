@@ -1,0 +1,40 @@
+{
+  "video": "industry_preview.mp4",
+  "round": 1,
+  "fps": 29.97,
+  "created": "2026-10-03T15:18:54+00:00",
+  "notes": [],
+  "next_i": 0,
+  "flags": [
+    {
+      "id": 1,
+      "t": 0.0,
+      "end": 8.0,
+      "tc": "0:00.000",
+      "title": "Standalone opening",
+      "note": "Does the opening card introduce this as a separate 產業篇?",
+      "region": null,
+      "verdict": "ok"
+    },
+    {
+      "id": 3,
+      "t": 117.3,
+      "end": 119.2,
+      "tc": "1:57.300",
+      "title": "Subtitle spelling",
+      "note": "The road line uses your requested 「這里路」. Is it correct on screen?",
+      "region": null,
+      "verdict": "ok"
+    },
+    {
+      "id": 2,
+      "t": 129.0,
+      "end": 137.97,
+      "tc": "2:09.000",
+      "title": "New industry closer",
+      "note": "Does the new ending feel complete after the washing plant, with no flood segment attached?",
+      "region": null,
+      "verdict": "ok"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "video": "kiln_preview.mp4",
+  "round": 4,
+  "fps": 29.97,
+  "created": "2026-10-03T15:18:01+00:00",
+  "notes": [],
+  "next_i": 0,
+  "flags": [
+    {
+      "id": 1,
+      "t": 59.9,
+      "end": 61.4,
+      "tc": "0:59.900",
+      "title": "Coal passage tail",
+      "note": "The brief stray reply after 「堆煤的」 is cut. Does the handoff into the next shot sound clean?",
+      "region": null,
+      "verdict": "ok"
+    },
+    {
+      "id": 2,
+      "t": 74.4,
+      "end": 76.2,
+      "tc": "1:14.400",
+      "title": "Ending speech tail",
+      "note": "The brief stray reply after 「木馬道」 is cut while the final 「道」 stays audible. Does the transition into the closing card sound complete?",
+      "region": null,
+      "verdict": "ok"
+    }
+  ]
+}

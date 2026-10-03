@@ -17,9 +17,9 @@ say who did what if both were involved (e.g. "JL ran Dailies round r02").
 To answer "what did JL do last time": the latest `— JL` entry here, plus
 `git log --author` for his commits.
 
-**Status (as of 2026-10-03):** 戰俘營篇 accepted (r04) · four Chinese-named
-professor review MP4s prepared on Drive · the new 產業篇 / 土石流篇 split and latest
-焦炭窯篇 sound-tail trims still await Kyle's Dailies verdicts. See Session 10.
+**Status (as of 2026-10-03):** All four Chinese-named professor review MP4s
+are on Drive and accepted by Kyle: 戰俘營篇 r04 · 產業篇 r01 · 土石流篇 r01 ·
+焦炭窯篇 r04. They await the professor's review. See Session 10.
 
 ## Session 1 — 2026-09-18 — Kyle (`/video-use init` — inventory, no cutting)
 
@@ -897,19 +897,22 @@ Media stays on Drive and outside git.
 received 2, with all four r03 flags marked OK. The r03 notes asked to remove
 brief stray replies after 「堆煤的」 and 「木馬道」. Codex trimmed those tails,
 kept the audible final 「道」 in the subtitle, and built the current 82.709-second
-cut. Kyle has not yet reviewed that last trim in r04. The long 產業篇 r03 received
-1 note and both flags OK. Kyle's note changed 「這裡路」 to 「這里路」; the correction
+cut. Kyle accepted the last trim in r04: 0 notes and both flags OK. The long
+產業篇 r03 received 1 note and both flags OK. Kyle's note changed 「這裡路」 to
+「這里路」; the correction
 fires once in the new 產業篇. The professor's instruction replaced one spoken
 subtitle in 土石流篇 with 「這樣應該是上面山崩土石堵住溪流」; it fires once. The old 24-hour
-kiln claim is removed.
+kiln claim is removed. Kyle also accepted the new split 產業篇 and 土石流篇 in
+their first Dailies rounds: 0 notes each; all six flags OK. No annotated frames
+or further video changes were needed. 戰俘營篇 had already been accepted in r04.
 
 **Verification:** rebuilt all EDLs, cards, SRT and ASS before full-quality
 renders. The four review files are 1920×1080 at 30000/1001 fps, with durations
 matching their previews. Rendered card paper measures Y=216. Final-composite
 frames show the 「這里路」 and landslide corrections. Audio mean levels are about
-1.5 dB below the full-quality masters. New Dailies flags cover the two kiln
-tails and the opening/closing transitions of the two split films; those versions
-have no completed Dailies round yet.
+1.5 dB below the full-quality masters. The last three Dailies rounds were all
+accepted with 0 notes and all eight flags OK. Their review JSONs are in
+`edit/review/`.
 
 **Reasoning log:** the professor requested a four-film set, so the split uses
 the approved material and cut point rather than reopening the long version's
@@ -924,11 +927,14 @@ corrected it. Strengthened the existing colour-range lesson. A system Python
 build attempt lacked `opencc`; rerunning under the skill virtual environment
 resolved it before any render. No new lesson was needed for that environment
 mistake because the skill already names its interpreter.
+The final three Dailies rounds required no corrections, so no new lesson
+qualified. Kiln's note counts fell 9 → 4 → 2 → 0; both new split films had
+0 notes in their first rounds.
 
 **Outstanding:**
-1. Kyle reviews the latest kiln tail trims in Dailies r04 and the separate
-   產業篇 / 土石流篇 cuts in their first rounds. The four review files are ready
-   to show prof; no prof verdict has been recorded on this four-film set.
+1. The four Kyle-accepted review files are ready to show prof; no prof verdict
+   has been recorded on this four-film set. Copies in sibling `../exports` were
+   verified byte-for-byte and synced to Drive.
 2. The original ≥90-second minimum conflicts with Kyle's approved 82.7-second
    kiln cut. If prof requires the minimum, add distinct material after his review.
 3. Kyle's open source questions: 游月里 (poster) vs 尤 — confirm with her before

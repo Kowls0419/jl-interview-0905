@@ -38,7 +38,8 @@ if __name__ == "__main__":
     base.build_cards()
     base.CARD_S["IND_CLOSE"] = 7.0
     from cards import credits_card
-    credits_card(base.CARDS / "ind_close.png")      # the credits card is the closer
+    credits_card(base.CARDS / "ind_close.png", title="塗潭社區社區產業演進",
+                 guiding_unit="文化部文資局")      # 產業篇 credits
     base.card_mp4(base.CARDS / "ind_close.png", base.CARD_S["IND_CLOSE"],
                   base.CARDS / "ind_close.mp4")
 

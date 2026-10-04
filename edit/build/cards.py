@@ -67,19 +67,21 @@ CREDITS = [
 ]
 
 
-def credits_card(out, extra_rows=()):
-    """Series title + credits. extra_rows: [(label, value)] appended (e.g. 資料來源)."""
-    rows = CREDITS + list(extra_rows)
+def credits_card(out, extra_rows=(), *, title=CREDITS_TITLE, guiding_unit=None):
+    """Film title + credits; optional per-film guide and appended source rows."""
+    rows = [(label, guiding_unit if label == "指導單位" and guiding_unit is not None else value)
+            for label, value in CREDITS] + list(extra_rows)
     f_t, f_label, f_value = _font(SERIF, 56), _font(SANS, 36), _font(SERIF, 52)
     step, value_x = 92, 520
     im = Image.new("RGB", (W, H), PAPER)
     d = ImageDraw.Draw(im)
-    tb = d.textbbox((0, 0), CREDITS_TITLE, font=f_t, anchor="ls")
+    tb = d.textbbox((0, 0), title, font=f_t, anchor="ls")
     block_h = (-tb[1]) + 70 + step * (len(rows) - 1) + 52
     y0 = (H - block_h) // 2
-    _guard(f_t, CREDITS_TITLE)
+    _guard(f_t, title)
+    assert d.textlength(title, font=f_t) < W - LABEL_X - 160, f"credit title too wide: {title}"
     y_t = y0 - tb[1]
-    d.text((LABEL_X, y_t), CREDITS_TITLE, font=f_t, fill=RUST, anchor="ls")
+    d.text((LABEL_X, y_t), title, font=f_t, fill=RUST, anchor="ls")
     y = y_t + 70 + 52
     for label, value in rows:
         _guard(f_label, label); _guard(f_value, value)

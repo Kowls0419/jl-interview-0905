@@ -17,9 +17,9 @@ say who did what if both were involved (e.g. "JL ran Dailies round r02").
 To answer "what did JL do last time": the latest `— JL` entry here, plus
 `git log --author` for his commits.
 
-**Status (as of 2026-10-03):** All four Chinese-named professor review MP4s
-are on Drive and accepted by Kyle: 戰俘營篇 r04 · 產業篇 r01 · 土石流篇 r01 ·
-焦炭窯篇 r04. They await the professor's review. See Session 10.
+**Status (as of 2026-10-05):** All four films are Public on YouTube in the
+搶救塗潭焦炭窯｜口述影像 playlist. Prof approved 戰俘營篇 and 焦炭窯篇; the revised
+credits in 產業篇 and 土石流篇 still await his confirmation. See Session 12.
 
 ## Session 1 — 2026-09-18 — Kyle (`/video-use init` — inventory, no cutting)
 
@@ -106,7 +106,7 @@ actually run the tour. A 審查意見 review-comments item is also raised.
   own power plant, its own stockpiles, its own small pits, a 木馬道 — unlike 三峽 or
   瑪陵坑 where 焦炭窯 sat next to easy transport. Plus the 新店↔萬華 class/economy tie.
 - **16:01–20:45** The **民國58 (1969) 土石流**. Trucks had replaced carrying; 輕便車
-  hauled coal. Then the debris flow — she ran down after school to find every
+  hauled coal. Then the debris flow — she ran down after class to find every
   house gone, huge boulders and mud. The warning sign: a washing worker found the
   water had stopped at ~6 am; 王才慶 (mid-20s, just out of the army) realised the
   reservoir above must be blocked and told everyone to run.
@@ -952,3 +952,109 @@ qualified. Kiln's note counts fell 9 → 4 → 2 → 0; both new split films had
 - Re-rendered the four masters and the −1.5 dB review copies. Lengths: 戰俘營篇 113.7 s, 產業篇 138.0 s, 土石流篇 104.8 s, 焦炭窯篇 82.7 s. Footage and audio before the end are identical to the earlier versions (frames at 10/30/60 s and mean/peak levels); paper Y=216 on opening and credits cards. Review copies are in `exports/` inside the project folder.
 - Spelling: the interviewee is **游月裡** (as signed), not 尤月里. Fixed in README and this log.
 - YouTube series title for this set: **搶救塗潭焦炭窯**. Prof approved four films.
+
+## Session 11 — 2026-10-05 — Kyle (prof's credits corrections)
+
+Codex drove the two credits revisions. Kyle relayed prof's exact LINE wording
+and identified the screenshot order: image 8 is 產業篇, image 9 is 土石流篇.
+The third screenshot grouped 戰俘營篇 and 焦炭窯篇 in red; prof said the red
+group is OK. JL made no changes in this session.
+
+**Strategy and decisions:** keep the accepted edits and update only the last
+credits scene in the blue-group films. 產業篇 now says
+「塗潭社區社區產業演進」; 土石流篇 says「塗潭社區社區環境災害」.
+Both say「指導單位　文化部文資局」. The repeated「社區」 follows prof's message
+exactly. 戰俘營篇 and 焦炭窯篇 keep their existing title and 指導單位.
+
+**Build and verification:** `edit/build/cards.py` now accepts a per-film
+credits title and guiding unit without changing the default for the red group.
+`industry.py` builds the 土石流篇 card, and `split_industry.py` builds the
+產業篇 card. Rebuilt both EDLs and card MP4s with the video-use virtual
+environment; tracked EDLs and subtitles did not change. Rendered full-quality
+masters with no loudnorm, then made fixed −1.5 dB AAC review copies with video
+stream copy. Both rendered credits were opened and checked against Kyle's
+message. Decoded frames before the credits match the previous exports at
+2/30/60/120 s (產業篇) and 2/30/60/90 s (土石流篇). Export format remains
+1920×1080 at 30000/1001, durations 137.9708/104.832 s, and paper Y=216.
+Speech mean in a matched 30–40 s sample fell exactly 1.5 dB in both exports.
+The revised edit and project-local `exports/` copies are byte-identical;
+the red-group export hashes did not change. Google Drive's browser shows
+exactly four files in this project's `exports/` folder. The two revised
+file IDs match DriveFS metadata with the new local byte sizes (131199270 and
+89155992 bytes), and its operation and upload queues are empty. An older
+土石流篇 metadata row remains cached locally but does not appear in Drive's
+folder view; no duplicate was removed.
+
+**Reflect:** prof supplied new wording, rather than finding a preventable
+editing error. No new lesson qualified. The exact text was checked on the
+rendered composite, not only on the source PNG.
+
+**Outstanding:**
+1. Kyle can show the revised `exports/產業篇.mp4` and `exports/土石流篇.mp4`
+   to prof. No revised version has been sent by Codex. Prof's confirmation
+   of these revisions remains open; the red-group films are OK.
+2. Kyle's remaining source questions: *gala* spelling · 「下層里」 (5635 07:07)
+   · 政三煤礦 (5635 02:38) · the 10 台語 gaps in the shortlisted kiln passages.
+   The interviewee spelling is resolved as 游月裡 from her signed consent form.
+3. JL's first-time setup against the README; JL must `git pull` the video-use
+   fork before rendering because `render.py` changed.
+4. Later, deliberately merge upstream's four commits into the fork, including
+   the fps-default change, and re-check renders afterwards.
+5. `temp/` still holds the 怪手林 clips from 2026-09-27; delete if unwanted.
+6. The optional other-photo request remains in `docs/questions_for_professor.md`.
+
+## Session 12 — 2026-10-05 — Kyle (YouTube publication)
+
+Codex drove the YouTube metadata, publishing, playlist order, public README,
+and factual production timeline. Kyle selected the four local MP4s in the
+native upload picker, chose Public visibility, requested AI-use Yes and each
+film's featured location, and decided to add custom thumbnails himself later.
+Claude made an initial thumbnail set, then discussed a new visual theme and
+frame options with Kyle in the other cmux pane. JL made no changes.
+
+**Strategy and decisions:** use the four verified `exports/*.mp4` files and
+Claude's `private/youtube_0905.md` title/description draft. The two revised
+films' YouTube descriptions say「指導單位｜文化部文資局」; the approved red-group
+films retain「新北市政府文化局」. All four videos are Public, marked not made for
+kids, marked AI use Yes at Kyle's request, and set to Chinese (Traditional).
+The 產業篇、土石流篇、焦炭窯篇 location is the YouTube result for 塗潭里;
+戰俘營篇 uses 磺窟戰俘營紀念碑. No custom thumbnail was attached. YouTube's
+automatic thumbnails remain until Kyle chooses and uploads his own.
+
+**Published videos and playlist:**
+
+1. 產業篇 — 2:18 — https://youtu.be/F7Pn8-HIm2w
+2. 土石流篇 — 1:45 — https://youtu.be/odgVTGZ_kWg
+3. 焦炭窯篇 — 1:23 — https://youtu.be/eWMPvhX_uqo
+4. 戰俘營篇 — 1:54 — https://youtu.be/gi6nBEnOoEw
+5. Public playlist, manually ordered as above — https://www.youtube.com/playlist?list=PLNQi8ivhM3Y0
+
+**Verification:** checked every description chapter start against the current
+EDL range boundaries; all four sets match to the nearest second. Studio
+confirmed `Video published` for each file, and the refreshed playlist showed
+Public / four videos in the intended order with the correct IDs. Studio's
+checks reported no issues for 焦炭窯篇、土石流篇、戰俘營篇 before publication.
+產業篇's copyright check was still running unusually long at publication;
+Studio allowed publication and had reported no issue. Recheck that result.
+No video file was edited or re-rendered for YouTube.
+
+**Reflect:** Kyle changed the thumbnail direction after seeing Claude's first
+set; that was a design preference, so no recurring editing lesson was added.
+A YouTube search for the kiln's name returned a location in Keelung; Codex
+checked the city and used 塗潭里 instead, before saving a wrong location. No
+published metadata required correction after a user's review in this session.
+
+**Outstanding:**
+1. Recheck 產業篇's unusually slow YouTube copyright check and any later
+   notices. Kyle will choose and upload the custom thumbnails after Claude's
+   new-theme frame options.
+2. Prof's confirmation of the revised 產業篇 and 土石流篇 credits remains open;
+   戰俘營篇 and 焦炭窯篇 were already OK. No video link was sent to prof by Codex.
+3. Kyle's source questions: *gala* spelling ·「下層里」(5635 07:07) · 政三煤礦
+   (5635 02:38) · the 10 台語 gaps in the shortlisted kiln passages.
+4. JL's first-time setup against the collaboration workflow; JL must pull
+   Kyle's video-use fork before rendering because `render.py` changed.
+5. Later, deliberately merge upstream's four commits into the fork, including
+   the fps-default change, and re-check renders afterwards.
+6. `temp/` still holds the 怪手林 clips from 2026-09-27; delete if unwanted.
+7. The optional other-photo request remains in `docs/questions_for_professor.md`.

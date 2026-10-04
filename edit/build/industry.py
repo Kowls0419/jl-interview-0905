@@ -58,7 +58,7 @@ RANGES = [
                                "(ends before the next voice at ~1751.80, Dailies r01)"),
     ("MID", 0, CARD_S["MID"], "mid card"),
     ("5635", 1003.60, 1017.93, "民國58: the first debris flow she ever saw"),
-    ("5635", 1027.90, 1041.45, "ran down after school: every house gone, huge boulders"),
+    ("5635", 1027.90, 1041.45, "ran down after class: every house gone, huge boulders"),
     ("5635", 1134.38, 1145.05, "one morning — the washing workers from outside"),
     ("5635", 1160.22, 1205.80, "no water at 6 am; 王財慶: the dam above is blocked, run; 陳總: no one died"),
     ("5635", 1247.40, 1250.95, "陳總: water that should come and doesn't"),
@@ -145,7 +145,8 @@ def build_cards():
     from cards import open_card, credits_card
     open_card("新店區塗潭里", "塗潭里的產業變遷", "藍染、樟腦、煤礦、柑橘", CARDS / "open.png")
     open_card("新店區塗潭里", "堰塞湖與土石流", "民國 58 年的土石流記憶", CARDS / "mid.png")   # 土石流篇's opener
-    credits_card(CARDS / "close.png")    # the credits card is the closer
+    credits_card(CARDS / "close.png", title="塗潭社區社區環境災害",
+                 guiding_unit="文化部文資局")    # 土石流篇 credits
     for k in CARD_S:
         card_mp4(CARDS / f"{k.lower()}.png", CARD_S[k], CARDS / f"{k.lower()}.mp4")
 

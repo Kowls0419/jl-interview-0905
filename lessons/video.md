@@ -280,6 +280,10 @@ This is the only copy of the video lessons; Kyle's reflect ledger links here.
               closing card — already present in the accepted 戰俘營篇 r02.
 - Seen:       JL Interview 0905 four-film export (2026-10-03), self-eval — corrected
               a grayscale-RGB measurement before accepting the final card check.
+- Seen:       JL Interview 0905 credits-card render (2026-10-03), Claude's check —
+              read Y=233 on every card by converting to gray, which looked like a
+              brightness regression, before re-reading the raw Y plane (216). The
+              rule was recalled; the probe was not calibrated on a known value first.
 
 ### L48 — per-segment AAC + stream-copy concat: the voice drifts behind the picture
 - Context:    render pipelines that encode each cut to its own MP4 with AAC audio and then

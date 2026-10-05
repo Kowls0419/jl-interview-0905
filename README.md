@@ -1,29 +1,40 @@
-# 搶救塗潭焦炭窯｜口述影像
+# Tutan Oral Histories
 
-四支口述影片記錄新北市新店區塗潭里一帶的產業、土石流與焦炭窯，以及磺窟戰俘營的地方記憶。訪談攝於 2026 年 9 月 5 日；片中的年代與細節以受訪者口述為準。
+Four short oral-history films about industry, environmental disasters, the coke
+kiln in Tutan, and the Kukutsu prisoner-of-war camp in Xindian, New Taipei City.
+Recorded on September 5, 2026, the interviews preserve local residents' memories
+of the places and livelihoods around them. Dates and details reflect their
+personal recollections.
 
-## 觀看影片
+[Watch the full playlist — 塗潭社區產業、環境與歷史｜口述影像](https://www.youtube.com/playlist?list=PLNQi8ivhM3Y0)
 
-[觀看完整播放清單](https://www.youtube.com/playlist?list=PLNQi8ivhM3Y0)
-
-| 順序 | 影片 | 長度 |
+| Film | Subject | Length |
 |---|---|---|
-| 1 | [產業篇｜塗潭里的煤礦與產業](https://youtu.be/F7Pn8-HIm2w) | 2:18 |
-| 2 | [土石流篇｜塗潭里的土石流](https://youtu.be/odgVTGZ_kWg) | 1:45 |
-| 3 | [焦炭窯篇｜塗潭里的焦炭窯](https://youtu.be/eWMPvhX_uqo) | 1:23 |
-| 4 | [戰俘營篇｜磺窟戰俘營](https://youtu.be/gi6nBEnOoEw) | 1:54 |
+| [產業篇｜塗潭社區社區產業演進](https://youtu.be/F7Pn8-HIm2w) | Indigo, camphor, coal mining, and citrus farming | 2:18 |
+| [土石流篇｜塗潭社區社區環境災害](https://youtu.be/odgVTGZ_kWg) | Memories of the 1969 (ROC year 58) landslide and debris flow | 1:45 |
+| [焦炭窯篇｜塗潭里的焦炭窯](https://youtu.be/eWMPvhX_uqo) | Carrying coal and working around the coke kiln | 1:23 |
+| [戰俘營篇｜磺窟戰俘營](https://youtu.be/gi6nBEnOoEw) | Local memories of the camp and returning former prisoners | 1:54 |
 
-## 製作名單
+The Chinese project titles follow the client's wording. The films have burned-in
+Traditional Chinese subtitles and can be watched individually or in sequence.
 
-- 口述：陳國超、游月裡、張游寶彩、高燈立
-- 攝影：李承洋
-- 後製剪輯：楊大謙
-- 指導單位：產業篇與土石流篇為文化部文資局；焦炭窯篇與戰俘營篇為新北市政府文化局
-- 執行單位：新北市陳昌梯醫師山林保育協會
-- 戰俘營篇資料來源：台灣戰俘營紀念協會
+## Credits
 
-## 本儲存庫
+| Role | Credit |
+|---|---|
+| Interview participants | 陳國超、游月裡、張游寶彩、高燈立 |
+| Cinematography | 李承洋 |
+| Editing and post-production | Kyle Yang（楊大謙） |
+| Supervising organization — 產業篇 and 土石流篇 | 文化部文資局 |
+| Supervising organization — 焦炭窯篇 and 戰俘營篇 | 新北市政府文化局 |
+| Producing organization | 新北市陳昌梯醫師山林保育協會 |
+| Historical source — 戰俘營篇 | 台灣戰俘營紀念協會 |
 
-這裡保存剪輯決策、字幕、建置腳本與審片紀錄；原始影像、照片及輸出影片透過 Google Drive 管理，不放入 Git。編輯歷程見 [edit/project.md](edit/project.md)，協作方式及素材分工見 [docs/collaboration.md](docs/collaboration.md)。
+The kiln and POW-camp films belong to **搶救塗潭焦炭窯**. The industry and
+environmental-disaster films use the separate project titles listed above.
 
-專案成員：Kyle Yang（專案負責與剪輯）、JL（共同拍攝）、陳國超／陳總（委託方）、Hoho（Kyle 的母親，協助轉達訊息）。主要受訪者為游月裡老師。
+## Related films
+
+The [Xindian Mining Heritage Trail films](https://github.com/Kowls0419/jl-interview-0613)
+were recorded on June 13, 2026, for the same association. That collection visits
+過水橋與瑠公圳, 和美煤礦, and 振山煤礦與光明街.

@@ -4,22 +4,19 @@ Companion to `JL Interview 0613` (新店礦業文化路徑 heritage series; its 
 videos — the **"0613 set"** — were DELIVERED 2026-08-14; that project's log is on
 Kyle's Drive only). Same client, same association, new shoot.
 
-**Who's who** (陳總 = 陳國超 = "prof", Hoho, JL, speaker IDs) is in the root
-`README.md` — read it before this file. **Video names:** 焦炭窯篇 · 戰俘營篇 ·
+**Who's who** (陳總 = 陳國超 = "prof", Hoho, speaker IDs) is in
+`docs/production.md` — read it before this file. Kyle is the sole editor. **Video names:** 焦炭窯篇 · 戰俘營篇 ·
 產業篇 · 土石流篇. Older entries say "V1–V3" for the *0613 set*; Session 4's
 "V1 焦炭窯 · V2 戰俘營 · V3 產業…" is this project's working split under the old
 labels. Notes tagged *(Kyle's machine)* refer to paths/hosts only he has.
 
-**Every session is tagged with who drove it:** `## Session N — YYYY-MM-DD — Kyle`
-or `— JL`. Session numbers are shared and sequential across both people — take
-the next number after the last entry here, whoever wrote it. Inside an entry,
-say who did what if both were involved (e.g. "JL ran Dailies round r02").
-To answer "what did JL do last time": the latest `— JL` entry here, plus
-`git log --author` for his commits.
+**Every session is logged for Kyle:** `## Session N — YYYY-MM-DD — Kyle`.
+Use the next sequential number and record which agent handled each task.
+Kyle is the sole editor and Git author.
 
 **Status (as of 2026-10-05):** All four films are Public on YouTube in the
-搶救塗潭焦炭窯｜口述影像 playlist. Prof approved 戰俘營篇 and 焦炭窯篇; the revised
-credits in 產業篇 and 土石流篇 still await his confirmation. See Session 12.
+塗潭社區產業、環境與歷史｜口述影像 playlist. Prof approved 戰俘營篇 and 焦炭窯篇; the revised
+credits in 產業篇 and 土石流篇 still await his confirmation. See Sessions 12–13.
 
 ## Session 1 — 2026-09-18 — Kyle (`/video-use init` — inventory, no cutting)
 
@@ -234,49 +231,23 @@ every subtitle pass.
    gaps.
 3. The photo set the leader promises at the end of 5636 — not in this directory yet.
 
-## Session 2 — 2026-09-20 — Kyle (collaboration setup — no cutting)
+## Session 2 — 2026-09-20 — Kyle (Git and Drive setup — no cutting)
 
-**Strategy:** Kyle wants a peer (GitHub: `CYLI310`) to be able to collaborate
-on the edit from his own PC. No editorial work happened this session — this
-was infrastructure: setting up the git/GitHub + Google Drive split so both
-people's Claude sessions can pick up full context.
+**Strategy:** set up the GitHub and Google Drive split for the editorial record.
+No footage was cut in this session.
 
-**Decisions:**
-- Project root (`JL Interview 0905/`, the parent of this `edit/` dir) is now a
-  git repo, pushed to **https://github.com/Kowls0419/jl-interview-0905**
-  (private). Kyle and CYLI310 both have access.
-- **Split:** git tracks only small text — `edit/project.md` (this file),
-  `edit/takes_packed.md`, `edit/transcripts/*.json`, `docs/questions_for_professor.md`,
-  and (once they exist) `edl.json`/`master.srt`/`review/*.json`. Everything
-  binary (`raw footage/`, `BTS pics/`, renders, `clips_graded/`) stays out of
-  git via `.gitignore` and continues to live in Google Drive exactly as
-  before — Drive's own sync is untouched by any of this.
-- The Drive folder was link-shared with the peer for the raw footage/renders:
-  https://drive.google.com/drive/folders/1wwfvlHXUNO4crt0ZVVjCH3QRvXbb3hyh
-- `README.md` at the project root documents the full setup: repo-vs-Drive
-  split and why, the peer's first-time setup steps, Kyle's own per-session
-  workflow (`git pull` → edit → `git add edit && git commit && git push`),
-  and a Cautions list (don't both hand-edit `edl.json` at once; Drive must be
-  a real desktop sync on the peer's machine, not browser-only access; check
-  `git status` before committing in case a binary ever slips past
-  `.gitignore`; GitHub needs a PAT/SSH key, not an account password).
-- `.gitignore` also excludes `*.pdf` by default — defensive, since
-  `questions_for_professor.md` references course review documents that could
-  land in this folder later and shouldn't be committed without a deliberate look first.
+**Decisions:** the project root became the Git repository at
+https://github.com/Kowls0419/jl-interview-0905. Git tracks the small text files:
+project memory, transcripts, takes, EDLs, subtitles, review JSON, and client
+questions. Raw footage, photos, generated media, renders, and PDFs remain on
+Google Drive and are excluded by `.gitignore`.
 
-**Reasoning log:**
-- Git-in-a-Drive-synced-folder risk (Drive touching `.git/` internals
-  mid-write) was flagged but accepted as low-probability for this project's
-  usage pattern (infrequent commits, effectively one person committing at a
-  time) rather than solved with a sync exclusion.
-- Chose repo-root = project folder (not just `edit/`) so the layout is
-  self-documenting for a new clone and matches the sibling `JL Interview 0613`
-  repo's structure.
+**Reasoning log:** use the whole project folder as the root, matching the 0613
+layout, while keeping large binaries out of Git. The current production
+workflow is in `docs/production.md`; Kyle is the sole editor and maintainer.
 
-**Outstanding:**
-- Peer (CYLI310) hasn't completed first clone/setup yet as of this session.
-- Everything from Session 1's Outstanding list is still open — no editorial
-  work has started.
+**Outstanding:** Session 1's editorial planning and source questions were still
+open at this stage.
 
 ## Session 3 — 2026-09-20 — Kyle (陳總's brief, relayed by Hoho + 焦炭窯 proposal)
 
@@ -538,11 +509,11 @@ shortlist of candidate passages, not a cut (Hard Rule 11 still applies).
   commits (incl. **fps now preserved by default**) deliberately NOT merged —
   merging mid-project would change render output on a 59.94 fps source.
   `edl_to_fcpxml.py` is no longer used and was left out.
-- **README rewritten** for JL: who's-who, video names, the fork and how to keep
-  it in sync (Kyle pushes skill changes; JL pulls before rendering), updated
-  install/startup prompts, and a caution to fetch before editing tracked files.
+- **README rewritten:** working names, video names, the fork, install/startup
+  prompts, and a caution to fetch before editing tracked files. The current
+  viewer-facing README and production guide supersede this setup.
 - **This file:** reflect-ledger codes (L05, L28, …) replaced by their rules in
-  plain words, since JL doesn't have that ledger; the "V1–V3" collision
+  plain words; the "V1–V3" collision
   resolved; machine-specific notes tagged *(Kyle's machine)*; Session 3 now
   says the brief was 陳總's, relayed by Hoho.
 
@@ -591,17 +562,12 @@ self-contained-system passages) + this photo arc.
   kiln originals (he said they may not exist — if they don't, ask Kyle before
   building from the LINE copies). 戰俘營篇 and 產業篇 are not held by this.
 
-**Shared lessons + who-did-what logging (2026-09-27, Kyle's request):**
-- Kyle's 11 video lessons moved from his private `reflect` ledger into this
-  repo's **`lessons/video.md`** (now the only copy; the reflect file is a
-  pointer). JL writes **`lessons/video-jl.md`** (`J01…` IDs). Both are read
-  before any render. Kept in this *private* repo on Kyle's call, not the
-  public fork.
-- Every session header now names its driver (`— Kyle` / `— JL`); Sessions 1–7
-  retro-tagged Kyle. Session numbers are one shared sequence.
-- README: new "Lessons" and "Who did what" sections; the startup prompt now
-  identifies the driver, reads both lessons files, and ends with reflect →
-  log → push.
+**Lessons and session logging (2026-09-27, Kyle's request):**
+- Kyle's video lessons moved from his private `reflect` ledger into this
+  project's `lessons/video.md` (the only copy; reflect holds a pointer).
+- Session headers identify Kyle and use sequential numbers. Entries record
+  which agent handled each task; startup reads the lessons and ends with
+  reflection, session logging, and a push when Kyle requests it.
 - Fork `SKILL.md` (commit `38bf34e`): step 0 / Hard Rule 13 read a project's
   root `lessons/` folder with or without the reflect skill.
 - **戰俘營篇 research (Hurst's Taiwan POW Camps Memorial Society):** the camp is
@@ -685,14 +651,13 @@ Not yet decided: whether to trim toward 90 s, and the jump cuts at 0:40 / 1:26.
 4. **Kyle's own list:** 游月裡's full name for a title card · *gala* spelling ·
    「下層里」 (5635 07:07) · 政三煤礦 (5635 02:38) · the 10 台語 gaps
    (5635 06:44–08:01 ×8, 12:08; 5636 34:30).
-5. **JL's first-time setup** against the README (fork, not upstream).
-6. Later, deliberately: merge upstream's 4 commits into the fork's `kyle` branch
+5. Later, deliberately: merge upstream's 4 commits into the fork's `kyle` branch
    (includes an fps-default change — re-check renders after).
-7. `temp/` holds the 怪手林 clips from 2026-09-27 — no longer needed; delete if unwanted.
+6. `temp/` holds the 怪手林 clips from 2026-09-27 — no longer needed; delete if unwanted.
 
 ## Session 8 — 2026-09-28 → 09-29 — Kyle (產業篇 long version; prof's posters; renderer + Dailies fixes)
 
-Kyle drove; JL had pushed nothing since Session 7. Kyle reviewed every round in
+Kyle drove and reviewed every round in
 Dailies (產業篇 r01, r02; 戰俘營篇 r03).
 
 **Strategy:** keep the split prof approved on 9/26 — 戰俘營篇 (done) · 焦炭窯篇
@@ -799,16 +764,13 @@ card keeps its source credit). Subtitles now use exact segment timing (up to
 3. **Kyle's own list:** 游月里 (poster) vs 尤 — confirm with her before any name
    card · *gala* spelling · 「下層里」 (5635 07:07) · 政三煤礦 (5635 02:38) · the
    10 台語 gaps (焦炭窯篇 passages).
-4. **JL's first-time setup** against the README; the fork's `render.py` changed —
-   JL must `git pull` the fork before rendering.
-5. Later, deliberately: merge upstream's 4 commits into the fork (fps default).
-6. `temp/` still holds the 怪手林 clips from 2026-09-27 — delete if unwanted.
+4. Later, deliberately: merge upstream's 4 commits into the fork (fps default).
+5. `temp/` still holds the 怪手林 clips from 2026-09-27 — delete if unwanted.
 
 ## Session 9 — 2026-09-29 — Kyle (焦炭窯篇 photo decision and build handoff)
 
 Kyle drove the decision; Codex drove the planning and handoff. Claude had already
-synced the project and the video-use fork, both up to date, and confirmed JL had
-pushed nothing since Session 8. No cut or render was made this session.
+synced the project and the video-use fork, both up to date, and found no new project changes since Session 8. No cut or render was made this session.
 
 **Strategy:** Kyle said to ignore the original kiln photos, clearing the hold
 on 焦炭窯篇. Codex inspected the existing LINE and poster images and wrote a
@@ -861,17 +823,15 @@ no new recurring lesson was added.
 2. Kyle's own list: 游月里 (poster) vs 尤 — confirm with her before any name card ·
    *gala* spelling · 「下層里」 (5635 07:07) · 政三煤礦 (5635 02:38) · the 10 台語 gaps
    in the shortlisted passages.
-3. JL's first-time setup against the README; JL must `git pull` the video-use
-   fork before rendering because `render.py` changed.
-4. Later, deliberately merge upstream's 4 commits into the fork (includes an
+3. Later, deliberately merge upstream's 4 commits into the fork (includes an
    fps-default change, so re-check renders afterwards).
-5. `temp/` still holds the 怪手林 clips from 2026-09-27 — delete if unwanted.
+4. `temp/` still holds the 怪手林 clips from 2026-09-27 — delete if unwanted.
 
 ## Session 10 — 2026-09-30 → 10-03 — Kyle (four professor review files)
 
 Codex drove the edit and exports while Kyle reviewed the Dailies rounds and
 made the cut and audio decisions. Claude checked the first kiln draft and wrote
-the starting handoff. JL made no changes during this session.
+the starting handoff.
 
 **Strategy:** finish 戰俘營篇 and 焦炭窯篇, then follow prof's 2026-10-03 decision
 to split the former long 產業篇 into separate 產業篇 and 土石流篇. Keep the existing
@@ -940,11 +900,9 @@ qualified. Kiln's note counts fell 9 → 4 → 2 → 0; both new split films had
 3. Kyle's open source questions: 游月里 (poster) vs 尤 — confirm with her before
    any name card · *gala* spelling · 「下層里」 (5635 07:07) · 政三煤礦
    (5635 02:38) · the 10 台語 gaps in the shortlisted kiln passages.
-4. JL's first-time setup against the README; JL must `git pull` the video-use
-   fork before rendering because `render.py` changed.
-5. Later, deliberately merge upstream's four commits into the fork, including
+4. Later, deliberately merge upstream's four commits into the fork, including
    its fps-default change, and re-check renders afterwards.
-6. `temp/` still holds the 怪手林 clips from 2026-09-27; delete if unwanted.
+5. `temp/` still holds the 怪手林 clips from 2026-09-27; delete if unwanted.
 
 ### Session 10 addendum — 2026-10-03 — Kyle (Claude drove this part)
 - **Ends:** every old closing card is gone. Each film now ends on one 7 s credits card (`edit/build/cards.py` → `credits_card`): 口述 陳國超、游月裡、張游寶彩、高燈立 · 攝影 李承洋 · 後製剪輯 楊大謙 · 指導單位 新北市政府文化局 · 執行單位 新北市陳昌梯醫師山林保育協會 (names as signed on the video consent form). 戰俘營篇 keeps its source line as a sixth row (資料來源 台灣戰俘營紀念協會). The card takes the closer's place under the same card name, so photo covers that hand off into it (產業篇 stele, 土石流篇 creek) still work.
@@ -958,7 +916,7 @@ qualified. Kiln's note counts fell 9 → 4 → 2 → 0; both new split films had
 Codex drove the two credits revisions. Kyle relayed prof's exact LINE wording
 and identified the screenshot order: image 8 is 產業篇, image 9 is 土石流篇.
 The third screenshot grouped 戰俘營篇 and 焦炭窯篇 in red; prof said the red
-group is OK. JL made no changes in this session.
+group is OK.
 
 **Strategy and decisions:** keep the accepted edits and update only the last
 credits scene in the blue-group films. 產業篇 now says
@@ -996,12 +954,10 @@ rendered composite, not only on the source PNG.
 2. Kyle's remaining source questions: *gala* spelling · 「下層里」 (5635 07:07)
    · 政三煤礦 (5635 02:38) · the 10 台語 gaps in the shortlisted kiln passages.
    The interviewee spelling is resolved as 游月裡 from her signed consent form.
-3. JL's first-time setup against the README; JL must `git pull` the video-use
-   fork before rendering because `render.py` changed.
-4. Later, deliberately merge upstream's four commits into the fork, including
+3. Later, deliberately merge upstream's four commits into the fork, including
    the fps-default change, and re-check renders afterwards.
-5. `temp/` still holds the 怪手林 clips from 2026-09-27; delete if unwanted.
-6. The optional other-photo request remains in `docs/questions_for_professor.md`.
+4. `temp/` still holds the 怪手林 clips from 2026-09-27; delete if unwanted.
+5. The optional other-photo request remains in `docs/questions_for_professor.md`.
 
 ## Session 12 — 2026-10-05 — Kyle (YouTube publication)
 
@@ -1010,7 +966,7 @@ and factual production timeline. Kyle selected the four local MP4s in the
 native upload picker, chose Public visibility, requested AI-use Yes and each
 film's featured location, and decided to add custom thumbnails himself later.
 Claude made an initial thumbnail set, then discussed a new visual theme and
-frame options with Kyle in the other cmux pane. JL made no changes.
+frame options with Kyle in the other cmux pane.
 
 **Strategy and decisions:** use the four verified `exports/*.mp4` files and
 Claude's `private/youtube_0905.md` title/description draft. The two revised
@@ -1052,9 +1008,86 @@ published metadata required correction after a user's review in this session.
    戰俘營篇 and 焦炭窯篇 were already OK. No video link was sent to prof by Codex.
 3. Kyle's source questions: *gala* spelling ·「下層里」(5635 07:07) · 政三煤礦
    (5635 02:38) · the 10 台語 gaps in the shortlisted kiln passages.
-4. JL's first-time setup against the collaboration workflow; JL must pull
-   Kyle's video-use fork before rendering because `render.py` changed.
-5. Later, deliberately merge upstream's four commits into the fork, including
+4. Later, deliberately merge upstream's four commits into the fork, including
    the fps-default change, and re-check renders afterwards.
-6. `temp/` still holds the 怪手林 clips from 2026-09-27; delete if unwanted.
-7. The optional other-photo request remains in `docs/questions_for_professor.md`.
+5. `temp/` still holds the 怪手林 clips from 2026-09-27; delete if unwanted.
+6. The optional other-photo request remains in `docs/questions_for_professor.md`.
+
+## Session 13 — 2026-10-05 — Kyle (publication titles and sole-editor documentation)
+
+Codex drove the 0905 README, production-guide cleanup, live YouTube metadata,
+private share text, and reflection lessons. Kyle clarified that he is the sole
+editor, requested English as the README's primary language, and chose
+「塗潭社區產業、環境與歷史｜口述影像」as the combined playlist name. Claude
+compared the 0613 documentation, reviewed the 0905 README, and corrected the
+two blue thumbnail labels. His proposed 0613 README edit was reverted after
+Kyle clarified that the requested README change was for 0905. The 0613
+repository has no changes from this work. Claude handles the coordinated
+0905 commit and push under Kyle's identity.
+
+**Strategy:** use the latest professor message for each film's public title,
+rather than the superseded upload draft. Make the README useful to viewers:
+English introduction, playlist and video links, subjects and lengths, credits,
+and a link to the earlier films. Remove the repository-contents section and
+retired second-editor setup. Keep 李承洋's cinematography credit.
+
+**Decisions:**
+- 產業篇's public title is「產業篇｜塗潭社區社區產業演進」.
+- 土石流篇's public title is「土石流篇｜塗潭社區社區環境災害」.
+- The repeated「社區」follows the professor's exact message. Both retain
+  文化部文資局 as the supervising organization.
+- 焦炭窯篇 and 戰俘營篇 retain their approved titles and 搶救塗潭焦炭窯 branding.
+- All four descriptions now refer to the combined playlist and list the two
+  corrected project names. Playlist description and private share text match.
+  Narrative summaries, chapter times, video IDs, Public visibility, and order
+  remain as accepted; the existing MP4s did not require another render.
+- `docs/production.md` replaces `docs/collaboration.md`; the empty second-editor
+  lesson file is removed. Retired setup administration was removed from the
+  session log while keeping the editorial record. Local AGENTS.md and the
+  shared reflect pointers now read the single active `lessons/video.md`.
+- The comparison with 0613 kept clear viewer context, direct watch links, and
+  production credits. 0613's existing tracked thumbnail/poster links are valid;
+  0905 uses live YouTube links because its images are private, untracked assets.
+  No licensing claim was added to 0905.
+
+**Verification:** saved every Studio edit and confirmed Save returned to its
+completed state. Reloaded the playlist details: selected title, corrected blue
+names, both supervising organizations, and Public visibility persisted. The
+public playlist shows four videos in the intended order with the two exact
+new titles and unchanged red titles/IDs. Kyle had reported that the manual
+thumbnail uploads and industry copyright check were done; Studio shows no
+notice for 產業篇. Claude independently checked the README's four video links,
+playlist, and earlier-project link against live pages. Checked the Gregorian
+year against the original production record and arithmetic: ROC 58 + 1911 =
+1969. Scanned documentation for retired collaboration instructions, broken
+references to the removed guide/lesson file, and formatting errors.
+
+**Reasoning log:** the professor's title correction applies across the public
+publication, not just the rendered credits. One combined playlist should not
+impose the kiln project's name on differently titled films. The public README
+uses English for explanations and original Chinese for names and project
+titles; the internal production guide holds operational instructions.
+
+**Reflect:** two preventable mistakes were corrected: superseded title wording
+survived in public metadata and thumbnails; Codex also converted ROC year 58
+incorrectly to 1959 in the English README and private timeline. Claude caught
+the date, and both now say 1969. Added generalized publication-naming and
+calendar-conversion lessons. Each correction task converged from one correction
+to zero after verification. The sole-editor workflow and English README were
+Kyle's updated requirements. The proposed 0613 README edit was reverted after
+scope clarification; no video edit or publication URL changed.
+
+**Outstanding:**
+1. Kyle must replace only the two uploaded blue thumbnails with
+   `private/youtube_thumbnails/產業篇_thumbnail.jpg` and
+   `private/youtube_thumbnails/土石流篇_thumbnail.jpg`. Claude corrected their
+   top labels; the other two JPGs are byte-identical to Kyle's uploads. Prior
+   blue JPGs are in `private/youtube_thumbnails/previous_uploaded/`.
+2. Prof's confirmation of the revised 產業篇 and 土石流篇 credits remains open;
+   戰俘營篇 and 焦炭窯篇 were already OK. Codex sent no link to prof.
+3. Kyle's source questions: *gala* spelling ·「下層里」(5635 07:07) · 政三煤礦
+   (5635 02:38) · the 10 台語 gaps in the shortlisted kiln passages.
+4. Later, deliberately merge upstream's four commits into the video-use fork,
+   including the fps-default change, and re-check renders afterwards.
+5. `temp/` still holds the 怪手林 clips from 2026-09-27; delete if unwanted.
+6. The optional other-photo request remains in `docs/questions_for_professor.md`.

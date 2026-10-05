@@ -1,18 +1,12 @@
 # 🎬 Video lessons — Kyle
 
-Video editing — cuts, overlays, transitions, audio render, burned subtitles.
-Generalized mistakes and the rule that prevents each. **Read this file and
-`video-jl.md` before any render**, whoever is driving (video-use step 0).
+Video editing — cuts, overlays, transitions, audio render, burned subtitles,
+and publication. Generalized mistakes and the rule that prevents each.
+**Read this file before every render** (video-use step 0).
 
-**Who writes here:** Kyle's sessions only. JL's sessions add to `video-jl.md`.
-IDs here (`L01…`) come from Kyle's global `reflect` sequence, which skips
-numbers used in his other ledgers — gaps are expected. Next free ID: see
-"Next free ID" in Kyle's `reflect/lessons.md`. Some entries cite `L09`/`L28`,
-which live in Kyle's private ledger; the rule each entry states is self-contained.
-
-Moved here from Kyle's `reflect/lessons/video.md` on 2026-09-27 so JL's Claude
-can read it; **this is now the only copy.** Entry format is in `README.md`
-("Lessons").
+Kyle is the sole editor. Entries use Kyle's global reflect sequence, which
+may have gaps. The lesson format is in `docs/production.md`.
+This is the only copy of the video lessons; Kyle's reflect ledger links here.
 
 ---
 
@@ -344,3 +338,30 @@ can read it; **this is now the only copy.** Entry format is in `README.md`
               BICUBIC)`), so the photo only ever downsamples slightly. Keep eased ends.
 - Scope:      video, overlay-transitions, animation
 - Seen:       JL Interview 0905 產業篇 r01 (2026-09-28), Kyle
+
+### L52 — carry client title changes through every public appearance
+- Context:    a client changes a project title, name, or credit before publication.
+- Symptom:    the rendered credits are corrected but YouTube, thumbnails, or the
+              share message still use the superseded wording.
+- Root cause: corrected the video asset while reusing an older upload draft and
+              treating one project name as the umbrella for differently titled films.
+- Rule:       record each film's current title and credit from the latest client
+              message. Review video graphics, live titles/descriptions, playlist,
+              thumbnail text, README, and share message together. Use a combined
+              playlist name selected by the editor when project titles differ.
+              Verify saved public pages against the client's actual wording;
+              remove superseded labels from reusable upload drafts.
+- Scope:      video, publication, naming, metadata
+- Seen:       JL Interview 0905, Kyle's YouTube/title correction, 2026-10-05
+
+### L53 — calculate calendar conversions and retain the source year
+- Context:    translating a date from a named calendar into an English summary.
+- Symptom:    the Gregorian year conflicts with the source era year.
+- Root cause: converted the year from memory rather than calculating the offset
+              and comparing it with the interview and existing production record.
+- Rule:       retain the original era year and calculate the converted year.
+              For ROC years, add 1911: ROC 58 = 1969. Cross-check every summary
+              and share document that repeats the date before publication.
+- Scope:      video, publication, dates, translation
+- Seen:       JL Interview 0905 English README, Claude caught ROC 58 misconverted
+              as 1959; corrected to 1969 in README and private notes, 2026-10-05

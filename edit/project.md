@@ -1091,3 +1091,72 @@ scope clarification; no video edit or publication URL changed.
    including the fps-default change, and re-check renders afterwards.
 5. `temp/` still holds the 怪手林 clips from 2026-09-27; delete if unwanted.
 6. The optional other-photo request remains in `docs/questions_for_professor.md`.
+
+## Session 14 — 2026-10-05 — Kyle (final YouTube audit and share preparation)
+
+Codex drove the final settings audit and thumbnail verification. Kyle asked
+Claude to make a playlist cover using the earlier playlist layout in the new
+0905 theme, then draft the message to prof after Codex verified YouTube.
+Claude replied to Codex through the current cmux pane after each completed part.
+
+**Strategy:** check saved Studio settings for every film and the public
+playlist, then compare actual live thumbnails with the current approved names.
+Prepare the playlist artwork and a message Kyle can send with all five links.
+
+**Decisions and results:**
+- All four films remain Public, not made for kids, with no age restriction,
+  no paid promotion, AI-use Yes, Traditional Chinese video language, and no
+  Studio notice. They belong to the intended combined playlist.
+- Locations: 產業篇、土石流篇、焦炭窯篇 use Tutan Village (塗潭里);
+  戰俘營篇 uses Kukutsu POW Camp Memorial (磺窟戰俘營紀念碑).
+- Standard YouTube License, Nonprofits & Activism category, embedding enabled,
+  and comments On with Basic moderation were present consistently. Optional
+  recording-date and title/description language fields remain unfilled; no
+  request depended on filling them. No setting needed another correction.
+- The playlist is Public, named「塗潭社區產業、環境與歷史｜口述影像」and
+  manually ordered 產業篇 → 土石流篇 → 焦炭窯篇 → 戰俘營篇. Titles, credits,
+  descriptions, and live chapter starts match the current publishing decisions.
+- Codex downloaded and opened all four LIVE full-size YouTube thumbnails.
+  Kyle has already uploaded both corrected blue title labels. The red thumbnails
+  also match the approved style/wording, so no video-thumbnail upload remains.
+- Claude made `private/youtube_thumbnails/playlist_thumbnail.jpg` (1280×720):
+  four selected frame slices under a paper scrim with centered ink/rust type,
+  following the previous playlist format in the current visual theme. It uses
+  the combined title, four film names, and no speaker name or umbrella kiln
+  branding. Codex opened the image at full size. Builder and images are private.
+- Claude drafted `private/message_to_prof_0905.txt`: brief greeting, all four
+  film titles and lengths, each video URL on its own indented line, playlist
+  URL, and note that the two blue titles/guiding-unit credits were corrected.
+  It asks prof to review those revisions; it does not assert his acceptance.
+  Kyle sends the message. The neutral share list remains separately available
+  in `private/分享訊息.txt`.
+
+**Verification:** the audit reads selected radio-button states, displayed
+language/location/playlist fields, enabled embedding, and saved-state controls
+from each actual Studio details page. Public playlist read-back confirms its
+name, four correct IDs and order. All live chapter starts still match the
+previously verified current EDL boundaries. Private audit evidence is in
+`private/youtube_final_audit.json`. No film was rendered, replaced, or sent.
+
+**Reasoning log:** a local corrected JPG does not prove its live upload; the
+public thumbnail was downloaded and viewed. That check resolved the stale
+blue-thumbnail upload item from Session 13. A separate playlist cover uses
+neutral collection wording because the films have different approved project
+names. Prof's message is prepared for Kyle, with no direct external send.
+
+**Reflect:** no new preventable mistake qualified. The audit found no wrong
+saved setting; thumbnail verification confirmed Kyle had already finished the
+two replacements. Claude completed the playlist artwork and message draft.
+
+**Outstanding:**
+1. Kyle uploads `private/youtube_thumbnails/playlist_thumbnail.jpg` as the
+   playlist's custom thumbnail; the public playlist still uses 產業篇's image.
+   The public playlist has an Edit Thumbnail control over its cover.
+2. Kyle sends `private/message_to_prof_0905.txt` to prof. Prof's confirmation
+   of the revised 產業篇 and 土石流篇 remains open; the red films were already OK.
+3. Kyle's source questions: *gala* spelling ·「下層里」(5635 07:07) · 政三煤礦
+   (5635 02:38) · the 10 台語 gaps in the shortlisted kiln passages.
+4. Later, deliberately merge upstream's four commits into the video-use fork,
+   including the fps-default change, and re-check renders afterwards.
+5. `temp/` still holds the 怪手林 clips from 2026-09-27; delete if unwanted.
+6. The optional other-photo request remains in `docs/questions_for_professor.md`.

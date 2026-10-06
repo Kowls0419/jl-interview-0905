@@ -23,8 +23,8 @@ edit/animations/*/node_modules/
 # Personal working folder — local only, never pushed
 private/
 
-# Images pulled out of the proposal PDF — derived binaries, regenerable
-docs/extracted/
+# Working documents — Google Drive only, never GitHub
+/docs/
 
 .DS_Store
 CLAUDE.md

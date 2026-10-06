@@ -1160,3 +1160,41 @@ two replacements. Claude completed the playlist artwork and message draft.
    including the fps-default change, and re-check renders afterwards.
 5. `temp/` still holds the 怪手林 clips from 2026-09-27; delete if unwanted.
 6. The optional other-photo request remains in `docs/questions_for_professor.md`.
+
+## Session 15 — 2026-10-06 — Kyle (Drive-only documents)
+
+Codex drove this change at Kyle's request. Claude was notified of Git ownership
+and the updated storage rule. No video or YouTube setting changed.
+
+**Strategy:** keep all working documents in Google Drive and exclude the entire
+`docs/` folder from GitHub.
+
+**Decisions:** added `/docs/` to `.gitignore` and removed
+`docs/production.md` and `docs/questions_for_professor.md` from Git tracking.
+Both files remain locally available on Drive. The local production guide,
+agent instructions and handoff now say never to stage `docs/`.
+
+**Verification:** no `docs/` path remains in the Git index; both documents are
+ignored. SHA-256 checks before and after untracking confirm the local copies
+were preserved. Staging excludes media, private material and the existing
+untracked `edit/cards_kiln/` folder.
+
+**Reasoning log:** an ignore rule alone cannot stop tracking files already in
+Git. Removing them from the index preserves local working copies and removes
+them from the current published branch. Previous commits retain their history.
+
+**Reflect:** no new preventable mistake qualified; this was an updated storage
+preference.
+
+**Outstanding:**
+1. Kyle's upload of `private/youtube_thumbnails/playlist_thumbnail.jpg` as the
+   playlist's custom cover has not been confirmed.
+2. Kyle has sent the videos to prof. Prof's confirmation of the revised
+   產業篇 and 土石流篇 remains open; the red films were already OK.
+3. Kyle's source questions: *gala* spelling ·「下層里」(5635 07:07) · 政三煤礦
+   (5635 02:38) · the 10 台語 gaps in the shortlisted kiln passages.
+4. Later, deliberately merge upstream's four commits into the video-use fork,
+   including the fps-default change, and re-check renders afterwards.
+5. `temp/` still holds the 怪手林 clips from 2026-09-27; delete if unwanted.
+6. The optional other-photo request remains in the Drive-only
+   `docs/questions_for_professor.md`.

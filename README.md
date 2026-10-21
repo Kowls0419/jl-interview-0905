@@ -16,10 +16,10 @@ All four films are on YouTube and collected in one playlist:
 
 <table>
 <tr>
-<td width="25%"><a href="https://youtu.be/F7Pn8-HIm2w"><img src="https://i.ytimg.com/vi/F7Pn8-HIm2w/maxresdefault.jpg" width="100%"></a><br><b><a href="https://youtu.be/F7Pn8-HIm2w">產業篇（塗潭社區社區產業演進）</a></b> — 2:18</td>
-<td width="25%"><a href="https://youtu.be/odgVTGZ_kWg"><img src="https://i.ytimg.com/vi/odgVTGZ_kWg/maxresdefault.jpg" width="100%"></a><br><b><a href="https://youtu.be/odgVTGZ_kWg">土石流篇（塗潭社區社區環境災害）</a></b> — 1:45</td>
-<td width="25%"><a href="https://youtu.be/eWMPvhX_uqo"><img src="https://i.ytimg.com/vi/eWMPvhX_uqo/maxresdefault.jpg" width="100%"></a><br><b><a href="https://youtu.be/eWMPvhX_uqo">焦炭窯篇（塗潭里的焦炭窯）</a></b> — 1:23</td>
-<td width="25%"><a href="https://youtu.be/gi6nBEnOoEw"><img src="https://i.ytimg.com/vi/gi6nBEnOoEw/maxresdefault.jpg" width="100%"></a><br><b><a href="https://youtu.be/gi6nBEnOoEw">戰俘營篇（磺窟戰俘營）</a></b> — 1:54</td>
+<td width="25%"><a href="https://youtu.be/QX6aEfSyFL0"><img src="https://i.ytimg.com/vi/QX6aEfSyFL0/maxresdefault.jpg" width="100%"></a><br><b><a href="https://youtu.be/QX6aEfSyFL0">產業篇（塗潭社區社區產業演進）</a></b> — 2:18</td>
+<td width="25%"><a href="https://youtu.be/szvAr8PcF-8"><img src="https://i.ytimg.com/vi/szvAr8PcF-8/maxresdefault.jpg" width="100%"></a><br><b><a href="https://youtu.be/szvAr8PcF-8">土石流篇（塗潭社區社區環境災害）</a></b> — 1:45</td>
+<td width="25%"><a href="https://youtu.be/aEFQYlVrca4"><img src="https://i.ytimg.com/vi/aEFQYlVrca4/maxresdefault.jpg" width="100%"></a><br><b><a href="https://youtu.be/aEFQYlVrca4">焦炭窯篇（塗潭里的焦炭窯）</a></b> — 1:23</td>
+<td width="25%"><a href="https://youtu.be/NWCrjgt2XIQ"><img src="https://i.ytimg.com/vi/NWCrjgt2XIQ/maxresdefault.jpg" width="100%"></a><br><b><a href="https://youtu.be/NWCrjgt2XIQ">戰俘營篇（磺窟戰俘營）</a></b> — 1:54</td>
 </tr>
 </table>
 

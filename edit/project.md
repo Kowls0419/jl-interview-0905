@@ -14,10 +14,10 @@ labels. Notes tagged *(Kyle's machine)* refer to paths/hosts only he has.
 Use the next sequential number and record which agent handled each task.
 Kyle is the sole editor and Git author.
 
-**Status (as of 2026-10-21):** All four end-credit blocks have been updated
-at Kyle’s request. Full-quality replacement files are in project-local `exports/`;
-Kyle will reupload them to YouTube. Existing Watch links still refer to the prior
-uploads. See Session 16.
+**Status (as of 2026-10-21):** Kyle reuploaded all four films with the revised
+end credits. README watch links and thumbnail URLs now point to the replacement
+videos in the existing playlist. Full-quality files remain in project-local
+`exports/`. See Sessions 16–17.
 
 ## Session 1 — 2026-09-18 — Kyle (`/video-use init` — inventory, no cutting)
 
@@ -1265,3 +1265,38 @@ this text-only revision; all rendered endings were inspected directly.
 6. `temp/` still holds the 怪手林 clips from 2026-09-27; delete if unwanted.
 7. The optional other-photo request remains in the Drive-only
    `docs/questions_for_professor.md`.
+
+
+## Session 17 — 2026-10-21 — Kyle (replacement YouTube links)
+
+Codex drove this README update after Kyle supplied the playlist URL.
+
+**Strategy:** read the current playlist and match each replacement video by its
+published title before changing README links.
+
+**Decisions:** replaced all eight video anchors and four thumbnail URLs in the
+README. The playlist URL is unchanged: `https://www.youtube.com/playlist?list=PLNQi8ivhM3Y0`.
+
+| Film | Replacement video |
+|---|---|
+| 產業篇 | `QX6aEfSyFL0` |
+| 土石流篇 | `szvAr8PcF-8` |
+| 焦炭窯篇 | `aEFQYlVrca4` |
+| 戰俘營篇 | `NWCrjgt2XIQ` |
+
+**Verification:** yt-dlp’s current public playlist listing maps all four new IDs
+to the expected titles and lengths. The four older entries are unavailable.
+Each new `maxresdefault.jpg` thumbnail returns HTTP 200. README retains the
+selected film order and all six revised credit rows. No live YouTube setting changed.
+
+**Reasoning log:** the playlist URL stayed the same after reupload, while each
+video acquired a new ID. Updating the video anchors and thumbnail paths together
+avoids linking to the unavailable previous uploads.
+
+**Reflect:** no new preventable recurring mistake qualified.
+
+**Outstanding:** the replacement watch-link item from Session 16 is resolved.
+The private upload draft and share messages still contain previous upload URLs;
+they were outside this README-only update. Client review, optional playlist-cover
+confirmation, source questions and other deferred production work remain as
+listed in Session 16.

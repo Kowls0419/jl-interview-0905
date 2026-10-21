@@ -14,9 +14,10 @@ labels. Notes tagged *(Kyle's machine)* refer to paths/hosts only he has.
 Use the next sequential number and record which agent handled each task.
 Kyle is the sole editor and Git author.
 
-**Status (as of 2026-10-05):** All four films are Public on YouTube in the
-塗潭社區產業、環境與歷史｜口述影像 playlist. Prof approved 戰俘營篇 and 焦炭窯篇; the revised
-credits in 產業篇 and 土石流篇 still await his confirmation. See Sessions 12–13.
+**Status (as of 2026-10-21):** All four end-credit blocks have been updated
+at Kyle’s request. Full-quality replacement files are in project-local `exports/`;
+Kyle will reupload them to YouTube. Existing Watch links still refer to the prior
+uploads. See Session 16.
 
 ## Session 1 — 2026-09-18 — Kyle (`/video-use init` — inventory, no cutting)
 
@@ -1197,4 +1198,70 @@ preference.
    including the fps-default change, and re-check renders afterwards.
 5. `temp/` still holds the 怪手林 clips from 2026-09-27; delete if unwanted.
 6. The optional other-photo request remains in the Drive-only
+   `docs/questions_for_professor.md`.
+
+
+## Session 16 — 2026-10-21 — Kyle (four-film credit replacement)
+
+Codex drove the credit update at Kyle’s direct request. Kyle also authorized
+committing and pushing the README update and related production changes.
+
+**Strategy:** apply the same supplied six credit rows to all four films through
+the shared card builder, retain their existing titles and timings, then rebuild
+and render sequentially with the accepted settings.
+
+**Decisions:** the final block is:
+- 口述｜陳國超、游月裡、張游寶彩、高燈立
+- 攝影｜李承洋
+- 後製剪輯｜楊大謙、李楓晴
+- 指導單位｜新北市政府文化局廣告
+- 執行者｜陳國超
+- 協力單位｜新北市陳昌梯醫師山林保育協會
+
+Kyle clarified that 廣告 belongs at the end of the guiding-unit value and
+執行者 is a separate role. The initial grouping was corrected before delivery.
+Removed the blue films’ old guiding-unit overrides and the POW card’s additional
+source row so every end-credit block uses the supplied six rows. README credits,
+the Drive-only production guide and private upload-description draft now agree;
+the POW historical reference remains documented in the README and upload draft.
+The flood rebuild also refreshes one descriptive EDL beat to the builder’s current
+wording, with no timing or media change.
+
+**Verification:** rendered all four through the existing video-use helper at
+1920×1080, 30000/1001, no loudnorm, then made fixed −1.5 dB delivery copies.
+All durations match the prior exports: 戰俘營篇 113.770 s, 產業篇 137.9708 s,
+土石流篇 104.832 s, 焦炭窯篇 82.709 s. Opened every rendered credit frame and
+closing-transition filmstrip; text and margins are intact and decoded paper Y=216.
+Samples at 2/30/60 s and decoded speech audio at 30–40 s are identical to prior
+exports. The later sampled industry/flood/kiln frames also match exactly. POW’s
+late frame has minor encode differences (SSIM 0.981151); visual comparison confirms
+the same picture, subtitle and timing. No edits to interview cuts or subtitles.
+SHA-256 checks confirm each delivered `exports/<篇>.mp4` matches its `edit/` copy.
+Verification evidence and logs: `edit/verify/credits_20261021/` (Drive only).
+Original exports and masters are preserved in `edit/old_credits_20261021/`.
+
+**Reasoning log:** preserve the accepted cut and loudness treatment while updating
+only the closing graphics. Existing live YouTube pages were left for Kyle’s
+reupload. The repository arrived with a missing index and stale October 9 lock;
+a process check found no active Git operation. Preserved the lock under a backup
+name and reconstructed the index from HEAD without changing working files.
+
+**Reflect:** one credit-label grouping was corrected after Kyle’s clarification;
+no new recurring mistake qualified for a lesson. No Dailies round was needed for
+this text-only revision; all rendered endings were inspected directly.
+
+**Outstanding:**
+1. Kyle reuploads all four project-local `exports/*.mp4` files and supplies the
+   replacement URLs so README Watch links and the upload draft can be updated.
+   Google Drive remote sync was not independently verified in this session.
+2. Kyle’s upload of `private/youtube_thumbnails/playlist_thumbnail.jpg` as the
+   playlist’s custom cover has not been confirmed.
+3. Client confirmation of the revised films remains open; prior red-film approval
+   predates this replacement credit block.
+4. Source questions remain: *gala* spelling ·「下層里」(5635 07:07) · 政三煤礦
+   (5635 02:38) · the 10 台語 gaps in the shortlisted kiln passages.
+5. Later, deliberately merge upstream’s four commits into the video-use fork,
+   including the fps-default change, and re-check renders afterwards.
+6. `temp/` still holds the 怪手林 clips from 2026-09-27; delete if unwanted.
+7. The optional other-photo request remains in the Drive-only
    `docs/questions_for_professor.md`.

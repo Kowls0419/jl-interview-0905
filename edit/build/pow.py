@@ -113,7 +113,7 @@ def build_cards():
     CARDS.mkdir(parents=True, exist_ok=True)
     from cards import open_card, credits_card
     open_card("新店區磺窟", "磺窟戰俘營", "1945 年 5 月，戰俘自金瓜石遷來", CARDS / "open.png")
-    credits_card(CARDS / "close.png", extra_rows=[("資料來源", "台灣戰俘營紀念協會")])   # the credits card is the closer
+    credits_card(CARDS / "close.png")   # the credits card is the closer
     card_mp4(CARDS / "open.png", OPEN_S, CARDS / "open.mp4")
     card_mp4(CARDS / "close.png", CLOSE_S, CARDS / "close.mp4")
 

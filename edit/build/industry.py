@@ -145,8 +145,7 @@ def build_cards():
     from cards import open_card, credits_card
     open_card("新店區塗潭里", "塗潭里的產業變遷", "藍染、樟腦、煤礦、柑橘", CARDS / "open.png")
     open_card("新店區塗潭里", "堰塞湖與土石流", "民國 58 年的土石流記憶", CARDS / "mid.png")   # 土石流篇's opener
-    credits_card(CARDS / "close.png", title="塗潭社區社區環境災害",
-                 guiding_unit="文化部文資局")    # 土石流篇 credits
+    credits_card(CARDS / "close.png", title="塗潭社區社區環境災害")    # 土石流篇 credits
     for k in CARD_S:
         card_mp4(CARDS / f"{k.lower()}.png", CARD_S[k], CARDS / f"{k.lower()}.mp4")
 

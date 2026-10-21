@@ -35,10 +35,10 @@ The Chinese titles follow the client's wording.
 |---|---|
 | Interviewees 口述 | 陳國超、游月裡、張游寶彩、高燈立 |
 | Cinematography 攝影 | 李承洋 |
-| Editing and post-production 後製剪輯 | Kyle Yang（楊大謙） |
-| Supervising organization 指導單位，產業篇與土石流篇 | 文化部文資局 |
-| Supervising organization 指導單位，焦炭窯篇與戰俘營篇 | 新北市政府文化局 |
-| Executing organization 執行單位 | 新北市陳昌梯醫師山林保育協會 |
+| Editing and post-production 後製剪輯 | 楊大謙、李楓晴 |
+| Supervising organization 指導單位 | 新北市政府文化局廣告 |
+| Executor 執行者 | 陳國超 |
+| Supporting organization 協力單位 | 新北市陳昌梯醫師山林保育協會 |
 | Historical source 資料來源，戰俘營篇 | 台灣戰俘營紀念協會 |
 
 The coke-kiln and POW-camp films belong to the project **搶救塗潭焦炭窯**. The

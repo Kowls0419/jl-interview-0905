@@ -33,7 +33,7 @@ PAPER, INK, RUST, GREY = (238, 233, 222), (34, 30, 26), (150, 70, 40), (120, 112
 SERIF = str(FONTS / "NotoSerifTC-Medium.otf")
 SANS = str(FONTS / "NotoSansTC-Medium.otf")
 
-CARD_S = {"OPEN": 5.0, "MID": 5.0, "CLOSE": 7.0}
+CARD_S = {"OPEN": 5.0, "MID": 5.0, "CLOSE": 8.0}   # CLOSE +1 s: prof's ≥1:30 runtime
 
 # (source, start, end, beat) — word-boundary cuts, padded into the pauses.
 # Cards are ranges too, so the timeline is this one list.
@@ -41,7 +41,7 @@ RANGES = [
     ("OPEN", 0, CARD_S["OPEN"], "open card"),
     ("5635", 145.62, 150.60, "coal discovered and mined around 新店; moved from 產業篇"),
     ("5635", 398.82, 403.78, "her father had carried the kiln product"),
-    ("5635", 412.86, 424.82, "carried it out; two trips a day"),
+    ("5635", 412.86, 431.52, "carried it out; two trips a day, to 安坑 / 下城里 (prof's option 2, 2026-10-28)"),
     ("5635", 435.58, 446.06, "about 150 台斤 a trip, without stopping; omit false start 一趟是一百"),
     ("5635", 451.46, 455.98, "two trips, leaving very early"),
     ("5635", 473.46, 475.46, "seeing smoke from the kiln (stop before 台語)"),
@@ -56,6 +56,7 @@ PUNCT = set("，。？！、-")
 # Authoritative spellings, applied AFTER OpenCC. Keys are written against the
 # converted (Traditional) text; every key's hits are counted and reported.
 SUB_FIXES = OrderedDict([
+    ("下層裡", "下城里"),   # place name confirmed by prof, 2026-10-28
     ("山段", "三段"),       # context; flag for Kyle to confirm by ear
     ("臺", "台"),
 ])

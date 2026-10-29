@@ -29,8 +29,8 @@
     {
       "source": "5635",
       "start": 412.86,
-      "end": 424.82,
-      "beat": "carried it out; two trips a day"
+      "end": 431.52,
+      "beat": "carried it out; two trips a day, to 安坑 / 下城里 (prof's option 2, 2026-10-28)"
     },
     {
       "source": "5635",
@@ -78,7 +78,7 @@
     {
       "source": "CLOSE",
       "start": 0,
-      "end": 7.0,
+      "end": 8.0,
       "beat": "close card",
       "grade": ""
     }
@@ -93,19 +93,19 @@
     {
       "file": "cards_kiln/cover_mouth.mp4",
       "start_in_output": 22.617,
-      "duration": 7.959
+      "duration": 14.665
     },
     {
       "file": "cards_kiln/cover_interior.mp4",
-      "start_in_output": 64.957,
+      "start_in_output": 71.664,
       "duration": 3.55
     },
     {
       "file": "cards_kiln/cover_exposed.mp4",
-      "start_in_output": 68.407,
+      "start_in_output": 75.114,
       "duration": 6.25
     }
   ],
   "subtitles": "master_kiln.ass",
-  "total_duration_s": 82.7
+  "total_duration_s": 90.41
 }

@@ -1300,3 +1300,50 @@ The private upload draft and share messages still contain previous upload URLs;
 they were outside this README-only update. Client review, optional playlist-cover
 confirmation, source questions and other deferred production work remain as
 listed in Session 16.
+
+
+## Session 18 — 2026-10-28 — Kyle (prof's runtime and POW credits title)
+
+Claude drove this revision from prof's LINE messages, relayed by Kyle.
+
+**Strategy:** meet prof's 1:30 runtime for 焦炭窯篇 with interview material he
+chose, and fix the POW credits title, without touching anything else.
+
+**Decisions:** prof picked option 2 of two offered: extend the 「兩趟」 range
+(5635 412.86 → 431.52) to restore 「兩趟去到安坑吧／挑到安坑…現在的下城里」 and
+hold the closing card 8 s instead of 7. Prof confirmed the place name is
+下城里; a new subtitle fix maps the converted 下層裡 to 下城里 (2 hits). The
+rejected option was 陳總's 三峽／瑪陵坑 comparison (prof: the meaning was wrong).
+戰俘營篇's credits card had inherited the default 「搶救塗潭焦炭窯」; prof asked
+for 「戰俘營篇」, which Kyle confirmed. 焦炭窯篇's credit title is unchanged.
+
+**Verification:** the new out-point sits in a measured dip (≤ −30 dB at
+431.49–431.57). 焦炭窯篇 is now 90.39 s; the inserted lines play under the
+existing kiln-mouth cover. 戰俘營篇 is unchanged at 113.77 s, with frames at
+2/30/60/100 s identical to the previous export. Both are 1920×1080, 30000/1001,
+paper Y=216, rendered without loudnorm, then given the fixed −1.5 dB copy.
+SHA-256 matches between `edit/` and `exports/`. Previous files are in
+`edit/old_runtime_20261028/`; logs in `edit/verify/runtime_20261028/`.
+README lists 焦炭窯篇 at 1:30.
+
+**Reflect:** no new recurring mistake qualified.
+
+**Publication (2026-10-29):** Kyle approved after prof checked the Drive copies.
+Both films were reuploaded with Studio's "Reuse details" from the previous uploads
+(title, description, playlist, language, location, category, remixing), plus the
+custom thumbnails, not made for kids, no paid promotion, AI use Yes and recording
+date 5 September 2026. 焦炭窯篇's chapters moved to 00:00/00:15/00:34/00:52/01:08.
+
+| Film | New video | Previous (now 「X 」 + Private) |
+|---|---|---|
+| 焦炭窯篇 | `zoc7oYUXRBM` | `aEFQYlVrca4` |
+| 戰俘營篇 | `1f60GgrE9hw` | `NWCrjgt2XIQ` |
+
+The playlist's public order is 產業篇 → 土石流篇 → 焦炭窯篇 → 戰俘營篇, and its
+description lists 焦炭窯篇 at 1:30. README links and thumbnails point to the new
+IDs; both thumbnails return HTTP 200.
+
+**Outstanding:**
+1. Prof's LINE list of 2026-10-27 used the 10-05 IDs; send him the current links.
+2. The playlist description's credit block predates the 10-21 credits.
+3. Earlier source and production items from Session 16 remain.
